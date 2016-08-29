@@ -3,7 +3,7 @@ layout: default
 ---
 
 <section>
-	<div class="wrapper">
+	<div class="wrapper wrapper-content">
 		<div class="feature-internal">
 			<h1>Available Data</h1>
 			<p class="description-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit metus. Vestibulum at mauris vestibulum, interdum quam id, egestas metus. In viverra elit id auctor pharetra.</p>
@@ -11,15 +11,78 @@ layout: default
 		<div class="content-internal">
 			<div class="sidebar">
 				<h5>Filter Datasets</h5>
-				<div>
-					<h4>Category</h4>
-					<ul class="list-type-none">
-						<li>
-							Category 1
-							<span>(2)</span>
-						</li>
-					</ul>
-				</div>
+				<form>
+					<div class="wrapper-filter-item">
+						<fieldset>
+							<label class="header-filter">Category</label>
+							<ul class="list-type-none">
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>Category Name <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>Category Name <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>Category Name <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>Category Name <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>Category Name <span>(2)</span></label>
+								</li>
+							</ul>
+						</fieldset>
+					</div>
+					<div class="wrapper-filter-item">
+						<fieldset>
+							<label class="header-filter">Format</label>
+							<ul class="list-type-none">
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>CSV <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>XML <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>JSON <span>(2)</span></label>
+								</li>
+							</ul>
+						</fieldset>
+					</div>
+					<div class="wrapper-filter-item">
+						<fieldset>
+							<label class="header-filter">Language</label>
+							<ul class="list-type-none">
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>English <span>(2)</span></label>
+								</li>
+								<li>
+									<input type="checkbox" name="" id="" value="" />
+									<label>Farsi <span>(2)</span></label>
+								</li>
+							</ul>
+						</fieldset>
+					</div>
+					<div class="wrapper-filter-item">
+						<fieldset>
+							<label class="header-filter">Date Range</label>
+							<ul class="list-type-none">
+								<li>English <span>(2)</span></li>
+								<li>Farsi <span>(2)</span></li>
+							</ul>
+						</fieldset>
+					</div>
+				</form>
 			</div>
 			<div class="content-sidebar">
 				<h5>Showing 15 Datasets</h5>
@@ -30,8 +93,8 @@ layout: default
 				<ul class="list-type-none">
 					<li class="population list-item-vertical">
 						<span class="type-category">Population</span>
-						<h4 class="header-with-description"><a href="">Name of Dataset</a></h4>
-						<dl>
+						<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
+						<dl class="metadata">
 							<dt>Source:</dt>
 							<dd>Name of Source</dd>
 						</dl>
@@ -47,7 +110,7 @@ layout: default
 					</li>
 					<li class="trade list-item-vertical">
 						<span class="type-category">Trade</span>
-						<h4 class="header-with-description"><a href="">Name of Dataset</a></h4>
+						<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
 						<dl class="metadata">
 							<dt>Source:</dt>
 							<dd>Name of Source</dd>
@@ -64,7 +127,7 @@ layout: default
 					</li>
 					<li class="housing list-item-vertical">
 						<span class="type-category">Housing</span>
-						<h4 class="header-with-description"><a href="">Name of Dataset</a></h4>
+						<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
 						<dl class="metadata">
 							<dt>Source:</dt>
 							<dd>Name of Source</dd>
@@ -81,7 +144,7 @@ layout: default
 					</li>
 					<li class="women list-item-vertical">
 						<span class="type-category">Women</span>
-						<h4 class="header-with-description"><a href="">Name of Dataset</a></h4>
+						<h5 class="header-with-description"><a href="">Name of Dataset</a></h5>
 						<dl class="metadata">
 							<dt>Source:</dt>
 							<dd>Name of Source</dd>
@@ -98,7 +161,7 @@ layout: default
 					</li>
 					<li class="housing list-item-vertical">
 						<span class="type-category">Housing</span>
-						<h4 class="header-with-description"><a href="">Name of Dataset</a></h4>
+						<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
 						<dl class="metadata">
 							<dt>Source:</dt>
 							<dd>Name of Source</dd>
@@ -118,10 +181,14 @@ layout: default
 		</div>
 	</div>
 </section>
-<section class="section-black">
-	<div class="wrapper">
-		<h2>Don't see the dataset you're looking for?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-		<a href="">Suggest a Dataset</a>
+<section class="section-black section-black-last">
+	<div class="wrapper wrapper-content">
+		<div class="centered-content">
+			<h2 class="section-black-header">Don't see the dataset you're looking for?</h2>
+			<div class="section-black-description">
+				<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
+				<a class="button button-white" href="">Suggest a Dataset</a>
+			</div>
+		</div>
 	</div>
 </section>
