@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+- '4'
+env:
+  global:
+  - CXX=g++-4.8
+  - DEPLOY_BRANCH=develop
+  - secure: WE5yuhSlAN0KYvxnMcFG0aauH55PdckaM0Ob9syiasSs/GLPUajsGXckSe2LQFaEb0DFsZlTnP4UskjYYw3/V2AxsNsOWYQk74UPqDad7H4D5Y+8246sK9PcWOvbj/82qGPj7cA99u3H/mRvTYC58QQq3X6w6rLn+/eiE9qpeB21u/VEyqQ+MCNvWAQJ0EJrrDspqg5BWJb0rLctO/Bfxflpj10bJFdI2jXuZZFK/tsl1jV3/YB9GbpehQXGPU4xGp+PfBdLyIwR3pCGQaXZtNGXmSyiWcVdoi81RKk9wfCZ27R8Tc/oGcX6pvnXIKQyupL57qV0hsvfa1eqFZshopBCy0Xa+bG0ywOnwYZP8wrAq6enRFhZv7AgpeUkDdz2VcwwzNp77K/xA/ZM5Wki8bPnoOjgTCS4Neg0NeIL++iLlLOYsPSo6C2DmJtagUBp9BQrgnAfAMkMAJbeMQnQ4TnfAqlg1VfzA77eV1pMDf37JHgIEROkCluKoUpciT96yamE62RjJ/7D0B/MKr+GZSggTgvfA8sX3YcGnUAhVkXEnIYgDxzRrNfVwDsiGv6XBbQgchTEsv9fXC2XR/RAFkevq2VouZzqmV3tOg2IvLT1S0N8rLJ4tNPPGsquMxRP7K38i+eCv2L+OcdZ8ki1AX6LN9NClYGOH2s7KUyTXAc=
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+cache:
+  apt: true
+  directories:
+  - node_modules
+  - bundle/cache
+before_install:
+- rvm install 2.1
+- chmod +x ./.build_scripts/deploy.sh
+- chmod +x ./.build_scripts/lint.sh
+before_script:
+- "./.build_scripts/lint.sh"
+- npm test
+script:
+- npm run build
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ".build_scripts/deploy.sh"
+  on:
+    branch: "${DEPLOY_BRANCH}"

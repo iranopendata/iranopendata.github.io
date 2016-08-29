@@ -1,0 +1,13 @@
+# Site settings
+title: Jekyll Seed
+safe:           false
+source:         app
+exclude:
+  - assets/scripts
+  - assets/vendor
+  - assets/styles
+  - README.md
+timezone: America/New_York
+highlighter: false 
+
+baseurl: ""

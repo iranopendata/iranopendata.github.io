@@ -1,0 +1,305 @@
+/*Type*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font;
+}
+
+h1 {
+	font-size: 4.2em;
+	font-weight: 900;
+	line-height: .95em;
+}
+
+h2 {
+	font-size: 2.85em;
+	font-weight: 900;
+	line-height: 1em;
+}
+
+h3 {
+	font-size: 2.35em;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 1.85em;
+	font-weight: 700;
+}
+
+h5 {
+	font-size: 1.5em;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+
+h6 {
+	font-size: 1.15em;
+	font-weight: 700;
+}
+
+.header-with-description {
+	margin-bottom: .2em;
+}
+
+.logo {
+	font-size: 1.5em;
+	float: left;
+}
+
+.metadata {
+	font-size: .8em;
+	display: inline-block;
+	color: $grey;
+	* {
+		display: inline-block;
+	}
+}
+
+.description-lg {
+	font-size: 1.15em;
+	line-height: 1.7em;
+	color: $black;
+}
+
+.metadata-title {
+	font-weight: bold;
+}
+
+.nav-languages {
+	float: right;
+}
+
+.type-category {
+	text-transform: uppercase;
+	font-size: .8em;
+	font-weight: 700;
+}
+
+.header-feature {
+	font-size: 5em;
+	font-weight: 900;
+	line-height: 1.2em;
+}
+
+.header-divider {
+	border-bottom: 3px solid $black;
+	padding-bottom: .5em;
+  margin-bottom: 1.3em;
+}
+
+.header-centered {
+	text-align: center;
+}
+
+header {
+	margin: 2.2em 0;
+}
+
+
+/*links & buttons*/
+.nav-link {
+	color: $text-color;
+}
+
+.button, .button:visited,  {
+	color: $link-color;
+	border: 3px solid $link-color;
+	padding: .4em 2.5em;
+	font-weight: 700;
+	font-size: 1.2em;
+	margin-top: 1em;
+	display: inline-block;
+	font-family: $header-font;
+}
+
+.button-lg {
+	border: 4px solid $link-color;
+	font-weight: 900;
+	padding: .6em 3em;
+}
+
+.button-sm {
+	background: #fff;
+	border: 1px solid $link-color;
+	font-size: 1em;
+}
+
+.button-white, .button-white:visited, {
+	border: 3px solid #fff;
+	color: #fff;
+}
+
+.button-xl, .button-xl:visited, { 
+	padding: 3em;
+	min-width: 11em;
+	text-align: center;
+}
+
+
+/*Sections*/
+section {
+	margin: 6em 0;
+}
+
+.section-black {
+	background-color: $dark-grey;
+	color: #fff;
+	padding-top: 8em;
+	padding-bottom: 8em;
+	p {
+		color: #fff;
+	}
+}
+
+.section-black-description {
+	float: left;
+	border-left: 3px solid #fff;
+	padding-left: 4%;
+	margin-left: 4%;
+	width: 40%;
+}
+
+.section-black-header {
+	width: 20%;
+	float: left;
+}
+
+.feature-internal {
+	width: 45%;
+	margin-bottom: 5em;
+}
+
+.subsection {
+	border-top: 1px solid $lightest-grey;
+	padding-top: 3em;
+	margin-top: 3em;
+}
+
+.subsection-bold {
+	border-top: 3px solid $black;
+}
+
+
+
+/*Lists*/
+nav { float: left; }
+
+.list-type-none {
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+
+.nav-list_item {
+	display: inline-block;
+	margin: .28em 1em 0;
+	&:first-of-type {
+		margin-left: 3em;
+	}
+}
+
+.list-item-vertical {
+	padding-top: 1em;
+	margin: 2em;
+}
+
+.list-item-block {
+	width: 42%;
+	float: left;
+	margin-right: 2.5em;
+	margin-bottom: 2.5em;
+}
+
+.faux-list-item {
+	margin-bottom: 3em;
+	@extend %clearfix;
+}
+
+
+/*Forms*/
+input { 
+	background-color: #fff;
+	border: 1px solid	$light-grey;
+	color: $grey;
+	padding: .6em 1em;
+	font-size: 1em;
+}
+
+label {
+	display: block;
+}
+
+
+/*footer*/
+footer {
+	background-color: $light-light-grey;
+	border-top: 1px solid $light-grey;
+	padding-top: 2em;
+	padding-bottom: 3em;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+
+/*Homepage*/
+.section-feature_main {
+	float: left;
+	width: 45%;
+}
+
+.section-feature_secondary {
+	width: 30%;
+	float: left;
+	border-left: 4px solid $black;
+	padding-left: 4%;
+	margin-left: 7%;
+}
+
+
+
+.sidebar {
+	float: left;
+	width: 20%;
+}
+
+.content-sidebar {
+	width: 65%;
+	float: left;
+}
+
+.element-file-type {
+	border-radius: 4px;
+	padding: .3em 1em;
+	background-color: $lightest-grey;
+	display: inline-block;
+	font-weight: 700;
+	font-size: .7em
+}
+
+.housing { border-top: 2px solid $housing; }
+.women { border-top: 2px solid $women; }
+.trade { border-top: 2px solid $trade; }
+.population { border-top: 2px solid $population; }
+
+
+
+
+
+.content-centered {
+	margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.wrapper-half {
+	width: 50%;
+	float: left;
+}
+
+.wrapper-half-right {
+	float: right;
+}
+
+.float-right {
+	float: right;
+}
