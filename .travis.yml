@@ -6,7 +6,7 @@ env:
   - CXX=g++-4.8
   - DEPLOY_BRANCH=develop
   - secure: TrZcPyaj+F0V4xPFtywHNwyygY7wesdGxRraL9nh7CvFblgsxZMqZCRfYwa54FQlkNFCxnIpg3u+EgUPhoj+dwN/k8jtGCfi+qjFEpJE8gNPkVA7P8s/dxqRgJU3NcIcSTwL6K2mIfGIq80GA/crTmmA4qdmPiRwKCNaNhrohHDPsCZiYJ2XCC3kByJkJWmqXxBB01adkmsK26VD8E1aphBXgcXWrTIpnjPc17UoNUkVfJs3ILnW09LxBzQPH5Cc63WeNEc4dr34CZG96BFCdnt0RgWEtaOWoAK0e6n+5WfMR0V010ljXlHxiPayy3TXVcu21veFnQQH47PMnut7mRWbHVdNR7QCANmEoVBze2zIKFAVizD6tv6oWTz48tvX+oCXsy/PjcIiHDRQEDL6+/xBuuiOxzov2eOpVPYKffW4PT8II1zl6o9UOUntQom9vHlKd70eHcbNsRdyHWZs/5znrqKpbgq0faci9m2eH5HZ5yinK5m3MFCYQKTzYwri73MZSf/5G/Dz0e7SyjNwy6BIIqRgBdYT5YXuS2xIdy/61ryLEhD9MdfQjWQsO+0cMfCT+zqTfc2DsgNobHxoXtlB2pz+wyzqXknNgP5ons+THQsQsXhLBjhT9b7uWgMifNikUHRfWuu+IIhZer3HJjaD1lVWVOIXPmMzEn4DsEE=
- addons:
+addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
