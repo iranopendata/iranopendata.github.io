@@ -68,12 +68,12 @@ gulp.task('serve', ['vendorScripts', 'javascript', 'styles', 'jekyll'], function
 
   // watch for changes
   gulp.watch([
-    'app/**/*.html',
-    'app/**/*.md',
-    'app/assets/graphics/**/*',
+    '**/*.html',
+    '**/*.md',
+    'assets/graphics/**/*',
   ], ['jekyll', reload]);
 
-  gulp.watch('app/assets/styles/**/*.scss', ['styles']);
+  gulp.watch('assets/styles/**/*.scss', ['styles']);
   gulp.watch('package.json', ['vendorScripts']);
 });
 
@@ -94,7 +94,7 @@ gulp.task('clean', function () {
 // main.js
 gulp.task('javascript', function () {
   var watcher = watchify(browserify({
-    entries: ['./app/assets/scripts/main.js'],
+    entries: ['./assets/scripts/main.js'],
     debug: true,
     cache: {},
     packageCache: {},
@@ -190,7 +190,7 @@ gulp.task('build', function () {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('app/assets/styles/main.scss')
+  return gulp.src('assets/styles/main.scss')
     .pipe($.plumber(function (e) {
       notifier.notify({
         title: 'Oops! Sass errored:',

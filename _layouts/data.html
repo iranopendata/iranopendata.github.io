@@ -16,23 +16,23 @@ layout: default
 						<fieldset>
 							<label class="header-filter">Category</label>
 							<ul class="list-type-none">
-								<li>
+								<li class="list-item-filter list-item-filter-housing">
+									<input type="checkbox" name="" id="" value="" />
+									<label class="list-item-filter-housing">Category Name <span>(2)</span></label>
+								</li>
+								<li class="list-item-filter list-item-filter-population">
 									<input type="checkbox" name="" id="" value="" />
 									<label>Category Name <span>(2)</span></label>
 								</li>
-								<li>
+								<li class="list-item-filter list-item-filter-women">
 									<input type="checkbox" name="" id="" value="" />
 									<label>Category Name <span>(2)</span></label>
 								</li>
-								<li>
+								<li class="list-item-filter list-item-filter-trade">
 									<input type="checkbox" name="" id="" value="" />
 									<label>Category Name <span>(2)</span></label>
 								</li>
-								<li>
-									<input type="checkbox" name="" id="" value="" />
-									<label>Category Name <span>(2)</span></label>
-								</li>
-								<li>
+								<li class="list-item-filter list-item-filter-economy">
 									<input type="checkbox" name="" id="" value="" />
 									<label>Category Name <span>(2)</span></label>
 								</li>
@@ -43,15 +43,15 @@ layout: default
 						<fieldset>
 							<label class="header-filter">Format</label>
 							<ul class="list-type-none">
-								<li>
+								<li class="list-item-filter">
 									<input type="checkbox" name="" id="" value="" />
 									<label>CSV <span>(2)</span></label>
 								</li>
-								<li>
+								<li class="list-item-filter">
 									<input type="checkbox" name="" id="" value="" />
 									<label>XML <span>(2)</span></label>
 								</li>
-								<li>
+								<li class="list-item-filter">
 									<input type="checkbox" name="" id="" value="" />
 									<label>JSON <span>(2)</span></label>
 								</li>
@@ -62,11 +62,11 @@ layout: default
 						<fieldset>
 							<label class="header-filter">Language</label>
 							<ul class="list-type-none">
-								<li>
+								<li class="list-item-filter">
 									<input type="checkbox" name="" id="" value="" />
 									<label>English <span>(2)</span></label>
 								</li>
-								<li>
+								<li class="list-item-filter">
 									<input type="checkbox" name="" id="" value="" />
 									<label>Farsi <span>(2)</span></label>
 								</li>
@@ -77,18 +77,19 @@ layout: default
 						<fieldset>
 							<label class="header-filter">Date Range</label>
 							<ul class="list-type-none">
-								<li>English <span>(2)</span></li>
-								<li>Farsi <span>(2)</span></li>
+								<li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">1999</span></li>
+								<li class="list-item-datarange"><span>to</span></li>
+								<li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">2016</span></li>
 							</ul>
 						</fieldset>
 					</div>
 				</form>
 			</div>
 			<div class="content-sidebar">
-				<h5>Showing 15 Datasets</h5>
-				<div>
-					<span>Sort by</span>
-					<div></div>
+				<h6 class="content-sidebar-header">Showing 15 Datasets</h6>
+				<div class="sort-filter">
+					<span class="sort-filter-header">Sort by</span>
+					<div class="dropdown-sm">Recent Updates</div>
 				</div>
 				<ul class="list-type-none">
 					<li class="population list-item-vertical">
@@ -102,7 +103,7 @@ layout: default
 							<dt>Updated:</dt>
 							<dd>Jul. 28, 2016</dd>
 						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
+						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
 						<ul class="list-type-none">
 							<li class="element-file-type">CSV</li>
 							<li class="element-file-type">XML</li>
@@ -119,7 +120,7 @@ layout: default
 							<dt>Updated:</dt>
 							<dd>Jul. 28, 2016</dd>
 						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
+						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
 						<ul class="list-type-none">
 							<li class="element-file-type">CSV</li>
 							<li class="element-file-type">XML</li>
@@ -136,7 +137,7 @@ layout: default
 							<dt>Updated:</dt>
 							<dd>Jul. 28, 2016</dd>
 						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
+						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
 						<ul class="list-type-none">
 							<li class="element-file-type">CSV</li>
 							<li class="element-file-type">XML</li>
@@ -153,7 +154,7 @@ layout: default
 							<dt>Updated:</dt>
 							<dd>Jul. 28, 2016</dd>
 						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
+						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
 						<ul class="list-type-none">
 							<li class="element-file-type">CSV</li>
 							<li class="element-file-type">XML</li>
@@ -170,13 +171,18 @@ layout: default
 							<dt>Updated:</dt>
 							<dd>Jul. 28, 2016</dd>
 						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
+						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
 						<ul class="list-type-none">
 							<li class="element-file-type">CSV</li>
 							<li class="element-file-type">XML</li>
 						</ul>
 					</li>
 				</ul>
+				<div class="pagination">
+					<ul>
+						<li></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -184,7 +190,7 @@ layout: default
 <section class="section-black section-black-last">
 	<div class="wrapper wrapper-content">
 		<div class="centered-content">
-			<h2 class="section-black-header">Don't see the dataset you're looking for?</h2>
+			<h2 class="section-black-header">Don't see what you're looking for?</h2>
 			<div class="section-black-description">
 				<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
 				<a class="button button-white" href="">Suggest a Dataset</a>

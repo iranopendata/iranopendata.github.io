@@ -114,6 +114,12 @@ h6 {
 	font-style: italic;
 }
 
+.content-sidebar-header {
+	display: inline-block;
+	padding-top: .3em;
+	margin-bottom: 0;
+}
+
 header {
 	margin: 2.2em 0;
 }
@@ -205,6 +211,7 @@ section {
 .section-black-header {
 	width: 28%;
 	float: left;
+	line-height: 1.2em;
 }
 
 .feature-internal {
@@ -248,7 +255,14 @@ nav {
 
 .list-item-vertical {
 	padding-top: 1em;
-	margin: 2em 0 4.3em;
+	margin: 1em 0 5.3em;
+	position: relative;
+
+	.metadata-date {
+		position: absolute;
+		top: 1.3em;
+		right: 0;
+	}
 }
 
 .list-item-block {
@@ -276,6 +290,23 @@ nav {
 	}
 }
 
+.list-item-filter {
+	margin-bottom: .5em;
+}
+
+.list-item-contact { 
+	margin-bottom: 2em;
+}
+
+.form-contact-subsection {
+	float: left;
+	&:first-of-type {
+		margin-right: 3.5em;
+	}
+}
+
+
+
 .img-feature { 
 	width: 100%;
 	border: 1px solid $light-grey;
@@ -291,9 +322,10 @@ nav {
 input { 
 	background-color: #fff;
 	border: 1px solid	$light-grey;
-	color: $grey;
+	color: $mid-grey;
 	padding: .6em 1em;
 	font-size: 1em;
+	min-width: 18em;
 }
 
 .header-filter {
@@ -306,6 +338,72 @@ input {
 
 .wrapper-filter-item {
 	margin-bottom: 2.5em;
+}
+
+.label-form {
+	font-weight: 700;
+	display: block;
+	margin-bottom: .3em;
+}
+
+textarea {
+	min-width: 370px;
+	border: 1px solid	$light-grey;
+	height: 162px;
+	padding: 1em;
+	font-size: 1em;
+	color: $mid-grey;
+}
+
+.form-contact {
+	@extend %clearfix;
+}
+
+
+/*sort*/
+.sort-filter-header {
+	font-weight: 700;
+	float: left;
+	margin-right: .7em;
+	padding-top: .4em;
+}
+
+.sort-filter {
+	float: right;
+}
+
+
+/*dropdown*/
+.dropdown-sm {
+	border: 1px solid $light-grey;
+	padding: .3em 1em;
+	float: left;
+	font-size: .85em;
+	min-width: 100px;
+	&:after {
+		content: "";
+		display: block;
+		background-size: 10px 10px;
+		background-image: url("/assets/graphics/collecticons/chevron-down.svg");
+		height: 10px;
+		width: 10px;
+		background-repeat: no-repeat;
+		float: right;
+		margin-top: .35em;
+	}
+}
+
+.dropdown-sm-date {
+	min-width: 50px;
+}
+
+.list-item-datarange {
+	float: left;
+	margin-right: 1em;
+	&:nth-child(2) {
+		padding-top: .3em;
+		display: block;
+	}
 }
 
 
@@ -342,11 +440,12 @@ footer {
 
 .sidebar {
 	float: left;
-	width: 23%;
+	width: 28%;
+	padding-top: .5em;
 }
 
 .content-sidebar {
-	width: 70%;
+	width: 65%;
 	float: left;
 }
 
@@ -364,7 +463,14 @@ footer {
 .trade { border-top: 2px solid $trade; }
 .population { border-top: 2px solid $population; }
 
-
+.list-item-filter-housing {
+	&:before {
+		display: block;
+		width: 3px;
+		height: 5px;
+		background-color: $housing;
+	}
+}
 
 
 
@@ -380,6 +486,10 @@ footer {
 
 .wrapper-content-sm {
 	max-width: 750px;
+}
+
+.wrapper-content-xs {
+	max-width: 680px;
 }
 
 .wrapper-half {
@@ -415,13 +525,25 @@ footer {
 	max-width: 550px;
 }
 
+.width-shortened-lg {
+	max-width: 650px;
+}
+
 .block-partners {
-	float: right;
+	float: left;
 	width: 20%;
+	border-left: 3px solid $black;
+	margin-left: 4em;
+	padding-left: 4em;
 }
 
 .centered-content {
 	margin: 0 auto;
 	width: 85%;
 	@extend %clearfix;
+}
+
+.content-width-6 {
+	width: 60%;
+	float: left;
 }
