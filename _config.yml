@@ -1,11 +1,11 @@
 # Site settings
 title: Jekyll Seed
-safe:           false
+safe: false
+source: app
 exclude:
   - assets/scripts
   - assets/vendor
   - assets/styles
-  - bundle/
   - README.md
 timezone: America/New_York
 highlighter: false 
