@@ -4,15 +4,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 4.2em;
 	font-weight: 900;
 	line-height: .95em;
+	@media screen and (min-width: 320px) {
+		font-size: 3.2em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 4.2em;
+	}
 }
 
 h2 {
-	font-size: 2.85em;
 	font-weight: 900;
 	line-height: 1em;
+	@media screen and (min-width: 320px) {
+		font-size: 2.4em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 2.85em;
+	}
 }
 
 h3 {
@@ -76,31 +86,28 @@ h6 {
 }
 
 .description-md {
-	font-size: 1.1em;
 	line-height: 1.8em;
+	@media screen and (min-width: 320px) {
+		font-size: 1em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 1.1em;
+	}
 }
 
 .description-lg {
-	font-size: 1.15em;
 	line-height: 1.7em;
 	color: $black;
+	@media screen and (min-width: 320px) {
+		font-size: 1em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 1.15em;
+	}
 }
 
 .metadata-title {
 	font-weight: bold;
-}
-
-.nav-languages {
-	float: right;
-	.active {
-		font-weight: 700;
-	}
-	li {
-		&:first-of-type {
-			border-right: 1px solid $light-grey;
-			padding-right: 2em;
-		}
-	}
 }
 
 .type-category {
@@ -116,9 +123,14 @@ h6 {
 }
 
 .header-feature {
-	font-size: 5em;
 	font-weight: 900;
 	line-height: 1.2em;
+	@media screen and (min-width: 320px) {
+		font-size: 4em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 5em;
+	}
 }
 
 .header-divider {
@@ -167,6 +179,9 @@ header {
 	display: inline-block;
 	font-family: $header-font;
 	background-color: transparent;
+	@media screen and (min-width: 320px) {
+		font-size: 1.1em;
+	}
 }
 
 .button-lg {
@@ -192,7 +207,12 @@ header {
 }
 
 .button-secondary {
-	margin-left: 1.1em;
+	@media screen and (min-width: 320px) {
+		margin-left: 0;
+	}
+	@media screen and (min-width: 768px) {
+		margin-left: 1.1em;
+	}
 }
 
 .text-link {
@@ -220,6 +240,10 @@ section {
 	a, a:visited {
 		color: #fff;
 	}
+	@media screen and (min-width: 320px) {
+		padding-top: 8em;
+		padding-bottom: 8em;
+	}
 }
 
 .section-black-last {
@@ -228,19 +252,33 @@ section {
 
 .section-black-description {
 	float: left;
-	border-left: 3px solid #fff;
-	padding-left: 4%;
-	margin-left: 6%;
-	width: 60%;
 	p {
 		color: $lightest-grey;
+	}
+	@media screen and (min-width: 320px) {
+		border-left: none;
+		padding-left: 0;
+		margin-left: 0;
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		border-left: 3px solid #fff;
+		padding-left: 4%;
+		margin-left: 6%;
+		width: 60%;
 	}
 }
 
 .section-black-header {
-	width: 28%;
-	float: left;
 	line-height: 1.2em;
+	@media screen and (min-width: 320px) {
+		float: initial;
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		width: 28%;
+		float: left;
+	}
 }
 
 .feature-internal {
@@ -262,9 +300,31 @@ section {
 /*Lists*/
 nav { 
 	float: left; 
+	@media screen and (max-width: 920px) {
+		float: initial;
+	}
 	.nav-list_item:hover, .nav-list_item:active {
 		border-bottom: 2px solid $link-color;
     padding-bottom: .3em;
+	}
+}
+
+.menu-hamburger {
+	display: none;
+	@media screen and (max-width: 920px) { 
+		display: initial;
+	}
+	float: right;
+	text-indent: -9999em;
+	padding-top: 1.5em;
+	&:before {
+		content: "";
+		background-image: url("/assets/graphics/collecticons/hamburger-menu.svg");
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-size: 20px 20px;
+		background-repeat: no-repeat;
 	}
 }
 
@@ -276,9 +336,57 @@ nav {
 
 .nav-list_item {
 	display: inline-block;
-	margin: 1.6em 1em 0;
+	padding: 1.6em 1em 1.6em;
 	&:first-of-type {
 		margin-left: 3em;
+		@media screen and (max-width: 920px) {
+			margin-left: 0;
+		}
+	}
+}
+
+.nav-container {
+	position: relative;
+}
+
+.nav-mobile { 
+	@media screen and (max-width: 920px) {
+		position: absolute;
+		right: 0em;
+		background-color: #fff;
+		border: 1px solid $light-grey;
+		z-index: 3;
+		min-width: 150px;
+		top: 4em;
+	}
+	.nav-list_item {
+		@media screen and (max-width: 920px) {
+			display: block;
+			padding: .8em 1em .6em;
+		}
+	}
+}
+
+.nav-languages {
+	float: right;
+	@media screen and (max-width: 920px) { 
+		float: initial;
+		margin-top: 1em;
+		padding-top: 1em;
+		border-top: 1px solid $light-grey;
+	}
+	.active {
+		font-weight: 700;
+	}
+	li {
+		&:first-of-type {
+			border-right: 1px solid $light-grey;
+			padding-right: 2em;
+			@media screen and (max-width: 920px) { 
+				border-right: initial;
+				padding-right: 0;
+			}
+		}
 	}
 }
 
@@ -295,10 +403,16 @@ nav {
 }
 
 .list-item-block {
-	width: 42%;
 	float: left;
-	margin-right: 4.5em;
 	margin-bottom: 2.5em;
+	@media screen and (min-width: 320px) {
+		width: 100%;
+		margin-right: 0;
+	}
+	@media screen and (min-width: 768px) {
+		margin-right: 4.5em;
+		width: 42%;
+	}
 }
 
 .section-black {
@@ -312,9 +426,14 @@ nav {
 }
 
 .list-item-block-sm {
-	width: 29%;
 	&:nth-child(3) {
 		margin-right: 0;
+	}
+	@media screen and (min-width: 320px) {
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		width: 29%;
 	}
 }
 
@@ -415,12 +534,17 @@ input {
 }
 
 textarea {
-	min-width: 370px;
 	border: 1px solid	$light-grey;
 	height: 162px;
 	padding: 1em;
 	font-size: 1em;
 	color: $mid-grey;
+	@media screen and (min-width: 320px) {
+		min-width: 255px;
+	}
+	@media screen and (min-width: 768px) {
+		min-width: 370px;
+	}
 }
 
 .form-contact {
@@ -512,18 +636,38 @@ footer {
 
 /*Homepage*/
 .section-feature_main {
-	float: left;
-	width: 55%;
+	@media screen and (min-width: 320px) {
+		width: 100%;
+		float: inherit;
+	}
+	@media screen and (min-width: 768px) {
+		float: left;
+		width: 55%;
+	}
 }
 
 .section-feature_secondary {
-	width: 30%;
-	float: left;
-	border-left: 4px solid $black;
-	padding-left: 4%;
-	margin-left: 7%;
 	li {
 		margin-bottom: 4em;
+	}
+	@media screen and (min-width: 320px) {
+		border-top: 3px solid $black;
+		border-left: 0;
+		padding-left: 0;
+		margin-left: 0;
+		width: 100%;
+		margin-top: 5em;
+		padding-top: 5em;
+	}
+	@media screen and (min-width: 768px) {
+		width: 30%;
+		float: left;
+		border-left: 4px solid $black;
+		padding-left: 4%;
+		margin-left: 7%;
+		margin-top: 0em;
+		padding-top: 0em;
+		border-top: 0;
 	}
 }
 
@@ -533,11 +677,22 @@ footer {
 	float: left;
 	width: 28%;
 	padding-top: .5em;
+	@media screen and (min-width: 320px) {
+		display: none;
+	}
+	@media screen and (min-width: 768px) {
+		display: initial;
+	}
 }
 
 .content-sidebar {
-	width: 65%;
 	float: left;
+	@media screen and (min-width: 320px) {
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		width: 65%;
+	}
 }
 
 .element-file-type {
@@ -633,10 +788,24 @@ footer {
 
 .block-partners {
 	float: left;
-	width: 20%;
-	border-left: 3px solid $black;
-	margin-left: 4em;
-	padding-left: 4em;
+	@media screen and (min-width: 320px) {
+		border-top: 3px solid $black;
+		border-left: 0;
+		margin-left: 0;
+		padding-left: 0;
+		margin-top: 4em;
+		padding-top: 4em;
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		width: 20%;
+		border-left: 3px solid $black;
+		margin-left: 4em;
+		padding-left: 4em;
+		border-top: 0;
+		padding-top: 0;
+		margin-top: 0;
+	}
 }
 
 .centered-content {
@@ -646,6 +815,11 @@ footer {
 }
 
 .content-width-6 {
-	width: 60%;
 	float: left;
+	@media screen and (min-width: 320px) {
+		width: 100%;
+	}
+	@media screen and (min-width: 768px) {
+		width: 60%;
+	}
 }
