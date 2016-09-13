@@ -11,3 +11,7 @@ timezone: America/New_York
 highlighter: false 
 
 baseurl: ""
+
+collections:
+  - about
+  - partners

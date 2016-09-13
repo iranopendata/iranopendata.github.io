@@ -5,3 +5,52 @@ body {
   direction: rtl;
   text-align: right;
 }
+
+.logo {
+	float: right;
+}
+
+.nav-languages {
+	float: left;
+}
+
+nav {
+	float: right;
+}
+
+.nav-list_item {
+	&:first-of-type {
+		margin-right: 3em;
+		margin-left: 0;
+	}
+}
+
+.section-feature_main {
+	float: right;
+}
+
+.section-feature_secondary {
+	border-right: 4px solid #151515;
+  padding-right: 4%;
+  margin-right: 7%;
+  border-left: 0;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.button-secondary {
+	margin-right: 1.1em;
+}
+
+.section-black-header {
+	float: right;
+}
+
+.section-black-description {
+	border-left: 0;
+  padding-left: 0;
+  margin-left: 0;
+  border-right: 3px solid #fff;
+  padding-right: 4%;
+  margin-right: 6%;
+}
