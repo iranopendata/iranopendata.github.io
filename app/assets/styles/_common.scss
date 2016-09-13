@@ -75,7 +75,7 @@ h6 {
 .metadata-item-header {
 	font-weight: 700;
 	width: 15%;
-	&:nth-child(3) {
+	&:nth-of-type(3n) {
 		clear: left;
 	}
 }
@@ -215,6 +215,18 @@ header {
 	}
 }
 
+.button-filter {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+	float: right;
+	@media screen and (min-width: 320px) {
+		display: inherit;
+	}
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+}
+
 .text-link {
 	border-bottom: 1px solid $lightest-grey;
 }
@@ -336,7 +348,11 @@ nav {
 
 .nav-list_item {
 	display: inline-block;
-	padding: 1.6em 1em 1.6em;
+	margin: 1.6em 1em 0;
+	@media screen and (max-width: 920px) {
+		margin: 0;
+		padding: 1.6em 1em 1.6em;;
+	}
 	&:first-of-type {
 		margin-left: 3em;
 		@media screen and (max-width: 920px) {
@@ -358,6 +374,7 @@ nav {
 		z-index: 3;
 		min-width: 150px;
 		top: 4em;
+		display: none;
 	}
 	.nav-list_item {
 		@media screen and (max-width: 920px) {
@@ -409,7 +426,7 @@ nav {
 		width: 100%;
 		margin-right: 0;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 440px) {
 		margin-right: 4.5em;
 		width: 42%;
 	}
@@ -426,14 +443,23 @@ nav {
 }
 
 .list-item-block-sm {
-	&:nth-child(3) {
-		margin-right: 0;
-	}
 	@media screen and (min-width: 320px) {
 		width: 100%;
 	}
+	@media screen and (min-width: 440px) {
+		width: 40%;
+		&:nth-child(2) {
+			margin-right: 0;
+		}
+	}
 	@media screen and (min-width: 768px) {
 		width: 29%;
+		&:nth-child(3) {
+			margin-right: 0;
+		}
+		&:nth-child(2) {
+			margin-right: 4.5em;
+		}
 	}
 }
 
@@ -513,6 +539,10 @@ input {
 	padding: .6em 1em;
 	font-size: 1em;
 	min-width: 18em;
+}
+
+.checkbox {
+	float:left;
 }
 
 .header-filter {
@@ -631,6 +661,16 @@ footer {
 	p {
 		margin-bottom: 0;
 	}
+	nav {
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+	.wrapper-half {
+		@media screen and (max-width: 440px) {
+			width: 100%;
+		}
+	}
 }
 
 
@@ -649,6 +689,17 @@ footer {
 .section-feature_secondary {
 	li {
 		margin-bottom: 4em;
+		float: initial;
+		@media screen and (min-width: 440px) {
+			width: 40%;
+			float: left;
+			margin-right: 4%;
+		}
+		@media screen and (min-width: 768px) {
+			float: initial;
+			margin-right: 0;
+			width: 100%
+		}
 	}
 	@media screen and (min-width: 320px) {
 		border-top: 3px solid $black;
@@ -683,6 +734,10 @@ footer {
 	@media screen and (min-width: 768px) {
 		display: initial;
 	}
+}
+
+.sidebar-fixed {
+	position: fixed;
 }
 
 .content-sidebar {
