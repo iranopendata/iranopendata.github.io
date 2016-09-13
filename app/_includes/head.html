@@ -8,11 +8,13 @@
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
-<!-- build:css /assets/styles/main.css -->
-<link rel="stylesheet" href="/assets/styles/main.css">
 
 {% if page.lang == 'fa' %}
+  <!-- build:css /assets/styles/main_rtl.css -->
   <link rel="stylesheet" href="/assets/styles/main_rtl.css">
+{% else %}
+  <!-- build:css /assets/styles/main.css -->
+  <link rel="stylesheet" href="/assets/styles/main.css">
 {% endif %}
 <!-- endbuild -->
 

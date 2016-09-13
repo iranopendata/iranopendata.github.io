@@ -1,6 +1,22 @@
 // Charset
 @charset "UTF-8";
 
+
+// Reset and normalize
+@import "fonts";
+@import "variables";
+
+//Overrides
+$base-font-family: 'BYekan', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font: 'BYekan', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+@import "reset";
+@import "syntax-highlighting";
+@import "common";
+@import 'https://fonts.googleapis.com/css?family=Lato:700,900';
+@import 'https://fonts.googleapis.com/css?family=Raleway:400,400i,700';
+
 body {
   direction: rtl;
   text-align: right;
