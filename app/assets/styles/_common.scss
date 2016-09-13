@@ -227,6 +227,10 @@ header {
 	}
 }
 
+.button-standalone {
+	clear: both;
+}
+
 .text-link {
 	border-bottom: 1px solid $lightest-grey;
 }
@@ -737,7 +741,7 @@ footer {
 }
 
 .sidebar-fixed {
-	position: fixed;
+
 }
 
 .content-sidebar {
