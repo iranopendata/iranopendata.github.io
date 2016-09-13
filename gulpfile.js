@@ -70,6 +70,7 @@ gulp.task('serve', ['vendorScripts', 'javascript', 'styles', 'jekyll'], function
   gulp.watch([
     'app/**/*.html',
     'app/**/*.md',
+    'app/**/*.yml',
     'app/assets/graphics/**/*',
   ], ['jekyll', reload]);
 
@@ -190,7 +191,37 @@ gulp.task('build', function () {
 });
 
 gulp.task('styles', function () {
-  return gulp.src('app/assets/styles/main.scss')
+  gulp.src('app/assets/styles/main.scss')
+    .pipe($.plumber(function (e) {
+      notifier.notify({
+        title: 'Oops! Sass errored:',
+        message: e.message
+      });
+      console.log('Sass error:', e.toString());
+      if (prodBuild) {
+        process.exit(1);
+      }
+      // Allows the watch to continue.
+      this.emit('end');
+    }))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      outputStyle: 'expanded',
+      precision: 10,
+      functions: {
+        'urlencode($url)': function (url) {
+          var v = new SassString();
+          v.setValue(encodeURIComponent(url.getValue()));
+          return v;
+        }
+      },
+      includePaths: require('node-bourbon').with('.', 'node_modules/jeet/scss')
+    }))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('.tmp/assets/styles'))
+    .pipe(reload({stream: true}));
+
+  gulp.src('app/assets/styles/main_rtl.scss')
     .pipe($.plumber(function (e) {
       notifier.notify({
         title: 'Oops! Sass errored:',
