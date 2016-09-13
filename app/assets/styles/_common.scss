@@ -351,7 +351,7 @@ nav {
 	margin: 1.6em 1em 0;
 	@media screen and (max-width: 920px) {
 		margin: 0;
-		padding: 1.6em 1em 1.6em;;
+		padding: 1.6em 1em 1.6em;
 	}
 	&:first-of-type {
 		margin-left: 3em;
@@ -813,6 +813,17 @@ footer {
 	float: right;
 }
 
+.wrapper-content-about {
+	p {
+		font-size: 1.1em;
+		line-height: 1.8em;
+		&:nth-of-type(3) {
+			width: 55%;
+			float: left;
+		}
+	}
+}
+
 .float-right {
 	float: right;
 }
@@ -837,12 +848,15 @@ footer {
 	max-width: 550px;
 }
 
-.width-shortened-lg {
-	max-width: 650px;
-}
-
 .block-partners {
 	float: left;
+	ul {
+		list-style-type: none;
+		margin-left: 0;
+	}
+	li { 
+		margin-bottom: 1em;
+	}
 	@media screen and (min-width: 320px) {
 		border-top: 3px solid $black;
 		border-left: 0;
@@ -853,13 +867,14 @@ footer {
 		width: 100%;
 	}
 	@media screen and (min-width: 768px) {
-		width: 20%;
+		width: 25%;
 		border-left: 3px solid $black;
 		margin-left: 4em;
 		padding-left: 4em;
 		border-top: 0;
 		padding-top: 0;
 		margin-top: 0;
+		float: right;
 	}
 }
 

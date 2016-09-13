@@ -1,30 +1,9 @@
-<footer>
-	<div class="wrapper">
-		<div class="wrapper-half wrapper-half-left">
-			<h5 class="header-with-description">Sign Up For Our Newsletter</h5>
-			<p>Get updates on new and updated datasets.</p>
-			<input type="" name="" placeholder="Enter Your Email">
-			<button class="button button-sm button-secondary">Submit</button>
-		</div>
-		<div class="wrapper-half wrapper-half-right">
-			<nav class="float-right">
-				<ul class="list-type-none">
-					<li class="nav-list_item"><a class="nav-link" href="/data/">Data</a></li>
-					<li class="nav-list_item"><a class="nav-link" href="/usecases/">Use Cases</a></li>
-					<li class="nav-list_item"><a class="nav-link" href="/resources/">Resources</a></li>
-					<li class="nav-list_item"><a class="nav-link" href="/developers/">Developers</a></li>
-					<li class="nav-list_item"><a class="nav-link" href="/about/">About</a></li>
-					<li class="nav-list_item"><a class="nav-link" href="/contact/">Contact</a></li>
-				</ul>
-			</nav>
-			<a class="button button-sm float-right" href="">Find Us On Github</a>
-		</div>
-	</div>
-</footer>
-
-<!-- build:js /assets/scripts/vendor.js -->
-<script src="/assets/scripts/vendor.js"></script>
-<!-- endbuild -->
-<!-- build:js /assets/scripts/bundle.js -->
-<script src="/assets/scripts/bundle.js"></script>
-<!-- endbuild -->
+<div class="block-partners">
+	<h3>Partners</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra leo sed libero bibendum pharetra vitae at nibh.</p>
+	<ul>
+		{% for partner in site.partners %}
+			<li><a href="{{partner.link}}"><img alt="{{partner.name}}" src="{{partner.image}}"></a></li>
+		{% endfor %}
+	</ul>
+</div>
