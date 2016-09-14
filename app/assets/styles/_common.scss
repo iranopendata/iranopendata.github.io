@@ -163,10 +163,18 @@ header {
 	color: $text-color;
 }
 
-.normal-link, .normal-link:visited {
+.normal-link, .normal-link:visited, p a, p a:visited {
 	color: $link-color;
 	font-family: $header-font;
 	font-weight: 700;
+}
+
+.link-filter {
+	a {
+		&:hover	{
+			color: $link-color;
+		}
+	}
 }
 
 .button, .button:visited,  {
@@ -179,8 +187,13 @@ header {
 	display: inline-block;
 	font-family: $header-font;
 	background-color: transparent;
+	transition: all 0.3s;
 	@media screen and (min-width: 320px) {
 		font-size: 1.1em;
+	}
+	&:hover {
+		background-color: $link-color;
+		color: #fff;
 	}
 }
 
@@ -198,6 +211,10 @@ header {
 .button-white, .button-white:visited, {
 	border: 3px solid #fff;
 	color: #fff;
+	&:hover {
+		background-color: #fff;
+		color: $dark-grey;
+	}
 }
 
 .button-xl, .button-xl:visited, { 
@@ -227,12 +244,12 @@ header {
 	}
 }
 
-.button-standalone {
-	clear: both;
-}
-
 .text-link {
 	border-bottom: 1px solid $lightest-grey;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		border-bottom: 1px solid $grey;
+	}
 }
 
 .button-right {
@@ -325,14 +342,14 @@ nav {
 	}
 }
 
-.menu-hamburger {
+.menu-hamburger, .menu-hamburger:visited {
 	display: none;
+	color: #fff;
+	margin-top: .8em;
 	@media screen and (max-width: 920px) { 
 		display: initial;
 	}
 	float: right;
-	text-indent: -9999em;
-	padding-top: 1.5em;
 	&:before {
 		content: "";
 		background-image: url("/assets/graphics/collecticons/hamburger-menu.svg");
@@ -378,12 +395,18 @@ nav {
 		z-index: 3;
 		min-width: 150px;
 		top: 4em;
-		display: none;
 	}
 	.nav-list_item {
 		@media screen and (max-width: 920px) {
 			display: block;
 			padding: .8em 1em .6em;
+			&:hover {
+				border-bottom: 0;
+				padding: .8em 1em .6em;
+			}
+			a:hover {
+				color: $link-color;
+			}
 		}
 	}
 }
@@ -482,6 +505,11 @@ nav {
 	margin-bottom: .5em;
 }
 
+.filter-number {
+	display: inline-block;
+	color: $grey;
+}
+
 .list-item-contact { 
 	margin-bottom: 2em;
 }
@@ -527,6 +555,7 @@ img {
 
 .img-feature { 
 	border: 1px solid $light-grey;
+	width: 99.8%;
 }
 
 .image-usecase {
@@ -669,6 +698,13 @@ footer {
 		@media screen and (max-width: 768px) {
 			display: none;
 		}
+		.nav-list_item:hover, .nav-list_item:active{
+			padding-bottom: 0em;
+			border-bottom: 0;
+			a {
+				color: $link-color;
+			}
+		}
 	}
 	.wrapper-half {
 		@media screen and (max-width: 440px) {
@@ -767,6 +803,7 @@ footer {
 	width: auto;
 	margin-right: 1em;
 	margin-top: .5em;
+	line-height: 2.8em;
 }
 
 .housing { border-top: 2px solid $housing; }
@@ -824,6 +861,9 @@ footer {
 		&:nth-of-type(3) {
 			width: 55%;
 			float: left;
+			@media screen and (max-width: 600px) {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -836,6 +876,11 @@ footer {
 	position: relative;
 	margin-bottom: 3em;
 	margin-top: 2.5em;
+	@media screen and (max-width: 600px) {
+		height: 400px;
+    width: 100%;
+    position: relative;
+	}
 }
 
 .overlay-description {
@@ -844,34 +889,37 @@ footer {
 	border-top: 3px solid $black;
 	position: absolute;
 	bottom: 6px;
-	width: 92%;
+	/*width: 92%;*/
 	background-color: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	bottom: 0;
 }
 
 .width-shortened {
-	max-width: 550px;
+	max-width: 75%;
+	@media screen and (max-width: 600px) {
+		max-width: 100%;
+	}
 }
 
 .block-partners {
 	float: left;
+	p {
+		font-size: 1em;
+	}
 	ul {
 		list-style-type: none;
 		margin-left: 0;
 	}
 	li { 
-		margin-bottom: 1em;
+		margin-bottom: 1.5em;
+		@media screen and (max-width: 600px) {
+			width: 40%;
+			float: left;
+			margin-right: 4%;
+		}
 	}
-	@media screen and (min-width: 320px) {
-		border-top: 3px solid $black;
-		border-left: 0;
-		margin-left: 0;
-		padding-left: 0;
-		margin-top: 4em;
-		padding-top: 4em;
-		width: 100%;
-	}
-	@media screen and (min-width: 768px) {
-		width: 25%;
+	width: 25%;
 		border-left: 3px solid $black;
 		margin-left: 4em;
 		padding-left: 4em;
@@ -879,6 +927,14 @@ footer {
 		padding-top: 0;
 		margin-top: 0;
 		float: right;
+	@media screen and (max-width: 600px) {
+		border-top: 3px solid $black;
+		border-left: 0;
+		margin-left: 0;
+		padding-left: 0;
+		margin-top: 4em;
+		padding-top: 4em;
+		width: 100%;
 	}
 }
 
@@ -895,5 +951,13 @@ footer {
 	}
 	@media screen and (min-width: 768px) {
 		width: 60%;
+	}
+}
+
+footer .button-standalone {
+	clear: both;
+	@media screen and (max-width: 768px) {
+		margin-top: 2em;
+		float: left;
 	}
 }
