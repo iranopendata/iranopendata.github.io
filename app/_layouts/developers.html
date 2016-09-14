@@ -1,27 +1,16 @@
 ---
 layout: default
 ---
-
+{% assign lang = site.data[page.lang][0] %}
 <section>
 	<div class="wrapper wrapper-content wrapper-content-sm">
-		<h1>Developers</h1>
+		<h1>{{lang.developers}}</h1>
 		<p class="description-md width-shortened-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra leo sed libero bibendum pharetra vitae at nibh. Praesent quis sem mattis, ullamcorper ligula sed, venenatis metus. Maecenas ornare tempor eleifend. Vivamus eleifend congue erat, quis rhoncus leo semper ac. In efficitur justo eu mattis vestibulum. Nullam auctor dui eros, eu pharetra erat molestie eu. Sed in nisl risus. Aenean posuere quam ac sapien semper molestie. Nunc congue nulla mi, et consequat tellus dapibus ac. Fusce eget magna ante. Vestibulum quis varius libero. Proin ac tellus eu massa consequat fringilla quis id eros. Etiam laoreet fermentum nibh vel auctor. Cras sed ipsum ac nunc consequat interdum eu quis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-		<a class="button" href="">View the API</a>
-		<a class="button button-secondary" href="https://github.com/orgs/iranopendata/">Find us on Github</a>
+		<a class="button" href="">{{lang.button-api}}</a>
+		<a class="button button-secondary" href="https://github.com/orgs/iranopendata/">{{lang.button-github}}</a>
 	</div>
 </section>
-<section class="section-black section-black-last">
-	<div class="wrapper wrapper-content">
-		<div class="centered-content">
-			<h2 class="section-black-header">How to Contribute</h2>
-			<div class="section-black-description">
-				<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.</p>
-				<a class="button button-white" href="">View Github Issues</a>
-				<a class="button button-white button-secondary" href="/{{page.lang}}/contact/">Submit Your Work</a>
-			</div>
-		</div>
-	</div>
-</section>
+{% include contribute.html %}
 <section>
 	<div class="wrapper wrapper-content wrapper-content-sm">
 		<h2>Methodology</h2>
