@@ -806,25 +806,49 @@ footer {
 	line-height: 2.8em;
 }
 
+.banking { border-top: 2px solid $banking; }
+.budget { border-top: 2px solid $budget; }
+.crime { border-top: 2px solid $crime; }
+.communications { border-top: 2px solid $communications; }
+.economics { border-top: 2px solid $economics; }
+.education { border-top: 2px solid $education; }
+.employment { border-top: 2px solid $employment; }
+.environment { border-top: 2px solid $environment; }
+.health { border-top: 2px solid $health; }
 .housing { border-top: 2px solid $housing; }
-.women { border-top: 2px solid $women; }
-.trade { border-top: 2px solid $trade; }
+.energy { border-top: 2px solid $energy; }
 .population { border-top: 2px solid $population; }
+.trade { border-top: 2px solid $trade; }
+.transport { border-top: 2px solid $transport; }
+.women { border-top: 2px solid $women; }
 
-.housing-lg { border-top: 3px solid $housing; padding-top: 3.5em;}
-.women-lg { border-top: 3px solid $women; padding-top: 3.5em;}
-.trade-lg { border-top: 3px solid $trade; padding-top: 3.5em;}
-.population-lg { border-top: 3px solid $population; padding-top: 3.5em;}
+.content-dataset { padding-top: 3.5em; border-top-width: 3px;}
 
-.list-item-filter-housing {
+.filter-categories li label {
 	&:before {
-		display: block;
-		width: 3px;
-		height: 5px;
-		background-color: $housing;
+		display: inline-block;
+		width: 5px;
+		height: 16px;
+		content: ".";
+		margin: 0 .5em 0 .4em;
 	}
 }
 
+.list-item-filter-banking label:before { background-color: $banking; }
+.list-item-filter-budget label:before { background-color: $budget; }
+.list-item-filter-crime label:before { background-color: $crime; }
+.list-item-filter-communications label:before { background-color: $communications; }
+.list-item-filter-economics label:before { background-color: $economics; }
+.list-item-filter-education label:before { background-color: $education; }
+.list-item-filter-employment label:before { background-color: $employment; }
+.list-item-filter-environment label:before { background-color: $environment; }
+.list-item-filter-health label:before { background-color: $health; }
+.list-item-filter-housing label:before { background-color: $housing; }
+.list-item-filter-energy label:before { background-color: $energy; }
+.list-item-filter-population label:before { background-color: $population; }
+.list-item-filter-trade label:before { background-color: $trade; }
+.list-item-filter-transport label:before { background-color: $transport; }
+.list-item-filter-women label:before { background-color: $women; }
 
 
 .content-centered {
