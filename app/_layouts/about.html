@@ -1,24 +1,13 @@
 ---
 layout: default
 ---
-
+{% assign lang = site.data[page.lang][0] %}
 <section>
 	<div class="wrapper wrapper-content wrapper-content-sm wrapper-content-about">
-		<h1>About</h1>
+		<h1>{{lang.about}}</h1>
 		{% for post in site.about | where:"lang",page.lang %}
 		  {{post.content}}
 		{% endfor %}
 	</div>
 </section>
-<section class="section-black section-black-last">
-	<div class="wrapper wrapper-content">
-		<div class="centered-content">
-			<h2 class="section-black-header">Get Involved</h2>
-			<div class="section-black-description">
-				<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-				<a class="button button-white" href="/{{page.lang}}/contact/">Contact us</a>
-				<a class="button button-white button-secondary" href="https://github.com/orgs/iranopendata/">Find us on Github</a>
-			</div>
-		</div>
-	</div>
-</section>
+{% include get-involved.html %}
