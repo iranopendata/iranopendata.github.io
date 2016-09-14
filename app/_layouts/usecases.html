@@ -6,42 +6,32 @@ layout: default
 	<div class="wrapper wrapper-content">
 		<h1>Use Cases</h1>
 		<div class="feature-overlay">
-			<img class="img-feature" src="/assets/graphics/feature1.jpg">
-			<div class="overlay-description">
-				<span class="type-category">Featured</span>
-				<h4><a class="text-link" href="">Name of Dataset</a></h4>
-				<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-				<a class="normal-link" href="">View Site</a>
-			</div>
+			{% for usecase in site.usecases %}
+				{% if usecase.featured == true %}
+					<img class="img-feature" src="/assets/graphics/{{usecase.img}}">
+					<div class="overlay-description">
+						<span class="type-category">Featured</span>
+						<h4><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h4>
+						<p class="width-shortened">{{usecase.description}}</p>
+						<a target="_blank" class="normal-link" href="{{usecase.link}}">View Site</a>
+					</div>
+				{% endif %}
+			{% endfor %}
 		</div>
 		<ul class="list-type-none">
-			<li class="list-item-block list-item-block-sm">
-				<a href=""><img class="img-feature image-usecase" src="/assets/graphics/usecase1.jpg"></a>
-				<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
-				<dl class="metadata">
-					<dt>Source:</dt>
-					<dd>Name of Source</dd>
-				</dl>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-			</li>
-			<li class="list-item-block list-item-block-sm">
-				<a href=""><img class="img-feature image-usecase" src="/assets/graphics/usecase2.jpg"></a>
-				<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
-				<dl class="metadata">
-					<dt>Source:</dt>
-					<dd>Name of Source</dd>
-				</dl>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-			</li>
-			<li class="list-item-block list-item-block-sm">
-				<a href=""><img class="img-feature image-usecase" src="/assets/graphics/usecase3.jpg"></a>
-				<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
-				<dl class="metadata">
-					<dt>Source:</dt>
-					<dd>Name of Source</dd>
-				</dl>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-			</li>
+			{% for usecase in site.usecases %}
+				{% if usecase.featured == false %}
+					<li class="list-item-block list-item-block-sm">
+						<a target="_blank" href="{{usecase.link}}"><img class="img-feature image-usecase" src="/assets/graphics/{{usecase.img}}"></a>
+						<h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
+						<dl class="metadata">
+							<dt>Source:</dt>
+							<dd>{{usecase.source}}</dd>
+						</dl>
+						<p>{{usecase.description}}</p>
+					</li>
+				{% endif %}
+			{% endfor %}
 		</ul>
 	</div>
 </section>

@@ -15,3 +15,7 @@ baseurl: ""
 collections:
   - about
   - partners
+  - developers
+  - methodology
+  - usecases
+  - resources

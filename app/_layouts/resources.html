@@ -25,93 +25,24 @@ layout: default
 			</ul>
 		</div>
 		<div class="content-sidebar">
+			{% for resource in site.resources | sort: 'category' %}
 			<div class="faux-list-item">
-				<h4 class="header-divider">Resource Category</h4>
+				<h4 class="header-divider">{{resource.category}}</h4>
 				<ul class="list-type-none">
+					{% for resource in site.resources %}
 					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource 1</a></h5>
+						<h5 class="header-with-description"><a class="text-link" target="_blank" href="{{resource.link}}">{{resource.title}}</a></h5>
 						<dl class="metadata">
 							<dt>Source:</dt>
-							<dd>Name of Source</dd>
+							<dd>{{resource.source}}</dd>
 						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
+						<p>{{resource.description}}</p>
 					</li>
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource 2</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource 3</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
+					{% endfor %}
 				</ul>
+
 			</div>
-			<div class="faux-list-item">
-				<h4 class="header-divider">Resource Category</h4>
-				<ul class="list-type-none">
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-				</ul>
-			</div>
-			<div class="faux-list-item">
-				<h4 class="header-divider">Resource Category</h4>
-				<ul class="list-type-none">
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="">Name of Resource</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-				</ul>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
