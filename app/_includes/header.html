@@ -8,12 +8,18 @@
 			<div class="nav-mobile">
 				<nav>
 					<ul class="nav-list list-type-none">
-						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/data/">{{lang.data}}</a></li>
-						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/usecases/">{{lang.use_cases}}</a></li>
-						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/resources/">{{lang.resources}}</a></li>
-						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/developers/">{{lang.developers}}</a></li>
-						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/about/">{{lang.about}}</a></li>
-						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/contact/">{{lang.contact}}</a></li>
+            {% if page.id == 'data' %}<li class="nav-list_item active data">{% else %}<li class="nav-list_item data">{% endif %}
+              <a class="nav-link" href="/{{page.lang}}/data/">{{lang.data}}</a></li>
+            {% if page.id == 'usecases' %}<li class="nav-list_item active usecases">{% else %}<li class="nav-list_item usecases">{% endif %}
+						  <a class="nav-link" href="/{{page.lang}}/usecases/">{{lang.use_cases}}</a></li>
+            {% if page.id == 'resources' %}<li class="nav-list_item active resources">{% else %}<li class="nav-list_item resources">{% endif %}
+						  <a class="nav-link" href="/{{page.lang}}/resources/">{{lang.resources}}</a></li>
+            {% if page.id == 'developers' %}<li class="nav-list_item active developers">{% else %}<li class="nav-list_item developers">{% endif %}
+						  <a class="nav-link" href="/{{page.lang}}/developers/">{{lang.developers}}</a></li>
+            {% if page.id == 'about' %}<li class="nav-list_item active about">{% else %}<li class="nav-list_item about">{% endif %}
+              <a class="nav-link" href="/{{page.lang}}/about/">{{lang.about}}</a></li>
+            {% if page.id == 'contact' %}<li class="nav-list_item active contact">{% else %}<li class="nav-list_item contact">{% endif %}
+						  <a class="nav-link" href="/{{page.lang}}/contact/">{{lang.contact}}</a></li>
 					</ul>
 				</nav>
 				<ul class="nav-languages nav-list list-type-none">

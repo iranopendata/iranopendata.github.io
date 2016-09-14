@@ -336,7 +336,7 @@ nav {
 	@media screen and (max-width: 920px) {
 		float: initial;
 	}
-	.nav-list_item:hover, .nav-list_item:active {
+	.nav-list_item:hover, .nav-list_item:active, .active {
 		border-bottom: 2px solid $link-color;
     padding-bottom: .3em;
 	}
