@@ -3,18 +3,23 @@
 		<h1 class="logo">
 			<a href="/{{page.lang}}/"><img src="/assets/graphics/IOD-logo.png" alt="Iran Open Data" /></a>
 		</h1>
-		<nav>
-			<ul class="nav-list list-type-none">
-				<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/data/">{{lang.data}}</a></li>
-				<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/usecases/">{{lang.use_cases}}</a></li>
-				<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/resources/">{{lang.resources}}</a></li>
-				<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/developers/">{{lang.developers}}</a></li>
-				<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/about/">{{lang.about}}</a></li>
-				<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/contact/">{{lang.contact}}</a></li>
-			</ul>
-		</nav>
-		<ul class="nav-languages nav-list list-type-none">
-			<li class="nav-list_item"><a href="/en{{page.url| remove_first:'/fa' | remove_first:'/en'}}" class="nav-link active">English</a></li>
-			<li class="nav-list_item"><a href="/fa{{page.url | remove_first:'/fa' | remove_first:'/en'}}" class="nav-link">فارسی</a></li>
-		</ul>
+		<div class="nav-container">
+			<a class="menu-hamburger" href="">Menu</a>
+			<div class="nav-mobile">
+				<nav>
+					<ul class="nav-list list-type-none">
+						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/data/">{{lang.data}}</a></li>
+						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/usecases/">{{lang.use_cases}}</a></li>
+						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/resources/">{{lang.resources}}</a></li>
+						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/developers/">{{lang.developers}}</a></li>
+						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/about/">{{lang.about}}</a></li>
+						<li class="nav-list_item"><a class="nav-link" href="/{{page.lang}}/contact/">{{lang.contact}}</a></li>
+					</ul>
+				</nav>
+				<ul class="nav-languages nav-list list-type-none">
+					<li class="nav-list_item"><a href="/en{{page.url| remove_first:'/fa' | remove_first:'/en'}}" class="nav-link active">English</a></li>
+					<li class="nav-list_item"><a href="/fa{{page.url | remove_first:'/fa' | remove_first:'/en'}}" class="nav-link">فارسی</a></li>
+				</ul>
+			</div>
+		</div>
 	</header>

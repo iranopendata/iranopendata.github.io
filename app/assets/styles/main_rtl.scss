@@ -17,12 +17,29 @@ body {
 
 nav {
 	float: right;
+	@media screen and (max-width: 960px) {
+		float: initial;
+	}
+}
+
+.menu-hamburger {
+	float: left;
+}
+
+.nav-mobile {
+	@media screen and (max-width: 960px) {
+		right: initial;
+		left: 0;
+	}
 }
 
 .nav-list_item {
 	&:first-of-type {
 		margin-right: 3em;
 		margin-left: 0;
+		@media screen and (max-width: 960px) {
+			margin-right: 0em;
+		}
 	}
 }
 
@@ -33,12 +50,22 @@ nav {
 			padding-left: 2em;
 			border-right: 0;
 			border-left: 1px solid $light-grey;
+			@media screen and (max-width: 960px) {
+				border-left: 0;
+				padding-right: 1em;
+			}
 		}
+	}
+	@media screen and (max-width: 960px) {
+		float: initial;
 	}
 }
 
 .section-feature_main {
 	float: right;
+	@media screen and (max-width: 768px) {
+		float: initial;
+	}
 }
 
 .section-feature_secondary {
@@ -48,10 +75,26 @@ nav {
   border-left: 0;
   padding-left: 0;
   margin-left: 0;
+  li {
+		@media screen and (max-width: 768px) {
+			float: right;
+			margin-right: 0;
+			margin-left: 4%;
+		}
+	}
+  @media screen and (max-width: 768px) {
+  	border-right: 0;
+  	padding-right: 0;
+  	margin-right: 0;
+  }
 }
 
 .button-secondary {
 	margin-right: 1.1em;
+	@media screen and (max-width: 440px) {
+		margin-right: 0;
+		float: initial;
+	}
 }
 
 .section-black-header {
@@ -65,6 +108,9 @@ nav {
   border-right: 3px solid #fff;
   padding-right: 4%;
   margin-right: 6%;
+  @media screen and (max-width: 768px) {
+  	border-right: 0;
+  }
 }
 
 .sidebar {
@@ -143,10 +189,20 @@ nav {
 
 .block-partners {
 	margin-top: .8em;
+	li {
+		@media screen and (max-width: 600px) {
+			float: right;
+			margin-right: 0;
+			margin-left: 4%;
+		}
+	}
 }
 
 .form-contact-subsection {
 	float: right;
+	@media screen and (max-width: 600px) {
+		float: none;
+	}
 	&:first-of-type {
 		margin-right: 0;
 		margin-left: 3.5em;
@@ -168,3 +224,10 @@ nav {
 .content-sidebar{
 	float: right;
 }
+
+footer .button-standalone {
+	@media screen and (max-width: 440px) {
+		float: right;
+	}
+}
+
