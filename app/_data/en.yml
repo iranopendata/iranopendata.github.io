@@ -1,7 +1,71 @@
-
+  # nav
 - data: Data
   contact: Contact
   use_cases: Use Cases
   resources: Resources
   developers: Developers
   about: About
+
+  # terms
+  featured: Featured
+  sort: Sort by
+  filter-title: Filter Datasets
+  category-title: Category
+  format-title: Format
+  date-title: Date
+
+  # footer
+  button-github: Find Us On Github
+  sign_up-title: Sign Up For Our Newsletter
+  newsletter-descript: Get updates on new and updated datasets.
+
+  # buttons
+  button-api: View the API
+  button-submit: Submit
+
+  # Data Page
+  data-title: Available Data
+  data-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+
+  # Resources Page
+  resources-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit metus. Vestibulum at mauris vestibulum, interdum quam id, egestas metus. In viverra elit id auctor pharetra.
+
+  # About Page - Partners
+  partners-title: Partners
+  partners-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra leo sed libero bibendum pharetra vitae at nibh.
+
+  # Contact Page
+  contact-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt.
+  name: Name
+  email: Email
+  subject: Subject
+  message: Message
+  other-ways: Other Ways to Reach Out
+  github: Github
+
+  # Suggest Dataset - data page - black content block
+  suggest-title: Don't see what you're looking for?
+  suggest-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  suggest-button: Suggest a Dataset
+
+  # Show Work - Use Cases page - black content block
+  show-title: Show Us Your Work
+  show-descript: Have a project that you’ve build off of an Open Iran Data dataset? Send us your information so that we can feature it on the site.
+  show-button: Submit Your Project
+
+  # How to Contribute - Developer page - black content block
+  contribute-title: How to Contribute
+  contribute-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
+  contribute-button: View Github Issues
+
+  # Get Involved - About page - black content block
+  involved-title: Get Involved
+  involved-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
+  involved-button: Contact Us
+
+  # Methodology - Home page - black content block
+  methodology-title: Our Methodology
+  methodology-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
+  methodology-button: Learn More
+  methodology-button2: Contribute
+

@@ -1,6 +1,8 @@
+{% assign lang = site.data[page.lang][0] %}
+
 <div class="block-partners">
-	<h3>Partners</h3>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra leo sed libero bibendum pharetra vitae at nibh.</p>
+	<h3>{{lang.partners-title}}</h3>
+	<p>{{lang.partners-descript}}</p>
 	<ul>
 		{% for partner in site.partners %}
 			<li><a href="{{partner.link}}"><img alt="{{partner.name}}" src="{{partner.image}}"></a></li>
