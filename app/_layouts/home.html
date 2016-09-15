@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% assign lang = site.data[page.lang][0] %}
 <section class="wrapper-feature feature">
 	<div class="wrapper wrapper-content">
 			<div class="section-feature_main">
@@ -33,19 +33,9 @@ layout: default
 			</div>
 	</div>
 </section>
-<section class="section-black">
-	<div class="wrapper wrapper-content">
-		<div class="centered-content">
-			<h2 class="section-black-header">Our Methodology</h2>
-			<div class="section-black-description">
-				<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam. Phasellus magna augue, rutrum vitae vulputate eget, mattis eget ante.</p>
-				<a class="button button-white" href="/{{page.lang}}/about/">Learn More</a>
-				<a class="button button-white button-secondary" href="/{{page.lang}}/developers/">Contribute</a>
-			</div>
-		</div>
-	</section>
+{% include methodology-home.html %}
 	<section  class="wrapper wrapper-content">
-		<h2>Use Cases</h2>
+		<h2>{{lang.use_cases}}</h2>
 		<p class="description-md width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
 		<div class="feature-overlay">
 			<img class="img-feature" src="/assets/graphics/feature1.jpg">

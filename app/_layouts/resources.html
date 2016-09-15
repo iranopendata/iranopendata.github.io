@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-
+{% assign lang = site.data[page.lang][0] %}
 <section>
 	<div class="wrapper wrapper-content">
 		<div class="feature-internal">
-			<h1>Resources</h1>
-			<p class="description-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit metus. Vestibulum at mauris vestibulum, interdum quam id, egestas metus. In viverra elit id auctor pharetra.</p>
-			<a class="button" href="https://github.com/orgs/iranopendata/">View the API</a>
-			<a class="button button-secondary" href="">Find us on Github</a>
+			<h1>{{lang.resources}}</h1>
+			<p class="description-lg">{{lang.resources-descript}}</p>
+			<a class="button" href="https://github.com/orgs/iranopendata/">{{lang.button-api}}</a>
+			<a class="button button-secondary" href="">{{lang.button-github}}</a>
 		</div>
 		<div class="sidebar sidebar-fixed">
 			<h5>Jump to</h5>
