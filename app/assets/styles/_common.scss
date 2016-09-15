@@ -575,7 +575,8 @@ input {
 }
 
 .checkbox {
-	float:left;
+	float: left;
+	min-width: initial;
 }
 
 .header-filter {
