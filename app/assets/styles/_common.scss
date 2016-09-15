@@ -642,7 +642,7 @@ textarea {
 		min-width: 255px;
 	}
 	@media screen and (min-width: 768px) {
-		min-width: 370px;
+		min-width: 360px;
 	}
 }
 
@@ -731,7 +731,7 @@ footer {
 		margin-bottom: 0;
 	}
 	nav {
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 995px) {
 			display: none;
 		}
 		.nav-list_item:hover, .nav-list_item:active{
@@ -1076,10 +1076,17 @@ footer {
 	}
 }
 
+.wrapper-half-right {
+	@media screen and (max-width: 520px) {
+		float: initial;
+	}
+}
+
 footer .button-standalone {
 	clear: both;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 520px) {
 		margin-top: 2em;
 		float: left;
+
 	}
 }
