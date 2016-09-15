@@ -39,9 +39,9 @@ The following part removes dulpicated categories and invalid categories like bla
 			<a class="button button-secondary" href="">{{lang.button-github}}</a>
 		</div>
 		<div class="sidebar sidebar-resources">
-			<h5 class="header-filter-resources">Jump to</h5>
+			<h5 class="header-filter-resources">{{lang.jump-to}}</h5>
 			<div class="dropdown-resources">
-				<div class="dropdown-sm">Select a Category</div>
+				<div class="dropdown-sm">{{lang.select-category}}</div>
 				<ul class="list-type-none dropdown-resources-options">
 					{% for category in categories %}
 					<li class="list-item-filter link-filter">
@@ -61,7 +61,7 @@ The following part removes dulpicated categories and invalid categories like bla
 						<li class="list-item-block">
 							<h5 class="header-with-description"><a class="text-link" target="_blank" href="{{resource.link}}">{{resource.title}}</a></h5>
 							<dl class="metadata">
-								<dt>Source:</dt>
+								<dt>{{lang.source}}:</dt>
 								<dd>{{resource.source}}</dd>
 							</dl>
 							<p>{{resource.description}}</p>

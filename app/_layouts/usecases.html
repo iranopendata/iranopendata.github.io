@@ -10,10 +10,10 @@ layout: default
 				{% if usecase.featured == true %}
 					<img class="img-feature" src="/assets/graphics/{{usecase.img}}">
 					<div class="overlay-description">
-						<span class="type-category">Featured</span>
+						<span class="type-category">{{lang.featured}}</span>
 						<h4><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h4>
 						<p class="width-shortened">{{usecase.description}}</p>
-						<a target="_blank" class="normal-link" href="{{usecase.link}}">View Site</a>
+						<a target="_blank" class="normal-link" href="{{usecase.link}}">{{homepage-usecase-link}}</a>
 					</div>
 				{% endif %}
 			{% endfor %}
@@ -25,7 +25,7 @@ layout: default
 						<a target="_blank" href="{{usecase.link}}"><img class="img-feature image-usecase" src="/assets/graphics/{{usecase.img}}"></a>
 						<h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
 						<dl class="metadata">
-							<dt>Source:</dt>
+							<dt>{{lang.source}}:</dt>
 							<dd>{{usecase.source}}</dd>
 						</dl>
 						<p>{{usecase.description}}</p>
