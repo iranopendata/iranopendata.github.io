@@ -232,6 +232,11 @@ header {
 	}
 }
 
+.button-grey, .button-grey:visited {
+	border-color: $grey;
+	color: $grey;
+}
+
 .button-filter {
 	margin-top: 0;
 	margin-bottom: 1.5em;
@@ -254,6 +259,13 @@ header {
 
 .button-right {
 	float: right;
+}
+
+.filter-buttons-mobile {
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: initial;
+	}
 }
 
 
@@ -338,7 +350,12 @@ nav {
 	}
 	.nav-list_item:hover, .nav-list_item:active, .active {
 		border-bottom: 2px solid $link-color;
-    padding-bottom: .3em;
+    	padding-bottom: .3em;
+	}
+	@media screen and (max-width: 920px) {
+		.active {
+			border-bottom: 0;
+		}
 	}
 }
 
@@ -358,6 +375,23 @@ nav {
 		height: 20px;
 		background-size: 20px 20px;
 		background-repeat: no-repeat;
+	}
+}
+
+.icon-close, .icon-close:visited {
+	color: #fff;
+	display: none;
+	&:before {
+		content: "";
+		background-image: url("/assets/graphics/collecticons/xmark.svg");
+		background-size: 15px 15px;
+		width: 15px;
+		height: 15px;
+		display: block;
+		float: right;
+	}
+	@media screen and (max-width: 768px) {
+		display: initial;
 	}
 }
 
@@ -382,33 +416,34 @@ nav {
 	}
 }
 
-.nav-container {
-	position: relative;
-}
-
 .nav-mobile { 
 	@media screen and (max-width: 920px) {
 		position: absolute;
 		right: 0em;
 		background-color: #fff;
 		border: 1px solid $light-grey;
-		z-index: 3;
-		min-width: 150px;
+		z-index: 4;
+		min-width: 250px;
 		top: 4em;
+		padding: .2em 0 3em;
 	}
 	.nav-list_item {
 		@media screen and (max-width: 920px) {
 			display: block;
-			padding: .8em 1em .6em;
+			padding: 1.5em 2em .6em;
 			&:hover {
 				border-bottom: 0;
-				padding: .8em 1em .6em;
+				padding: 1.5em 2em .6em;
 			}
 			a:hover {
 				color: $link-color;
 			}
 		}
 	}
+}
+
+.nav-container {
+	position: relative;
 }
 
 .nav-languages {
@@ -764,21 +799,67 @@ footer {
 }
 
 
-
 .sidebar {
 	float: left;
 	width: 28%;
 	padding-top: .5em;
-	@media screen and (min-width: 320px) {
-		display: none;
-	}
-	@media screen and (min-width: 768px) {
-		display: initial;
+}
+
+.header-filter-resources {
+	@media screen and (max-width: 768px) {
+		float: left;
+		margin-right: 1em;
 	}
 }
 
-.sidebar-fixed {
+.sidebar-resources {
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+}
 
+.dropdown-resources {
+	position: relative;
+	float: left;
+	.dropdown-sm {
+		display: none;
+		@media screen and (max-width: 768px) {
+			display: initial;
+		}
+	}
+}
+
+.dropdown-resources-options {
+	@media screen and (max-width: 768px) {
+		position: absolute;
+		border: 1px solid $light-grey;
+		top: 3em;
+		background-color: #fff;
+		li { 
+			padding: .8em 1em;
+			margin-bottom: 0;
+			font-size: .85em;
+			min-width: 100px;
+		}
+	}	
+}
+
+.wrapper-datasets {
+	.sidebar {
+		@media screen and (max-width: 768px) {
+			z-index: 4;
+			position: absolute;
+			background-color: #fff;
+			width: 85%;
+			top: 0;
+			height: 100%;
+			padding: 1.5em 1.2em;
+		}
+		@media screen and (min-width: 768px) {
+			display: initial;
+		}
+	}
 }
 
 .content-sidebar {

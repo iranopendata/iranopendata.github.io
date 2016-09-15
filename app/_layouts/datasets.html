@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign lang = site.data[page.lang][0] %}
 <section>
-	<div class="wrapper wrapper-content">
+	<div class="wrapper wrapper-content wrapper-datasets">
 		<div class="feature-internal">
 			<h1>{{lang.data-title}}</h1>
 			<p class="description-lg">{{lang.data-descript}}</p>
@@ -11,6 +11,7 @@ layout: default
 		<div class="content-internal">
 			<a class="button button-filter" href="">{{lang.filter-title}}</a>
 			<div class="sidebar">
+				<a class="icon-close" href="">Close</a>
 				<h5>{{lang.filter-title}}</h5>
 				<form>
 					<div class="wrapper-filter-item">
@@ -76,6 +77,10 @@ layout: default
 								<li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">2016</span></li>
 							</ul>
 						</fieldset>
+					</div>
+					<div class="filter-buttons-mobile">
+						<a class="button" href="">Apply</a>
+						<a class="button button-grey" href="">Cancel</a>
 					</div>
 				</form>
 			</div>

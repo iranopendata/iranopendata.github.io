@@ -17,7 +17,7 @@ body {
 
 nav {
 	float: right;
-	@media screen and (max-width: 960px) {
+	@media screen and (max-width: 920px) {
 		float: initial;
 	}
 }
@@ -27,7 +27,7 @@ nav {
 }
 
 .nav-mobile {
-	@media screen and (max-width: 960px) {
+	@media screen and (max-width: 920px) {
 		right: initial;
 		left: 0;
 	}
@@ -125,6 +125,18 @@ nav {
 	float: right;
 	&:after {
 		float: left;
+	}
+}
+
+.dropdown-resources {
+	float: right;
+}
+
+.header-filter-resources {
+	@media screen and (max-width: 768px) {
+		float: right;
+		margin-right: 0;
+		margin-left: 1em;
 	}
 }
 
@@ -238,6 +250,10 @@ nav {
 
 .content-sidebar{
 	float: right;
+}
+
+.icon-close:before, .icon-close:visited:before {
+	float: left;
 }
 
 footer .button-standalone {
