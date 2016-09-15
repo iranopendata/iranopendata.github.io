@@ -13,6 +13,8 @@
   category-title: Category
   format-title: Format
   date-title: Date
+  source: Source
+  to: to
 
   # footer
   button-github: Find Us On Github
@@ -23,12 +25,36 @@
   button-api: View the API
   button-submit: Submit
 
-  # Data Page
+  # Home Page
+  homepage-title: Making Iranian Data Available to the Public
+  homepage-descript: Find clean, reliable data from housing to transportation. With our growing database, check back for updates or sign up for our newsletter, to see when new sets are added.
+  homepage-button: View All Datasets
+  homepage-usecases-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  homepage-usecase-link: View Site
+  homepage-usecases-button: View All Use Cases
+
+  # Datasets Page
   data-title: Available Data
   data-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  button-apply: Apply
+  button-cancel: Cancel
+  dataset-num-title1: Showing
+  dataset-num-title2: Datasets
+  sortby-option1: Recent Updates
+  sortby-option2: Alphabetically
+  previous: Previous
+  next: Next
+
+  #Dataset Page
+  dataset-secondary-title: Issues or Notes
+  dataset-projects-made: Projects Made With This Dataset
+  button-download: Download
+  button-share: Share
 
   # Resources Page
   resources-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit metus. Vestibulum at mauris vestibulum, interdum quam id, egestas metus. In viverra elit id auctor pharetra.
+  jump-to: Jump to
+  select-category: Select a Category
 
   # About Page - Partners
   partners-title: Partners
@@ -68,4 +94,3 @@
   methodology-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
   methodology-button: Learn More
   methodology-button2: Contribute
-  

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% assign lang = site.data[page.lang][0] %}
 <section>
 	<div class="wrapper wrapper-content-sm wrapper-content-dataset">
 		<div class="housing content-dataset">
@@ -27,11 +27,11 @@ layout: default
 				<dt class="metadata-item metadata-item-header">Methodology</dt>
 				<dd class="metadata-item">Methodology</dd>
 			</dl>
-			<a class="button" href="">Download Dataset</a>
-			<a class="button button-secondary" href="">Share</a>
+			<a class="button" href="">{{lang.button-download}}</a>
+			<a class="button button-secondary" href="">{{lang.button-share}}</a>
 		</div>
 		<div class="subsection">
-			<h2>Issues or Notes</h2>
+			<h2>{{lang.dataset-secondary-title}}</h2>
 			<span>{{page.date}}</span>
 			<p>{{page.notes}}</p>
 		</div>
@@ -39,7 +39,7 @@ layout: default
 </section>
 <section class="section-black section-black-last">
 	<div class="wrapper wrapper-content">
-		<h2 class="section-black-header">Projects Made With This Dataset</h2>
+		<h2 class="section-black-header">{{lang.dataset-projects-made}}</h2>
 		<div class="section-black-description">
 			<ul class="list-type-none">
 				{% for related in page.related %}
@@ -49,7 +49,7 @@ layout: default
 	                    <a target="_blank" href="{{usecase.link}}"><img src="/assets/graphics/{{usecase.img}}"></a>
 	                    <h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
 	                    <dl class="metadata">
-	                        <dt>Source:</dt>
+	                        <dt>{{lang.source}}:</dt>
 	                        <dd>{{usecase.source}}</dd>
 	                    </dl>
 	                    <p>{{usecase.description}}</p>
@@ -58,7 +58,6 @@ layout: default
 	                {% endfor %}
 	            {% endfor %}
 			</ul>
-			<a class="icon-arrow-right" href="">Next</a>
 		</div>
 	</div>
 </section>
