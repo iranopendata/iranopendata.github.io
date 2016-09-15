@@ -13,9 +13,17 @@ highlighter: false
 baseurl: ""
 
 collections:
-  - about
-  - partners
-  - developers
-  - methodology
-  - usecases
-  - resources
+  about:
+    output: true
+  partners:
+    output: true
+  developers:
+    output: true
+  methodology:
+    output: true
+  usecases:
+    output: true
+  resources:
+    output: true
+  datasets:
+    output: true
