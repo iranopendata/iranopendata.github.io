@@ -38,19 +38,18 @@ The following part removes dulpicated categories and invalid categories like bla
 			<a class="button" href="https://github.com/orgs/iranopendata/">{{lang.button-api}}</a>
 			<a class="button button-secondary" href="">{{lang.button-github}}</a>
 		</div>
-		<div class="sidebar sidebar-fixed">
-			<h5>Jump to</h5>
-			<ul class="list-type-none">
-				<li class="list-item-filter link-filter">
-					<a href="">Category 1 <span>(2)</span></a>
-				</li>
-				<li class="list-item-filter link-filter">
-					<a href="">Category 2 <span>(2)</span></a>
-				</li>
-				<li class="list-item-filter link-filter">
-					<a href="">Category 3 <span>(2)</span></a>
-				</li>
-			</ul>
+		<div class="sidebar sidebar-resources">
+			<h5 class="header-filter-resources">Jump to</h5>
+			<div class="dropdown-resources">
+				<div class="dropdown-sm">Select a Category</div>
+				<ul class="list-type-none dropdown-resources-options">
+					{% for category in categories %}
+					<li class="list-item-filter link-filter">
+						<a href="">{{category}} <span class="filter-number">(2)</span></a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 		<div class="content-sidebar">
 			{% for category in categories %}
