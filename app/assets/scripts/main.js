@@ -49,7 +49,7 @@ class DatasetList extends Component {
     this.onCheckCategory = this.onCheckCategory.bind(this);
     this.onSort = this.onSort.bind(this);
 
-    this.APIUrl = '/catalog/index.json';
+    this.APIUrl = 'http://iranopendata.github.io/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
       this.APIUrl = 'http://10.1.10.114:8000/index.json';
     }
