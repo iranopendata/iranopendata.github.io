@@ -157,7 +157,7 @@ class DatasetList extends Component {
       // Render!
       return  h(
         'div', {class: 'content-internal wrapper-datasets'},
-        h('a', {class:'button button-filter', href:'', onclick:filterDatasets}, labels['filter-title']),
+        h('a', {class:'button button-filter', href:'', onclick:dataFilterBtn}, labels['filter-title']),
         h('div', {class: 'sidebar'}, 
         	h('a', {class: 'icon-close', href:''}, labels['Close']),
           h('h5', {}, labels['filter-title']),
@@ -169,8 +169,8 @@ class DatasetList extends Component {
             })
           ),
           h('div', {class:'filter-buttons-mobile'},
-          	h('a', {class: 'button', href:''}, labels['button-apply']),
-          	h('a', {class: 'button button-grey', href:''}, labels['button-cancel']),
+          	h('a', {class: 'button button-filter-apply', href:''}, labels['button-apply']),
+          	h('a', {class: 'button button-grey button-filter-cancel', href:''}, labels['button-cancel']),
           ),
          ),
         h('div', {class: 'content-sidebar'},
@@ -220,15 +220,29 @@ function closeResourceList () {
 function filterDatasets (e) {
 	e.preventDefault()
 	var filterClassList = document.querySelector('.sidebar').classList
+	var filterClassListBody = document.querySelector('body').classList
 	if (!filterClassList.contains('open')) {
 		e.stopPropagation()
 	  filterClassList.add('open');
 	}
+	if (!filterClassListBody.contains('filter-overlay')) {
+		e.stopPropagation()
+	  filterClassListBody.add('filter-overlay');
+	}
 }
 
-function closeDataFilter () {
+function closeDataFilter (e) {
+	e.preventDefault();
   document.querySelector('.sidebar').classList.remove('open');
 }	
+
+function reviseDataFilter () {
+  document.querySelector('body').classList.remove('filter-overlay');
+}	
+
+function dataFilterBtn (e) {
+	filterDatasets(e)
+}
 
 
 function onReady () {
@@ -241,7 +255,11 @@ function onReady () {
 		document.addEventListener('click', closeResourceList);
 	}
 
-	document.addEventListener('click', closeDataFilter);
+	document.querySelector('.button-filter-apply').addEventListener('click', closeDataFilter);
+	document.querySelector('.button-filter-cancel').addEventListener('click', closeDataFilter);
+	document.querySelector('.icon-close').addEventListener('click', closeDataFilter);
+
+	document.addEventListener('click', reviseDataFilter);
 }
 
 

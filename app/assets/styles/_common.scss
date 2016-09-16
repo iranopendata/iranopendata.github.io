@@ -236,6 +236,10 @@ header {
 	border-color: $grey;
 	color: $grey;
 	margin-left: 1em;
+	&:hover {
+		background-color: $grey;
+		color: #fff;
+	}
 }
 
 .button-filter {
@@ -862,17 +866,29 @@ footer {
 	}	
 }
 
+body.filter-overlay {
+	overflow-y: hidden;
+	.wrapper-datasets {
+
+		.sidebar {
+			z-index: 4;
+			position: fixed;
+			background-color: #fff;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			padding: 1.5em 1.2em;
+			width: auto;
+		}
+	}
+}
+
 .wrapper-datasets {
 	.sidebar {
 		@media screen and (max-width: 768px) {
 			display: none;
-			z-index: 4;
-			position: absolute;
-			background-color: #fff;
-			width: 85%;
-			top: 0;
-			height: 100%;
-			padding: 1.5em 1.2em;
 		}
 		@media screen and (min-width: 768px) {
 			display: initial;
