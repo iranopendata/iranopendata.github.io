@@ -1,8 +1,10 @@
 import {h, render, Component} from 'preact';
 import fetch from 'fetch';
+import moment from 'moment';
 
 import {categoryMap, invCategoryMap} from './utils';
 import CategoryFilter from './components/CategoryFilter';
+import SortFilter from './components/SortFilter';
 
 const PAGE_LANG = PAGE_LANG || 'fa';
 const labels = labels || {};
@@ -39,7 +41,6 @@ class Listing extends Component {
   }
 }
 
-
 class DatasetList extends Component {
 
   constructor () {
@@ -47,10 +48,11 @@ class DatasetList extends Component {
 
     this.transformDatasets = this.transformDatasets.bind(this);
     this.onCheckCategory = this.onCheckCategory.bind(this);
+    this.onSort = this.onSort.bind(this);
 
     this.APIUrl = '/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = 'http://localhost:8000/index.json';
+      this.APIUrl = 'http://10.1.10.114:8000/index.json';
     }
   }
 
@@ -99,11 +101,17 @@ class DatasetList extends Component {
     });
   }
 
+  onSort (value) {
+    const component = this;
+    component.setState({
+      sort: value
+    });
+  }
+
   applyFilters () {
     const component = this;
 
     let newDatasets = component.state.fromAPI;
-    console.log('[applyFilters]', component.state.checked);
 
     // Filter datasets if something is checked
     const checkedSet = new Set(component.state.checked);
@@ -112,6 +120,24 @@ class DatasetList extends Component {
         return checkedSet.has(dataset.category);
       });
     }
+
+    // Sort datasets
+    newDatasets.sort((a, b) => {
+      if (component.state.sort == 'alphabetic') {
+        if (a.title < b.title) { return -1;}
+        if (a.title > b.title) { return 1;}
+        if (a.title == b.title) { return 0;}
+      }
+
+      else {
+        if (moment(a.updated_at).isAfter(moment(b.updated_at))) { return -1; }
+        if (moment(a.updated_at).isBefore(moment(b.updated_at))) { return 1;}
+        if (moment(a.updated_at).isSame(moment(b.updated_at))) { return 0;}
+      }
+      return 0;
+    });
+
+
     return newDatasets;
   }
 
@@ -128,12 +154,12 @@ class DatasetList extends Component {
           const datasets = component.transformDatasets(parsed.datasets);
           component.setState({
             fromAPI: datasets,
-            checked: []
+            checked: [],
+            sort: 'update'
           });
         }
       });
   }
-
 
   render ({}, {fromAPI, checked}) {
     const component = this;
@@ -145,7 +171,7 @@ class DatasetList extends Component {
               .map ((dataset) => h(Listing, dataset));
 
       // Count categories to render category filter
-      const categories = fromAPI.map ( (dataset) => dataset.category);
+      const categories = fromAPI.map ( (dataset) => dataset.category).sort();
       let categoryCounts = {};
       categories.forEach( (category) => {
         if (!categoryCounts[category]) {
@@ -171,10 +197,7 @@ class DatasetList extends Component {
          ),
         h('div', {class: 'content-sidebar'},
           h('h6', {class: 'content-sidebar-header'}, `Showing ${listings.length} Datasets`),
-          h('div', {class: 'sort-filter'},
-            h('span', {class: 'sort-filter-header'}, 'Sort by'),
-            h('div', {class: 'dropdown-sm'}, 'Recent Updates')
-           ),
+          h(SortFilter, {sort: component.state.sort, onSort: component.onSort}),
           h('ul', {class: 'list-type-none'}, listings)
          )
       );
