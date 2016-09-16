@@ -12,7 +12,7 @@
   "license": "",
   "homepage": "",
   "scripts": {
-    "serve": "gulp serve",
+    "serve": "NODE_ENV='development' gulp serve",
     "build": "DS_ENV=production NODE_ENV=production gulp",
     "lint": "eslint docs/assets/scripts/ --ext .js",
     "test": "echo \"No tests\" && exit 0",
@@ -20,13 +20,24 @@
   },
   "browserify": {
     "transform": [
-      "require-globify",
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      "bulkify",
       "envify"
     ]
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
+    "bulkify": "^1.4.2",
     "del": "^2.2.0",
     "envify": "^3.4.0",
     "eslint": "^2.7.0",
@@ -53,10 +64,13 @@
     "node-bourbon": "^4.2.3",
     "node-notifier": "^4.5.0",
     "node-sass": "^3.7.0",
-    "require-globify": "^1.3.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
     "yamljs": "^0.2.7"
+  },
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "preact": "^6.0.2"
   }
 }
