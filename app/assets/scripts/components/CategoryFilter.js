@@ -3,7 +3,6 @@ import {invCategoryMap} from '../utils.js';
 
 
 const CategoryFilter = ({categories, checked, onClick}) => {
-  console.log(categories);
   let filterItems = [];
   const checkedSet = new Set(checked);
 

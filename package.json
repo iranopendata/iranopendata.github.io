@@ -71,6 +71,7 @@
   },
   "dependencies": {
     "fetch": "^1.1.0",
+    "moment": "^2.15.0",
     "preact": "^6.0.2"
   }
 }
