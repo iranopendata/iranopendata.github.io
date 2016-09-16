@@ -25,5 +25,9 @@ collections:
     output: true
   resources:
     output: true
-  datasets:
+  en_datasets:
     output: true
+    permalink: /en/datasets/:path/
+  fa_datasets:
+    output: true
+    permalink: /fa/datasets/:path/
