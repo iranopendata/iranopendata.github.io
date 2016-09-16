@@ -100,7 +100,7 @@ class Dataset extends Component {
 
     this.APIUrl = `https:/iranopendata.github.io/catalog/datasets/${this.id}.json`;
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = `http://localhost:8000/datasets/${this.id}.json`;
+      this.APIUrl = `http://10.1.10.114:8000/datasets/${this.id}.json`;
     }
   }
 
@@ -151,7 +151,7 @@ class Dataset extends Component {
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
           h('dd', {class: 'metadata-item'}, name)
          ),
-        h('a', {class: 'button', href: url}, lang['button-download']),
+        h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
         h('a', {class: 'button button-secondary', href:''}, lang['button-share']),
         h('div', {class: 'subsection'},
           h('h2', {}, lang['dataset-secondary-title']),
