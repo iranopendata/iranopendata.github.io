@@ -1,5 +1,5 @@
 import {h, render, Component} from 'preact';
-import fetch from 'fetch';
+import 'whatwg-fetch';
 import moment from 'moment';
 
 import {categoryMap, invCategoryMap} from './utils';
@@ -98,7 +98,7 @@ class Dataset extends Component {
 
     this.id = DATASET_ID;
 
-    this.APIUrl = `/catalog/datasets/${this.id}.json`;
+    this.APIUrl = `https:/iranopendata.github.io/catalog/datasets/${this.id}.json`;
     if (process.env.NODE_ENV == 'development') {
       this.APIUrl = `http://localhost:8000/datasets/${this.id}.json`;
     }
@@ -106,17 +106,17 @@ class Dataset extends Component {
 
   componentWillMount () {
     const component = this;
-    fetch.fetchUrl(
-      component.APIUrl,
-      function (err, meta, body) {
-        if (err) {
-          // Handle error
-          console.error('Could not fetch data');
-        } else {
-          const parsed = JSON.parse(body.toString());
-          component.setState(transformDatasetFromAPI(parsed));
-        }
-      });
+    fetch(component.APIUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        component.setState(transformDatasetFromAPI(json));
+      })
+      .catch(function (err) {
+        console.error('Could not fetch data', err);
+      })
+    ;
   }
 
   render ({}, {
@@ -174,7 +174,7 @@ class DatasetList extends Component {
     this.onCheckCategory = this.onCheckCategory.bind(this);
     this.onSort = this.onSort.bind(this);
 
-    this.APIUrl = '/catalog/index.json';
+    this.APIUrl = 'https://iranopendata.github.io/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
       this.APIUrl = 'http://10.1.10.114:8000/index.json';
     }
@@ -239,24 +239,26 @@ class DatasetList extends Component {
     return newDatasets;
   }
 
-  componentWillMount () { 
+  componentWillMount () {
     let component = this;
 
-    fetch.fetchUrl(component.APIUrl,
-      function (err, meta, body) {
-        if (err) {
-          // Handle error
-          console.error('Could not fetch data');
-        } else {
-          const parsed = JSON.parse(body.toString());
-          const datasets = component.transformDatasets(parsed.datasets);
-          component.setState({
-            fromAPI: datasets,
-            checked: [],
-            sort: 'update'
-          });
-        }
-      });
+    fetch(component.APIUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        const datasets = component.transformDatasets(json.datasets);
+
+        component.setState({
+          fromAPI: datasets,
+          checked: [],
+          sort: 'update'
+        });
+      })
+      .catch(function (err) {
+        console.error('Could not fetch data', err);
+      })
+    ;
   }
 
   render ({}, {fromAPI, checked}) {
@@ -281,9 +283,10 @@ class DatasetList extends Component {
 
       // Render!
       return  h(
-        'div', {class: 'content-internal'},
-        h('a', {class:'button button-filter', href:''}, labels['filter-title']),
-        h('div', {class: 'sidebar'},
+        'div', {class: 'content-internal wrapper-datasets'},
+        h('a', {class:'button button-filter', href:'', onclick:dataFilterBtn}, labels['filter-title']),
+        h('div', {class: 'sidebar'}, 
+        	h('a', {class: 'icon-close', href:''}, labels['Close']),
           h('h5', {}, labels['filter-title']),
           h('form', {},
             h(CategoryFilter, {
@@ -291,7 +294,11 @@ class DatasetList extends Component {
               checked: checked,
               onClick: component.onCheckCategory
             })
-           )
+          ),
+          h('div', {class:'filter-buttons-mobile'},
+          	h('a', {class: 'button button-filter-apply', href:''}, labels['button-apply']),
+          	h('a', {class: 'button button-grey button-filter-cancel', href:''}, labels['button-cancel']),
+          ),
          ),
         h('div', {class: 'content-sidebar'},
           h('h6', {class: 'content-sidebar-header'}, `Showing ${listings.length} Datasets`),
@@ -306,6 +313,96 @@ class DatasetList extends Component {
   }
 }
 
+function hamburgerClick (e) {
+	e.preventDefault();
+	var navClassList = document.querySelector('.nav-mobile').classList;
+	if (!navClassList.contains('open')) {
+		e.stopPropagation();
+	  navClassList.add('open');
+	}
+}
+
+function closePrimaryNav () {
+  document.querySelector('.nav-mobile').classList.remove('open');
+}
+
+
+function scrollTo (e) {
+	e.preventDefault();
+	var resourceClassList = document.querySelector('.dropdown-resources-options').classList;
+	if (!resourceClassList.contains('open')) {
+		e.stopPropagation();
+	  resourceClassList.add('open');
+	}
+}
+
+function closeResourceList () {
+  document.querySelector('.dropdown-resources-options').classList.remove('open');
+}
+
+
+function filterDatasets (e) {
+	e.preventDefault();
+	var filterClassList = document.querySelector('.sidebar').classList;
+	var filterClassListBody = document.querySelector('body').classList;
+	if (!filterClassList.contains('open')) {
+		e.stopPropagation();
+	  filterClassList.add('open');
+	}
+	if (!filterClassListBody.contains('filter-overlay')) {
+		e.stopPropagation();
+	  filterClassListBody.add('filter-overlay');
+	}
+}
+
+function closeDataFilter (e) {
+	e.preventDefault();
+  document.querySelector('.sidebar').classList.remove('open');
+}
+
+function reviseDataFilter () {
+  document.querySelector('body').classList.remove('filter-overlay');
+}
+
+function dataFilterBtn (e) {
+	filterDatasets(e);
+}
+
+
+function onReady () {
+	var hamburger = document.querySelector('.menu-hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', hamburgerClick);
+  }
+
+	document.addEventListener('click', closePrimaryNav);
+
+	var dropdown = document.querySelector('.dropdown-sm');
+	if (dropdown) {
+		dropdown.addEventListener('click', scrollTo);
+		document.addEventListener('click', closeResourceList);
+	}
+
+	var buttonFilterApply = document.querySelector('.button-filter-apply');
+  if (buttonFilterApply) {
+    buttonFilterApply.addEventListener('click', closeDataFilter);
+  }
+
+	var buttonFilterCancel = document.querySelector('.button-filter-cancel');
+  if (buttonFilterCancel) {
+     buttonFilterCancel.addEventListener('click', closeDataFilter);
+  }
+
+
+	var iconClose = document.querySelector('.icon-close');
+  if (iconClose) {
+     iconClose.addEventListener('click', closeDataFilter);
+  }
+
+	document.addEventListener('click', reviseDataFilter);
+}
+
+
 const content = document.getElementById('wrapper-content');
 if (content) {
   render(h(DatasetList), content);
@@ -314,4 +411,10 @@ if (content) {
 const dataset = document.getElementById('wrapper-content-dataset');
 if (dataset) {
   render(h(Dataset), dataset);
+}
+
+if (document.readyState != 'loading'){
+  onReady();
+} else {
+  document.addEventListener('DOMContentLoaded', onReady);
 }
