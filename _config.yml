@@ -10,8 +10,6 @@ exclude:
 timezone: America/New_York
 highlighter: false 
 
-baseurl: ""
-
 collections:
   about:
     output: true
