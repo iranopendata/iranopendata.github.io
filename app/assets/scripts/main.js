@@ -5,7 +5,6 @@ import {categoryMap, invCategoryMap} from './utils';
 import CategoryFilter from './components/CategoryFilter';
 
 const PAGE_LANG = PAGE_LANG || 'fa';
-const labels = labels || {};
 
 class Listing extends Component {
   render ({
@@ -50,7 +49,7 @@ class DatasetList extends Component {
 
     this.APIUrl = '/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = 'http://localhost:8000/index.json';
+      this.APIUrl = 'http://10.1.10.114:8000/index.json';
     }
   }
 
@@ -157,9 +156,10 @@ class DatasetList extends Component {
 
       // Render!
       return  h(
-        'div', {class: 'content-internal'},
-        h('a', {class:'button button-filter', href:''}, labels['filter-title']),
-        h('div', {class: 'sidebar'},
+        'div', {class: 'content-internal wrapper-datasets'},
+        h('a', {class:'button button-filter', href:'', onclick:filterDatasets}, labels['filter-title']),
+        h('div', {class: 'sidebar'}, 
+        	h('a', {class: 'icon-close', href:''}, labels['Close']),
           h('h5', {}, labels['filter-title']),
           h('form', {},
             h(CategoryFilter, {
@@ -167,7 +167,11 @@ class DatasetList extends Component {
               checked: checked,
               onClick: component.onCheckCategory
             })
-           )
+          ),
+          h('div', {class:'filter-buttons-mobile'},
+          	h('a', {class: 'button', href:''}, labels['button-apply']),
+          	h('a', {class: 'button button-grey', href:''}, labels['button-cancel']),
+          ),
          ),
         h('div', {class: 'content-sidebar'},
           h('h6', {class: 'content-sidebar-header'}, `Showing ${listings.length} Datasets`),
@@ -185,5 +189,72 @@ class DatasetList extends Component {
   }
 }
 
+function hamburgerClick (e) {
+	e.preventDefault()
+	var navClassList = document.querySelector('.nav-mobile').classList
+	if (!navClassList.contains('open')) {
+		e.stopPropagation()
+	  navClassList.add('open');
+	}
+}
+
+function closePrimaryNav () {
+  document.querySelector('.nav-mobile').classList.remove('open');
+}	
+
+
+function scrollTo (e) {
+	e.preventDefault()
+	var resourceClassList = document.querySelector('.dropdown-resources-options').classList
+	if (!resourceClassList.contains('open')) {
+		e.stopPropagation()
+	  resourceClassList.add('open');
+	}
+}
+
+function closeResourceList () {
+  document.querySelector('.dropdown-resources-options').classList.remove('open');
+}	
+
+
+function filterDatasets (e) {
+	e.preventDefault()
+	var filterClassList = document.querySelector('.sidebar').classList
+	if (!filterClassList.contains('open')) {
+		e.stopPropagation()
+	  filterClassList.add('open');
+	}
+}
+
+function closeDataFilter () {
+  document.querySelector('.sidebar').classList.remove('open');
+}	
+
+
+function onReady () {
+	document.querySelector('.menu-hamburger').addEventListener('click', hamburgerClick);
+	document.addEventListener('click', closePrimaryNav);
+
+	var dropdown = document.querySelector('.dropdown-sm');
+	if (dropdown) {
+		dropdown.addEventListener('click', scrollTo);
+		document.addEventListener('click', closeResourceList);
+	}
+
+	document.addEventListener('click', closeDataFilter);
+}
+
+
 const content = document.getElementById('wrapper-content');
-render(h(DatasetList), content);
+if (content) {
+	render(h(DatasetList), content);	
+}
+
+if (document.readyState != 'loading'){
+  onReady();
+} else {
+  document.addEventListener('DOMContentLoaded', onReady);
+}
+
+
+

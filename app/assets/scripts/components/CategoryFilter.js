@@ -1,6 +1,7 @@
 import {h} from 'preact';
 import {invCategoryMap} from '../utils.js';
 
+
 const CategoryFilter = ({categories, checked, onClick}) => {
   console.log(categories);
   let filterItems = [];
