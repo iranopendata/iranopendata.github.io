@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% assign lang = site.data[page.lang][0] %}
+<section>
+	<div class="wrapper wrapper-content-sm wrapper-content-dataset">
+		<div class="housing content-dataset">
+			<span class="type-category type-category-lg">Housing</span>
+			<h1>Name of Individual Dataset</h1>
+			<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam. Phasellus magna augue, rutrum vitae vulputate eget, mattis eget ante. Nulla tincidunt, dolor vel imperdiet hendrerit, nisi odio viverra dolor, et condimentum justo ex et urna.</p>
+			<dl class="metadata-lg">
+				<dt class="metadata-item metadata-item-header">Source</dt>
+				<dd class="metadata-item">Name of source</dd>
+
+				<dt class="metadata-item metadata-item-header">Dates</dt>
+				<dd class="metadata-item">Jun 2010 - Jul 2016</dd>
+
+				<dt class="metadata-item metadata-item-header">Formats</dt>
+				<dd class="metadata-item">
+					<span class="element-file-type element-file-type-lg">CSV</span>
+					<span class="element-file-type element-file-type-lg">XML</span>
+				</dd>
+
+				<dt class="metadata-item metadata-item-header">ID</dt>
+				<dd class="metadata-item">ID</dd>
+
+				<dt class="metadata-item metadata-item-header">Methodology</dt>
+				<dd class="metadata-item">Methodology</dd>
+			</dl>
+			<a class="button" href="">{{lang.button-download}}</a>
+			<a class="button button-secondary" href="">{{lang.button-share}}</a>
+		</div>
+		<div class="subsection">
+			<h2>{{lang.dataset-secondary-title}}</h2>
+			<span>{{page.date}}</span>
+			<p>{{page.notes}}</p>
+		</div>
+	</div>
+</section>
+<section class="section-black section-black-last">
+	<div class="wrapper wrapper-content">
+		<h2 class="section-black-header">{{lang.dataset-projects-made}}</h2>
+		<div class="section-black-description">
+			<ul class="list-type-none">
+				{% for related in page.related %}
+	                {% for usecase in site.usecases %}
+	                {% if usecase.title == related %}
+	                <li class="list-item-block">
+	                    <a target="_blank" href="{{usecase.link}}"><img src="/assets/graphics/{{usecase.img}}"></a>
+	                    <h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
+	                    <dl class="metadata">
+	                        <dt>{{lang.source}}:</dt>
+	                        <dd>{{usecase.source}}</dd>
+	                    </dl>
+	                    <p>{{usecase.description}}</p>
+	                </li>
+	                {% endif %}
+	                {% endfor %}
+	            {% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>

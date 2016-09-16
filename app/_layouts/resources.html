@@ -2,6 +2,34 @@
 layout: default
 ---
 {% assign lang = site.data[page.lang][0] %}
+
+{% comment %}
+=======================
+The following part extracts all the categories from your resources and sort categories, so that you do not need to manually collect your categories to a place. Derived from: https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/
+=======================
+{% endcomment %}
+{% assign rawcategories = "" %}
+{% for resource in site.resources %}
+	{% assign rawcategories = rawcategories | append:resource.category | append:'|' %}
+{% endfor %}
+{% assign rawcategories = rawcategories | split:'|' | sort %}
+
+{% comment %}
+=======================
+The following part removes dulpicated categories and invalid categories like blank categories.
+=======================
+{% endcomment %}
+{% assign categories = "" %}
+{% for category in rawcategories %}
+	{% if category != "" %}
+		{% if categories == "" %}
+			{% assign categories = category %}
+		{% endif %}
+		{% unless categories contains category %}
+			{% assign categories = categories | join:'|' | append:'|' | append:category | split:'|' %}
+		{% endunless %}
+	{% endif %}
+{% endfor %}
 <section>
 	<div class="wrapper wrapper-content">
 		<div class="feature-internal">
@@ -10,34 +38,35 @@ layout: default
 			<a class="button" href="https://github.com/orgs/iranopendata/">{{lang.button-api}}</a>
 			<a class="button button-secondary" href="">{{lang.button-github}}</a>
 		</div>
-		<div class="sidebar sidebar-fixed">
-			<h5>Jump to</h5>
-			<ul class="list-type-none">
-				<li class="list-item-filter link-filter">
-					<a href="">Category 1 <span>(2)</span></a>
-				</li>
-				<li class="list-item-filter link-filter">
-					<a href="">Category 2 <span>(2)</span></a>
-				</li>
-				<li class="list-item-filter link-filter">
-					<a href="">Category 3 <span>(2)</span></a>
-				</li>
-			</ul>
+		<div class="sidebar sidebar-resources">
+			<h5 class="header-filter-resources">{{lang.jump-to}}</h5>
+			<div class="dropdown-resources">
+				<div class="dropdown-sm">{{lang.select-category}}</div>
+				<ul class="list-type-none dropdown-resources-options">
+					{% for category in categories %}
+					<li class="list-item-filter link-filter">
+						<a href="">{{category}} <span class="filter-number">(2)</span></a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 		<div class="content-sidebar">
-			{% for resource in site.resources | sort: 'category' %}
+			{% for category in categories %}
 			<div class="faux-list-item">
-				<h4 class="header-divider">{{resource.category}}</h4>
+				<h4 class="header-divider">{{category}}</h4>
 				<ul class="list-type-none">
 					{% for resource in site.resources %}
-					<li class="list-item-block">
-						<h5 class="header-with-description"><a class="text-link" target="_blank" href="{{resource.link}}">{{resource.title}}</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>{{resource.source}}</dd>
-						</dl>
-						<p>{{resource.description}}</p>
-					</li>
+						{% if resource.category == category %}
+						<li class="list-item-block">
+							<h5 class="header-with-description"><a class="text-link" target="_blank" href="{{resource.link}}">{{resource.title}}</a></h5>
+							<dl class="metadata">
+								<dt>{{lang.source}}:</dt>
+								<dd>{{resource.source}}</dd>
+							</dl>
+							<p>{{resource.description}}</p>
+						</li>
+						{% endif %}
 					{% endfor %}
 				</ul>
 

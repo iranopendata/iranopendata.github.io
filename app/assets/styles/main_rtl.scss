@@ -17,7 +17,7 @@ body {
 
 nav {
 	float: right;
-	@media screen and (max-width: 960px) {
+	@media screen and (max-width: 920px) {
 		float: initial;
 	}
 }
@@ -27,7 +27,7 @@ nav {
 }
 
 .nav-mobile {
-	@media screen and (max-width: 960px) {
+	@media screen and (max-width: 920px) {
 		right: initial;
 		left: 0;
 	}
@@ -128,6 +128,18 @@ nav {
 	}
 }
 
+.dropdown-resources {
+	float: right;
+}
+
+.header-filter-resources {
+	@media screen and (max-width: 768px) {
+		float: right;
+		margin-right: 0;
+		margin-left: 1em;
+	}
+}
+
 .list-item-datarange {
 	float: right;
   margin-right: 0em;
@@ -189,11 +201,26 @@ nav {
 
 .block-partners {
 	margin-top: .8em;
+	float: left;
+	border-left: 0;
+	margin-left: 0em;
+	padding-left: 0em;
+	border-right: 3px solid $black;
+	margin-right: 4em;
+	padding-right: 4em;
 	li {
 		@media screen and (max-width: 600px) {
 			float: right;
 			margin-right: 0;
 			margin-left: 4%;
+		}
+	}
+}
+
+.wrapper-content-about {
+	p {
+		&:nth-of-type(3) {
+			float: right;
 		}
 	}
 }
@@ -223,6 +250,10 @@ nav {
 
 .content-sidebar{
 	float: right;
+}
+
+.icon-close:before, .icon-close:visited:before {
+	float: left;
 }
 
 footer .button-standalone {
