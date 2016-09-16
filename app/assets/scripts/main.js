@@ -137,18 +137,18 @@ class Dataset extends Component {
         h('h1', {}, title),
         h('p', {class: 'description-md'}, description),
         h('dl', {class: 'metadata-lg'},
-          h('dt', {class: 'metadata-item metadata-item-header'}, 'Source'),
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
           h('dd', {class: 'metadata-item'}, source),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, 'Dates'),
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
           h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, 'Formats'),
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
           h('dd', {class: 'metadata-item'},
             h('span', {class: 'element-file-type element-file-type-lg'}, format)
            ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, 'ID'),
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
           h('dd', {class: 'metadata-item'}, name)
          ),
         h('a', {class: 'button', href: url}, lang['button-download']),
