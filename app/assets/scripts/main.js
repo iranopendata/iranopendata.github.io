@@ -181,7 +181,7 @@ class DatasetList extends Component {
   }
 
   transformDatasets (datasets) {
-    return datasets.map (transformDatasetFromAPI);
+    return datasets.map (transformDatasetFromIndex);
   }
 
   onCheckCategory (category) {
