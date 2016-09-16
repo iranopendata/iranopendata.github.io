@@ -3,209 +3,58 @@ layout: default
 ---
 {% assign lang = site.data[page.lang][0] %}
 <section>
-	<div class="wrapper wrapper-content">
+	<div class="wrapper wrapper-content" id="wrapper-content">
 		<div class="feature-internal">
 			<h1>{{lang.data-title}}</h1>
 			<p class="description-lg">{{lang.data-descript}}</p>
 		</div>
-		<div class="content-internal" id="content-internal">
-			<a class="button button-filter" href="">{{lang.filter-title}}</a>
-			<div class="sidebar">
-				<h5>{{lang.filter-title}}</h5>
-				<form>
-					<div class="wrapper-filter-item">
-						<fieldset>
-							<label class="header-filter">{{lang.category-title}}</label>
-							<ul class="list-type-none filter-categories">
-								<li class="list-item-filter list-item-filter-housing">
-									<label>Housing <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-								<li class="list-item-filter list-item-filter-population">
-									<label>Population <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-								<li class="list-item-filter list-item-filter-women">
-									<label>Women <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-								<li class="list-item-filter list-item-filter-trade">
-									<label>Trade <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-								<li class="list-item-filter list-item-filter-economics">
-									<label>Economics <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-							</ul>
-						</fieldset>
-					</div>
-					<div class="wrapper-filter-item">
-						<fieldset>
-							<label class="header-filter">{{lang.format-title}}</label>
-							<ul class="list-type-none">
-								<li class="list-item-filter">
-									<label>CSV <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-								<li class="list-item-filter">
-									<label>XML <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-								<li class="list-item-filter">
-									<label>JSON <span class="filter-number">(2)</span>
-										<input class="checkbox" type="checkbox" name="" id="" value="" />
-									</label>
-								</li>
-							</ul>
-						</fieldset>
-					</div>
-					<div class="wrapper-filter-item">
-						<fieldset>
-							<label class="header-filter">{{lang.date-title}}</label>
-							<ul class="list-type-none">
-								<li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">1999</span></li>
-								<li class="list-item-datarange"><span>to</span></li>
-								<li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">2016</span></li>
-							</ul>
-						</fieldset>
-					</div>
-				</form>
-			</div>
-<<<<<<< HEAD
-		</div>
-	</div>
-</section>
-<section class="section-black section-black-last">
-	<div class="wrapper wrapper-content">
-		<div class="centered-content">
-			<h2 class="section-black-header">Don't see what you're looking for?</h2>
-			<div class="section-black-description">
-				<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.</p>
-				<a class="button button-white" href="">Suggest a Dataset</a>
-			</div>
-		</div>
-	</div>
-</section>
-=======
-			<div class="content-sidebar">
-				<h6 class="content-sidebar-header">Showing 15 Datasets</h6>
-				<div class="sort-filter">
-					<span class="sort-filter-header">{{lang.sort}}</span>
-					<div class="dropdown-sm">Recent Updates</div>
-					<div class="dropdown-categories">
-						<ul class="list-type-none">
-							<li class="dropdown-categories-item">Alphabetically</li>
-							<li class="dropdown-categories-item">Alphabetically</li>
-						</ul>
-					</div>
-				</div>
-				<ul class="list-type-none">
-					<li class="population list-item-vertical">
-						<span class="type-category">Population</span>
-						<h5 class="header-with-description"><a class="text-link" href="/{{page.lang}}/dataset/">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<dl class="metadata metadata-date">
-							<dt>Updated:</dt>
-							<dd>Jul. 28, 2016</dd>
-						</dl>
-						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-						<ul class="list-type-none">
-							<li class="element-file-type">CSV</li>
-							<li class="element-file-type">XML</li>
-						</ul>
-					</li>
-					<li class="trade list-item-vertical">
-						<span class="type-category">Trade</span>
-						<h5 class="header-with-description"><a class="text-link" href="/{{page.lang}}/dataset/">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<dl class="metadata metadata-date">
-							<dt>Updated:</dt>
-							<dd>Jul. 28, 2016</dd>
-						</dl>
-						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-						<ul class="list-type-none">
-							<li class="element-file-type">CSV</li>
-							<li class="element-file-type">XML</li>
-						</ul>
-					</li>
-					<li class="housing list-item-vertical">
-						<span class="type-category">Housing</span>
-						<h5 class="header-with-description"><a class="text-link" href="/{{page.lang}}/dataset/">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<dl class="metadata metadata-date">
-							<dt>Updated:</dt>
-							<dd>Jul. 28, 2016</dd>
-						</dl>
-						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-						<ul class="list-type-none">
-							<li class="element-file-type">CSV</li>
-							<li class="element-file-type">XML</li>
-						</ul>
-					</li>
-					<li class="women list-item-vertical">
-						<span class="type-category">Women</span>
-						<h5 class="header-with-description"><a class="text-link" href="/{{page.lang}}/dataset/">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<dl class="metadata metadata-date">
-							<dt>Updated:</dt>
-							<dd>Jul. 28, 2016</dd>
-						</dl>
-						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-						<ul class="list-type-none">
-							<li class="element-file-type">CSV</li>
-							<li class="element-file-type">XML</li>
-						</ul>
-					</li>
-					<li class="housing list-item-vertical">
-						<span class="type-category">Housing</span>
-						<h5 class="header-with-description"><a class="text-link" href="/{{page.lang}}/dataset/">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt>Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<dl class="metadata metadata-date">
-							<dt>Updated:</dt>
-							<dd>Jul. 28, 2016</dd>
-						</dl>
-						<p class="width-shortened">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-						<ul class="list-type-none">
-							<li class="element-file-type">CSV</li>
-							<li class="element-file-type">XML</li>
-						</ul>
-					</li>
-				</ul>
-				<div class="pagination">
-					<ul class="list-type-none">
-						<li class="list-item-pagination pagination-previous"><a href="">Previous</a></li>
-						<li class="list-item-pagination"><a class="pagination-link-active" href="">1</a></li>
-						<li class="list-item-pagination"><a href="">2</a></li>
-						<li class="list-item-pagination"><a href="">3</a></li>
-						<li class="list-item-pagination pagination-next"><a href="">Next</a></li>
-					</ul>
-				</div>
-			</div>
+		<!-- <div class="content-internal"> -->
+		<!-- <div class="sidebar"> -->
+		<!-- <h5>{{lang.filter-title}}</h5> -->
+		<!-- <form> -->
+		<!-- <div class="wrapper-filter-item"> -->
+		<!-- <fieldset> -->
+		<!-- <label class="header-filter">{{lang.format-title}}</label> -->
+		<!-- <ul class="list-type-none"> -->
+		<!-- <li class="list-item-filter"> -->
+		<!-- <label>CSV <span class="filter-number">(2)</span> -->
+		<!-- <input class="checkbox" type="checkbox" name="" id="" value="" /> -->
+		<!-- </label> -->
+		<!-- </li> -->
+		<!-- <li class="list-item-filter"> -->
+		<!-- <label>XML <span class="filter-number">(2)</span> -->
+		<!-- <input class="checkbox" type="checkbox" name="" id="" value="" /> -->
+		<!-- </label> -->
+		<!-- </li> -->
+		<!-- <li class="list-item-filter"> -->
+		<!-- <label>JSON <span class="filter-number">(2)</span> -->
+		<!-- <input class="checkbox" type="checkbox" name="" id="" value="" /> -->
+		<!-- </label> -->
+		<!-- </li> -->
+		<!-- </ul> -->
+		<!-- </fieldset> -->
+		<!-- </div> -->
+		<!-- <div class="wrapper-filter-item"> -->
+		<!-- <fieldset> -->
+		<!-- <label class="header-filter">{{lang.date-title}}</label> -->
+		<!-- <ul class="list-type-none"> -->
+		<!-- <li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">1999</span></li> -->
+		<!-- <li class="list-item-datarange"><span>to</span></li> -->
+		<!-- <li class="list-item-datarange"><span class="dropdown-sm dropdown-sm-date">2016</span></li> -->
+		<!-- </ul> -->
+		<!-- </fieldset> -->
+		<!-- </div> -->
+		<!-- </form> -->
+		<!-- </div> -->
 		</div>
 	</div>
 </section>
 {% include suggest-dataset.html %}
->>>>>>> develop
+
+<script>
+ var PAGE_LANG = '{{page.lang}}';
+ var labels = {
+     'filter-title': '{{lang.filter-title}}',
+     'category-title': '{{lang.category-title}}'
+ }
+</script>

@@ -12,7 +12,7 @@
   "license": "",
   "homepage": "",
   "scripts": {
-    "serve": "gulp serve",
+    "serve": "NODE_ENV='development' gulp serve",
     "build": "DS_ENV=production NODE_ENV=production gulp",
     "lint": "eslint docs/assets/scripts/ --ext .js",
     "test": "echo \"No tests\" && exit 0",
@@ -70,6 +70,7 @@
     "yamljs": "^0.2.7"
   },
   "dependencies": {
+    "fetch": "^1.1.0",
     "preact": "^6.0.2"
   }
 }
