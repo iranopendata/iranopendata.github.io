@@ -213,43 +213,43 @@ class DatasetList extends Component {
 }
 
 function hamburgerClick (e) {
-	e.preventDefault()
-	var navClassList = document.querySelector('.nav-mobile').classList
+	e.preventDefault();
+	var navClassList = document.querySelector('.nav-mobile').classList;
 	if (!navClassList.contains('open')) {
-		e.stopPropagation()
+		e.stopPropagation();
 	  navClassList.add('open');
 	}
 }
 
 function closePrimaryNav () {
   document.querySelector('.nav-mobile').classList.remove('open');
-}	
+}
 
 
 function scrollTo (e) {
-	e.preventDefault()
-	var resourceClassList = document.querySelector('.dropdown-resources-options').classList
+	e.preventDefault();
+	var resourceClassList = document.querySelector('.dropdown-resources-options').classList;
 	if (!resourceClassList.contains('open')) {
-		e.stopPropagation()
+		e.stopPropagation();
 	  resourceClassList.add('open');
 	}
 }
 
 function closeResourceList () {
   document.querySelector('.dropdown-resources-options').classList.remove('open');
-}	
+}
 
 
 function filterDatasets (e) {
-	e.preventDefault()
-	var filterClassList = document.querySelector('.sidebar').classList
-	var filterClassListBody = document.querySelector('body').classList
+	e.preventDefault();
+	var filterClassList = document.querySelector('.sidebar').classList;
+	var filterClassListBody = document.querySelector('body').classList;
 	if (!filterClassList.contains('open')) {
-		e.stopPropagation()
+		e.stopPropagation();
 	  filterClassList.add('open');
 	}
 	if (!filterClassListBody.contains('filter-overlay')) {
-		e.stopPropagation()
+		e.stopPropagation();
 	  filterClassListBody.add('filter-overlay');
 	}
 }
@@ -257,19 +257,23 @@ function filterDatasets (e) {
 function closeDataFilter (e) {
 	e.preventDefault();
   document.querySelector('.sidebar').classList.remove('open');
-}	
+}
 
 function reviseDataFilter () {
   document.querySelector('body').classList.remove('filter-overlay');
-}	
+}
 
 function dataFilterBtn (e) {
-	filterDatasets(e)
+	filterDatasets(e);
 }
 
 
 function onReady () {
-	document.querySelector('.menu-hamburger').addEventListener('click', hamburgerClick);
+	var hamburger = document.querySelector('.menu-hamburger');
+  if (hamburger) {
+    hamburger.addEventListener('click', hamburgerClick);
+  }
+
 	document.addEventListener('click', closePrimaryNav);
 
 	var dropdown = document.querySelector('.dropdown-sm');
@@ -278,9 +282,21 @@ function onReady () {
 		document.addEventListener('click', closeResourceList);
 	}
 
-	document.querySelector('.button-filter-apply').addEventListener('click', closeDataFilter);
-	document.querySelector('.button-filter-cancel').addEventListener('click', closeDataFilter);
-	document.querySelector('.icon-close').addEventListener('click', closeDataFilter);
+	var buttonFilterApply = document.querySelector('.button-filter-apply');
+  if (buttonFilterApply) {
+    buttonFilterApply.addEventListener('click', closeDataFilter);
+  }
+
+	var buttonFilterCancel = document.querySelector('.button-filter-cancel');
+  if (buttonFilterCancel) {
+     buttonFilterCancel.addEventListener('click', closeDataFilter);
+  }
+
+
+	var iconClose = document.querySelector('.icon-close');
+  if (iconClose) {
+     iconClose.addEventListener('click', closeDataFilter);
+  }
 
 	document.addEventListener('click', reviseDataFilter);
 }
@@ -288,7 +304,7 @@ function onReady () {
 
 const content = document.getElementById('wrapper-content');
 if (content) {
-	render(h(DatasetList), content);	
+	render(h(DatasetList), content);
 }
 
 if (document.readyState != 'loading'){
