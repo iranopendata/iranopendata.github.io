@@ -235,6 +235,11 @@ header {
 .button-grey, .button-grey:visited {
 	border-color: $grey;
 	color: $grey;
+	margin-left: 1em;
+	&:hover {
+		background-color: $grey;
+		color: #fff;
+	}
 }
 
 .button-filter {
@@ -357,6 +362,9 @@ nav {
 			border-bottom: 0;
 		}
 	}
+	.open {
+		display: inherit;
+	}
 }
 
 .menu-hamburger, .menu-hamburger:visited {
@@ -418,6 +426,7 @@ nav {
 
 .nav-mobile { 
 	@media screen and (max-width: 920px) {
+		display: none;
 		position: absolute;
 		right: 0em;
 		background-color: #fff;
@@ -444,6 +453,11 @@ nav {
 
 .nav-container {
 	position: relative;
+	.open {
+		@media screen and (max-width: 920px) {
+			display: inherit;
+		}
+	}
 }
 
 .nav-languages {
@@ -828,13 +842,20 @@ footer {
 			display: initial;
 		}
 	}
+	.open {
+		@media screen and (max-width: 768px) {
+			display: initial;
+		}
+	}
 }
 
 .dropdown-resources-options {
 	@media screen and (max-width: 768px) {
+		display: none;
 		position: absolute;
 		border: 1px solid $light-grey;
 		top: 3em;
+		left: 0;
 		background-color: #fff;
 		li { 
 			padding: .8em 1em;
@@ -845,18 +866,36 @@ footer {
 	}	
 }
 
+body.filter-overlay {
+	overflow-y: hidden;
+	.wrapper-datasets {
+
+		.sidebar {
+			z-index: 4;
+			position: fixed;
+			background-color: #fff;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			padding: 1.5em 1.2em;
+			width: auto;
+		}
+	}
+}
+
 .wrapper-datasets {
 	.sidebar {
 		@media screen and (max-width: 768px) {
-			z-index: 4;
-			position: absolute;
-			background-color: #fff;
-			width: 85%;
-			top: 0;
-			height: 100%;
-			padding: 1.5em 1.2em;
+			display: none;
 		}
 		@media screen and (min-width: 768px) {
+			display: initial;
+		}
+	}
+	.open {
+		@media screen and (max-width: 768px) {
 			display: initial;
 		}
 	}
