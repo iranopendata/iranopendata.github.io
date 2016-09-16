@@ -1,5 +1,5 @@
 import {h, render, Component} from 'preact';
-import fetch from 'fetch';
+import 'whatwg-fetch';
 import moment from 'moment';
 
 import {categoryMap, invCategoryMap} from './utils';
@@ -140,24 +140,26 @@ class DatasetList extends Component {
     return newDatasets;
   }
 
-  componentWillMount () { 
+  componentWillMount () {
     let component = this;
 
-    fetch.fetchUrl(component.APIUrl,
-      function (err, meta, body) {
-        if (err) {
-          // Handle error
-          console.error('Could not fetch data');
-        } else {
-          const parsed = JSON.parse(body.toString());
-          const datasets = component.transformDatasets(parsed.datasets);
-          component.setState({
-            fromAPI: datasets,
-            checked: [],
-            sort: 'update'
-          });
-        }
-      });
+    fetch(component.APIUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        const datasets = component.transformDatasets(json.datasets);
+
+        component.setState({
+          fromAPI: datasets,
+          checked: [],
+          sort: 'update'
+        });
+      })
+      .catch(function (err) {
+        console.error('Could not fetch data', err);
+      })
+    ;
   }
 
   render ({}, {fromAPI, checked}) {
