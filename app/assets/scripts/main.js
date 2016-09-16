@@ -52,7 +52,7 @@ class DatasetList extends Component {
 
     this.APIUrl = '/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = 'http://localhost:8000/index.json';
+      this.APIUrl = 'http://10.1.10.114:8000/index.json';
     }
   }
 
