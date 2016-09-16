@@ -121,11 +121,19 @@ nav {
 	float: right;
 }
 
-.dropdown-sm {
-	float: right;
-	&:after {
+.wrapper-dropdown-sort {
+	select {
 		float: left;
+		width: 11.6rem;
 	}
+	&:after {
+		left: 1rem;
+		right: initial;
+	}
+}
+
+.wrapper-dropdown-sort-sm .dropdown-sm-date {
+	width: 7.6rem;
 }
 
 .dropdown-resources {

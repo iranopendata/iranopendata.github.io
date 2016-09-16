@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import {categoryMap, invCategoryMap} from './utils';
 import CategoryFilter from './components/CategoryFilter';
+import DateFilter from './components/DateFilter';
 import SortFilter from './components/SortFilter';
 
 const PAGE_LANG = PAGE_LANG || 'fa';
@@ -47,6 +48,7 @@ class DatasetList extends Component {
 
     this.transformDatasets = this.transformDatasets.bind(this);
     this.onCheckCategory = this.onCheckCategory.bind(this);
+    this.onSelectDate = this.onSelectDate.bind(this);
     this.onSort = this.onSort.bind(this);
 
     this.APIUrl = 'https://iranopendata.github.io/catalog/index.json';
@@ -94,9 +96,17 @@ class DatasetList extends Component {
       checkedSet.add(category);
     }
 
-    component.applyFilters();
     component.setState({
       checked: Array.from(checkedSet)
+    });
+  }
+
+  onSelectDate (bound, date) {
+    const component = this;
+    let newDates = component.state.selectedDates;
+    newDates[bound] = date;
+    component.setState({
+      selectedDates: newDates
     });
   }
 
@@ -120,6 +130,14 @@ class DatasetList extends Component {
       });
     }
 
+    // Filter datasets by date
+    const {min, max}  = component.state.selectedDates;
+    newDatasets = newDatasets.filter((dataset) => {
+      console.log(dataset.period, min, max);
+      return dataset.period[0] <= max && dataset.period[1] >= min;
+    });
+    console.log(newDatasets);
+
     // Sort datasets
     newDatasets.sort((a, b) => {
       if (component.state.sort == 'alphabetic') {
@@ -136,7 +154,6 @@ class DatasetList extends Component {
       return 0;
     });
 
-
     return newDatasets;
   }
 
@@ -150,9 +167,19 @@ class DatasetList extends Component {
       .then(function (json) {
         const datasets = component.transformDatasets(json.datasets);
 
+        // Calculate min/max dates of datasets initially
+        let minMaxDates = {min: datasets[0].period[0], max: datasets[0].period[1]};
+        datasets.forEach( (dataset) => {
+          let min, max;
+          [min, max] = dataset.period;
+          if (min < minMaxDates.min) { minMaxDates.min = min;}
+          if (max > minMaxDates.max) { minMaxDates.max = max;}
+        });
+
         component.setState({
           fromAPI: datasets,
           checked: [],
+          selectedDates: minMaxDates,
           sort: 'update'
         });
       })
@@ -162,14 +189,16 @@ class DatasetList extends Component {
     ;
   }
 
-  render ({}, {fromAPI, checked}) {
+  render ({}, {fromAPI, checked, selectedDates}) {
     const component = this;
     if (fromAPI) {
 
+      // Filter the datasets
+      const datasets = component.applyFilters();
+      console.log(datasets);
+
       // Turn datasets to listings
-      const listings = component
-              .applyFilters()
-              .map ((dataset) => h(Listing, dataset));
+      const listings = datasets.map ((dataset) => h(Listing, dataset));
 
       // Count categories to render category filter
       const categories = fromAPI.map ( (dataset) => dataset.category).sort();
@@ -180,6 +209,15 @@ class DatasetList extends Component {
         } else {
           categoryCounts[category] += 1;
         }
+      });
+
+      // Calculate min/max dates of datasets
+      let minMaxDates = {min: datasets[0].period[0], max: datasets[0].period[1]};
+      datasets.forEach( (dataset) => {
+        let min, max;
+        [min, max] = dataset.period;
+        if (min < minMaxDates.min) { minMaxDates.min = min;}
+        if (max > minMaxDates.max) { minMaxDates.max = max;}
       });
 
       // Render!
@@ -194,6 +232,11 @@ class DatasetList extends Component {
               categories: categoryCounts,
               checked: checked,
               onClick: component.onCheckCategory
+            }),
+            h(DateFilter, {
+              minMaxDates: minMaxDates,
+              selectedDates: selectedDates,
+              onSelectDate: component.onSelectDate
             })
           ),
           h('div', {class:'filter-buttons-mobile'},
