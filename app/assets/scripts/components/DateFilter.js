@@ -23,21 +23,25 @@ export default ({minMaxDates, selectedDates, onSelectDate}) => {
     'div', {class: 'wrapper-filter-item'},
     h('fieldset', {},
       h('label', {class: 'header-filter'}, labels['date-title']),
-      h('select', {
-        onChange: (e) => {
-          e.preventDefault();
-          return onSelectDate('min', e.target.value);
-        },
-        value: min
-      }, mindates),
+      h('div', {class: 'wrapper-dropdown-sort wrapper-dropdown-sort-sm'},
+        h('select', { class: 'dropdown-sm dropdown-sm-date',
+          onChange: (e) => {
+            e.preventDefault();
+            return onSelectDate('min', e.target.value);
+          },
+          value: min
+        }, mindates),
+      ),
       h('span', {}, ' to '),
-      h('select', {
-        onChange: (e) => {
-          e.preventDefault();
-          return onSelectDate('max', e.target.value);
-        },
-        value: max
-      }, maxdates)
-     )
+      h('div', {class: 'wrapper-dropdown-sort wrapper-dropdown-sort-sm'},
+        h('select', { class: 'dropdown-sm dropdown-sm-date',
+          onChange: (e) => {
+            e.preventDefault();
+            return onSelectDate('max', e.target.value);
+          },
+          value: max
+        }, maxdates)
+       )
+      )
   );
 };
