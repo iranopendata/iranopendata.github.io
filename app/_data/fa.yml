@@ -1,4 +1,4 @@
-
+#nav
 - data: داده‌ها
   contact: تماس
   use_cases: نمونه‌
@@ -48,6 +48,10 @@
   #Dataset Page
   dataset-secondary-title: Issues or Notes
   dataset-projects-made: Projects Made With This Dataset
+  datasets-source: Source
+  datasets-dates: Dates
+  dataset-formats: Format
+  dataset-id: ID
   button-download: Download
   button-share: Share
 

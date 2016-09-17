@@ -3,39 +3,7 @@ layout: default
 ---
 {% assign lang = site.data[page.lang][0] %}
 <section>
-	<div class="wrapper wrapper-content-sm wrapper-content-dataset">
-		<div class="housing content-dataset">
-			<span class="type-category type-category-lg">Housing</span>
-			<h1>Name of Individual Dataset</h1>
-			<p class="description-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam. Phasellus magna augue, rutrum vitae vulputate eget, mattis eget ante. Nulla tincidunt, dolor vel imperdiet hendrerit, nisi odio viverra dolor, et condimentum justo ex et urna.</p>
-			<dl class="metadata-lg">
-				<dt class="metadata-item metadata-item-header">Source</dt>
-				<dd class="metadata-item">Name of source</dd>
-
-				<dt class="metadata-item metadata-item-header">Dates</dt>
-				<dd class="metadata-item">Jun 2010 - Jul 2016</dd>
-
-				<dt class="metadata-item metadata-item-header">Formats</dt>
-				<dd class="metadata-item">
-					<span class="element-file-type element-file-type-lg">CSV</span>
-					<span class="element-file-type element-file-type-lg">XML</span>
-				</dd>
-
-				<dt class="metadata-item metadata-item-header">ID</dt>
-				<dd class="metadata-item">ID</dd>
-
-				<dt class="metadata-item metadata-item-header">Methodology</dt>
-				<dd class="metadata-item">Methodology</dd>
-			</dl>
-			<a class="button" href="">{{lang.button-download}}</a>
-			<a class="button button-secondary" href="">{{lang.button-share}}</a>
-		</div>
-		<div class="subsection">
-			<h2>{{lang.dataset-secondary-title}}</h2>
-			<span>{{page.date}}</span>
-			<p>{{page.notes}}</p>
-		</div>
-	</div>
+	<div class="wrapper wrapper-content-sm wrapper-content-dataset" id="wrapper-content-dataset"></div>
 </section>
 <section class="section-black section-black-last">
 	<div class="wrapper wrapper-content">
@@ -61,3 +29,22 @@ layout: default
 		</div>
 	</div>
 </section>
+
+<script>
+ const DATASET_ID = `{{page.id}}`;
+ const lang = {
+     'button-share': '{{lang.button-share}}',
+     'button-download': '{{lang.button-download}}',
+     'dataset-secondary-title': '{{lang.dataset-secondary-title}}',
+     'dataset-id': '{{lang.dataset-id}}',
+     'dataset-dates': '{{lang.dataset-dates}}',
+     'dataset-formats': '{{lang.dataset-formats}}',
+     'dataset-source': '{{lang.dataset-source}}'
+ }
+
+ const page = {
+     'notes': '{{page.notes}}',
+     'date': '{{page.date}}'
+ }
+ const PAGE_LANG = '{{page.lang}}'
+</script>
