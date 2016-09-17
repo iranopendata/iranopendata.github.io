@@ -99,7 +99,7 @@ class Dataset extends Component {
 
     this.id = DATASET_ID;
 
-    this.APIUrl = 'https:/iranopendata.github.io/catalog/datasets/' + this.id + '.json';
+    this.APIUrl = '/catalog/datasets/' + this.id + '.json';
     if (process.env.NODE_ENV == 'development') {
       this.APIUrl = `http://10.1.10.114:8000/datasets/${this.id}.json`;
     }
