@@ -186,7 +186,7 @@ class DatasetList extends Component {
       return  h(
         'div', {class: 'content-internal wrapper-datasets'},
         h('a', {class:'button button-filter', href:'', onclick:dataFilterBtn}, labels['filter-title']),
-        h('div', {class: 'sidebar'}, 
+        h('div', {class: 'sidebar'},
         	h('a', {class: 'icon-close', href:''}, labels['Close']),
           h('h5', {}, labels['filter-title']),
           h('form', {},
@@ -301,6 +301,8 @@ function onReady () {
   }
 
 	document.addEventListener('click', reviseDataFilter);
+  window.scrollTo(0, 1)
+  window.scrollTo(0, 0)
 }
 
 
@@ -314,6 +316,3 @@ if (document.readyState != 'loading'){
 } else {
   document.addEventListener('DOMContentLoaded', onReady);
 }
-
-
-
