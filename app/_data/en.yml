@@ -40,6 +40,8 @@
   button-cancel: Cancel
   dataset-num-title1: Showing
   dataset-num-title2: Datasets
+  datasets-source: Source
+  datasets-updated: Updated
   sortby-option1: Recent Updates
   sortby-option2: Alphabetically
   previous: Previous
@@ -52,6 +54,11 @@
   dataset-dates: Dates
   dataset-formats: Format
   dataset-id: ID
+  dataset-added: Added
+  dataset-frequency: Update Frequency
+  dataset-keywords: Keywords
+  dataset-maintainer: Maintainer
+  dataset-license: License
   button-download: Download
   button-share: Share
 

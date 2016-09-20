@@ -54,9 +54,15 @@ function transformDatasetFromAPI (dataset) {
     'description': description[PAGE_LANG],
     'period': dataset.period,
     'source': dataset.resources[0].sources[0].name,
+    'source_url': dataset.resources[0].sources[0].web,
     'format': dataset.resources[0].schema.format,
     'updated_at': dataset.updated_at,
-    'name': dataset.name
+    'indexed_at': dataset.indexed_at,
+    'name': dataset.name,
+    'maintainer': dataset.maintainer,
+    'frequency': dataset.frequency,
+    'license': dataset.license,
+    'keywords': dataset.keywords.join(', ')
   };
 }
 
@@ -67,6 +73,7 @@ class Listing extends Component {
     description,
     format,
     source,
+    source_url,
     updated_at,
     name
   }, {}) {
@@ -78,11 +85,11 @@ class Listing extends Component {
         h('a', {class: 'text-link', href: `/${PAGE_LANG}/datasets/${name}`}, title)
        ),
       h('dl', {class: 'metadata'},
-        h('dt', {}, 'Source:'), ' ',
-        h('dd', {}, source)
+        h('dt', {}, labels['datasets-source']), ': ',
+        h('dd', {}, h('a', {href: source_url}, source))
        ),
       h('dl', {class: 'metadata metadata-date'},
-        h('dt', {}, 'Updated:'), ' ',
+        h('dt', {}, labels['datasets-updated']), ': ',
         h('dd', {}, updated_at)
        ),
       h('p', {class: 'width-shortened'}, description),
@@ -101,7 +108,7 @@ class Dataset extends Component {
 
     this.APIUrl = '/catalog/datasets/' + this.id + '.json';
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = `http://10.1.10.114:8000/datasets/${this.id}.json`;
+      this.APIUrl = `http://localhost:8000/datasets/${this.id}.json`;
     }
   }
 
@@ -126,9 +133,15 @@ class Dataset extends Component {
     description,
     format,
     source,
+    source_url,
     updated_at,
     period,
+    indexed_at,
+    license,
     url,
+    maintainer,
+    frequency,
+    keywords,
     name
   }) {
     if (title) {
@@ -139,18 +152,35 @@ class Dataset extends Component {
         h('p', {class: 'description-md'}, description),
         h('dl', {class: 'metadata-lg'},
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
-          h('dd', {class: 'metadata-item'}, source),
+          h('dd', {class: 'metadata-item'},
+            h('a', {href: source_url}, source)
+           ),
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
           h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`),
 
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
+          h('dd', {class: 'metadata-item'},indexed_at),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
+          h('dd', {class: 'metadata-item'}, maintainer),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-keywords']),
+          h('dd', {class: 'metadata-item'}, keywords),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
+          h('dd', {class: 'metadata-item'}, frequency),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-license']),
+          h('dd', {class: 'metadata-item'}, license),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
+          h('dd', {class: 'metadata-item'}, name),
+
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
           h('dd', {class: 'metadata-item'},
             h('span', {class: 'element-file-type element-file-type-lg'}, format)
-           ),
-
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
-          h('dd', {class: 'metadata-item'}, name)
+           )
          ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
         h('a', {class: 'button button-secondary', href:''}, lang['button-share']),
@@ -178,7 +208,7 @@ class DatasetList extends Component {
 
     this.APIUrl = 'https://iranopendata.github.io/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = 'http://10.1.10.114:8000/index.json';
+      this.APIUrl = 'http://localhost:8000/index.json';
     }
   }
 
@@ -443,8 +473,8 @@ function onReady () {
   }
 
 	document.addEventListener('click', reviseDataFilter);
-  window.scrollTo(0, 1)
-  window.scrollTo(0, 0)
+  window.scrollTo(0, 1);
+  window.scrollTo(0, 0);
 }
 
 

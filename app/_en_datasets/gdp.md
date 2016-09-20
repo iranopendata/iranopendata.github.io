@@ -1,6 +1,6 @@
 ---
 collection: dataset
-title: DatasetName
+title: GDP
 lang: en
 id: gdp
 layout: dataset
