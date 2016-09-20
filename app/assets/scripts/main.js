@@ -108,7 +108,7 @@ class Dataset extends Component {
 
     this.APIUrl = '/catalog/datasets/' + this.id + '.json';
     if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = `http://localhost:8000/datasets/${this.id}.json`;
+      this.APIUrl = `http://192.168.10.60:8000/datasets/${this.id}.json`;
     }
   }
 
@@ -165,9 +165,6 @@ class Dataset extends Component {
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
           h('dd', {class: 'metadata-item'}, maintainer),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-keywords']),
-          h('dd', {class: 'metadata-item'}, keywords),
-
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
           h('dd', {class: 'metadata-item'}, frequency),
 
@@ -180,7 +177,10 @@ class Dataset extends Component {
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
           h('dd', {class: 'metadata-item'},
             h('span', {class: 'element-file-type element-file-type-lg'}, format)
-           )
+           ),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-keywords']),
+          h('dd', {class: 'metadata-item metadata-item-keywords'}, keywords)
          ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
         h('a', {class: 'button button-secondary', href:''}, lang['button-share']),

@@ -11,6 +11,7 @@ h1 {
 	}
 	@media screen and (min-width: 768px) {
 		font-size: 4.2em;
+		line-height: 1.2em;
 	}
 }
 
@@ -69,7 +70,7 @@ h6 {
 .metadata-item {
 	float: left;
 	width: 25%;
-	line-height: 2.5em
+	margin-bottom: 1.2em;
 }
 
 .metadata-item-header {
@@ -78,6 +79,13 @@ h6 {
 	&:nth-of-type(3n) {
 		clear: left;
 	}
+	@media screen and (max-width: 768px) {
+		clear: left;
+	}
+}
+
+.metadata-item-keywords {
+	width: 70%;
 }
 
 .metadata-lg {
