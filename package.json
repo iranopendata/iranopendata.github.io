@@ -70,6 +70,7 @@
     "yamljs": "^0.2.7"
   },
   "dependencies": {
+    "history": "^4.2.0",
     "moment": "^2.15.0",
     "preact": "^6.0.2",
     "whatwg-fetch": "^1.0.0"
