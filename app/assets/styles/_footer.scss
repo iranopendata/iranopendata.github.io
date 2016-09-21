@@ -1,0 +1,35 @@
+/*footer*/
+footer {
+	background-color: $light-light-grey;
+	border-top: 1px solid $light-grey;
+	padding-top: 2em;
+	padding-bottom: 3em;
+	p {
+		margin-bottom: 0;
+	}
+	nav {
+		@media screen and (max-width: 995px) {
+			display: none;
+		}
+		.nav-list_item:hover, .nav-list_item:active{
+			padding-bottom: 0em;
+			border-bottom: 0;
+			a {
+				color: $link-color;
+			}
+		}
+	}
+	.wrapper-half {
+		@media screen and (max-width: 440px) {
+			width: 100%;
+		}
+	}
+}
+
+footer .button-standalone {
+	clear: both;
+	@media screen and (max-width: 520px) {
+		margin-top: 2em;
+		float: left;
+	}
+}

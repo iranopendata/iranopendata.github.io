@@ -1,0 +1,158 @@
+/*Type*/
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font;
+}
+
+h1 {
+	font-weight: 900;
+	line-height: .95em;
+	@media screen and (min-width: 320px) {
+		font-size: 3.2em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 4.2em;
+	}
+}
+
+h2 {
+	font-weight: 900;
+	line-height: 1em;
+	@media screen and (min-width: 320px) {
+		font-size: 2.4em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 2.85em;
+	}
+}
+
+h3 {
+	font-size: 2.35em;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 1.85em;
+	font-weight: 700;
+}
+
+h5 {
+	font-size: 1.5em;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+
+h6 {
+	font-size: 1.15em;
+	font-weight: 700;
+}
+
+.header-with-description {
+	margin-bottom: .2em;
+}
+
+.logo {
+	float: left;
+	img {
+		width: 4em;
+	}
+}
+
+.metadata {
+	font-size: .8em;
+	display: inline-block;
+	color: $grey;
+	* {
+		display: inline-block;
+	}
+}
+
+.metadata-item {
+	float: left;
+	width: 25%;
+	line-height: 2.5em
+}
+
+.metadata-item-header {
+	font-weight: 700;
+	width: 15%;
+	&:nth-of-type(3n) {
+		clear: left;
+	}
+}
+
+.metadata-lg {
+	@extend %clearfix;
+	margin-bottom: 1.5em;
+}
+
+.description-md {
+	line-height: 1.8em;
+	@media screen and (min-width: 320px) {
+		font-size: 1em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 1.1em;
+	}
+}
+
+.description-lg {
+	line-height: 1.7em;
+	color: $black;
+	@media screen and (min-width: 320px) {
+		font-size: 1em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 1.15em;
+	}
+}
+
+.metadata-title {
+	font-weight: bold;
+}
+
+.type-category {
+	text-transform: uppercase;
+	font-size: .8em;
+	font-weight: 700;
+}
+
+.type-category-lg {
+	font-size: 1.17em;
+	display: block;
+	margin-bottom: .3em;
+}
+
+.header-feature {
+	font-weight: 900;
+	line-height: 1.2em;
+	@media screen and (min-width: 320px) {
+		font-size: 4em;
+	}
+	@media screen and (min-width: 768px) {
+		font-size: 5em;
+	}
+}
+
+.header-divider {
+	border-bottom: 3px solid $black;
+	padding-bottom: .5em;
+  margin-bottom: 1.3em;
+}
+
+.header-centered {
+	text-align: center;
+}
+
+.metadata-date {
+	font-style: italic;
+}
+
+.content-sidebar-header {
+	display: inline-block;
+	padding-top: .7em;
+	margin-bottom: 0;
+}
+
+header {
+	margin: .7em 0 8em;
+}

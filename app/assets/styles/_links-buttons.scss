@@ -1,0 +1,122 @@
+/*links & buttons*/
+.nav-link, .nav-link:visited, {
+	color: $text-color;
+}
+
+.normal-link, .normal-link:visited, p a, p a:visited {
+	color: $link-color;
+	font-family: $header-font;
+	font-weight: 700;
+}
+
+.link-filter {
+	a {
+		&:hover	{
+			color: $link-color;
+		}
+	}
+}
+
+.button, .button:visited,  {
+	color: $link-color;
+	border: 3px solid $link-color;
+	padding: .6em 3em;
+	font-weight: 700;
+	font-size: 1.2em;
+	margin-top: 1em;
+	display: inline-block;
+	font-family: $header-font;
+	background-color: transparent;
+	transition: all 0.3s;
+	@media screen and (min-width: 320px) {
+		font-size: 1.1em;
+	}
+	&:hover {
+		background-color: $link-color;
+		color: #fff;
+	}
+}
+
+.button-lg {
+	border: 4px solid $link-color;
+	font-weight: 900;
+}
+
+.button-sm {
+	background: #fff;
+	border: 1px solid $link-color;
+	font-size: 1em;
+}
+
+.button-white, .button-white:visited, {
+	border: 3px solid #fff;
+	color: #fff;
+	&:hover {
+		background-color: #fff;
+		color: $dark-grey;
+	}
+}
+
+.button-xl, .button-xl:visited, { 
+	padding: 3em;
+	min-width: 11em;
+	text-align: center;
+}
+
+.button-secondary {
+	@media screen and (min-width: 320px) {
+		margin-left: 0;
+	}
+	@media screen and (min-width: 768px) {
+		margin-left: 1.1em;
+	}
+}
+
+.button-grey, .button-grey:visited {
+	border-color: $grey;
+	color: $grey;
+	margin-left: 1em;
+	&:hover {
+		background-color: $grey;
+		color: #fff;
+	}
+}
+
+.button-filter {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+	float: right;
+	@media screen and (min-width: 320px) {
+		display: inherit;
+	}
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+}
+
+.text-link {
+	border-bottom: 1px solid $lightest-grey;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		border-bottom: 1px solid $grey;
+	}
+}
+
+.button-right {
+	float: right;
+}
+
+.button-contact {
+	@media screen and (max-width: 768px) {
+		float: none;
+		clear: left;
+		display: block;
+	}
+}
+
+.filter-buttons-mobile {
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: initial;
+	}
+}
