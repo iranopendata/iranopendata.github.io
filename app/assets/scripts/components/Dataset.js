@@ -3,25 +3,21 @@ import {transformDatasetFromAPI, categoryMap} from '../utils';
 
 import 'whatwg-fetch';
 class Dataset extends Component {
-  constructor () {
-    super();
-
-    this.id = DATASET_ID;
-
-    this.APIUrl = '/catalog/datasets/' + this.id + '.json';
-    if (process.env.NODE_ENV == 'development') {
-      this.APIUrl = `http://10.1.10.114:8000/datasets/${this.id}.json`;
-    }
-  }
-
   componentWillMount () {
     const component = this;
+    component.id = component.props.id;
+    component.lang = component.props.lang;
+
+    component.APIUrl = '/catalog/datasets/' + this.id + '.json';
+    if (process.env.NODE_ENV == 'development') {
+      component.APIUrl = `http://10.1.10.114:8000/datasets/${this.id}.json`;
+    }
     fetch(component.APIUrl)
       .then(function (response) {
         return response.json();
       })
       .then(function (json) {
-        component.setState(transformDatasetFromAPI(json));
+        component.setState(transformDatasetFromAPI(json, component.lang));
       })
       .catch(function (err) {
         console.error('Could not fetch data', err);
@@ -41,6 +37,14 @@ class Dataset extends Component {
     name
   }) {
     if (title) {
+      let subsection = h('div', {style: 'display:none;'});
+      if (typeof page !== 'undefined') {
+        subsection = h('div', {class: 'subsection'},
+          h('h2', {}, lang['dataset-secondary-title']),
+          h('span', {}, page['date']),
+          h('p', {}, page['notes'])
+         );
+      }
       return h(
         'div', {class: `${categoryMap[category]} content-dataset`},
         h('span', {class: 'type-category type-category-lg'}, category),
@@ -63,12 +67,7 @@ class Dataset extends Component {
          ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
         h('a', {class: 'button button-secondary', href:''}, lang['button-share']),
-        h('div', {class: 'subsection'},
-          h('h2', {}, lang['dataset-secondary-title']),
-          h('span', {}, page['date']),
-          h('p', {}, page['notes'])
-
-         )
+        subsection
       );
     }
     return h('div');
