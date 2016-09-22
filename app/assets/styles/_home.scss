@@ -1,0 +1,47 @@
+/*Homepage*/
+.section-feature_main {
+	@media screen and (min-width: 320px) {
+		width: 100%;
+		float: inherit;
+	}
+	@media screen and (min-width: 768px) {
+		float: left;
+		width: 55%;
+	}
+}
+
+.section-feature_secondary {
+	li {
+		margin-bottom: 4em;
+		float: initial;
+		@media screen and (min-width: 440px) {
+			width: 40%;
+			float: left;
+			margin-right: 4%;
+		}
+		@media screen and (min-width: 768px) {
+			float: initial;
+			margin-right: 0;
+			width: 100%
+		}
+	}
+	@media screen and (min-width: 320px) {
+		border-top: 3px solid $black;
+		border-left: 0;
+		padding-left: 0;
+		margin-left: 0;
+		width: 100%;
+		margin-top: 5em;
+		padding-top: 5em;
+	}
+	@media screen and (min-width: 768px) {
+		width: 30%;
+		float: left;
+		border-left: 4px solid $black;
+		padding-left: 4%;
+		margin-left: 7%;
+		margin-top: 0em;
+		padding-top: 0em;
+		border-top: 0;
+	}
+}
