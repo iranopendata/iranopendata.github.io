@@ -1,5 +1,7 @@
-'use strict'
+'use strict';
 var fs = require('fs');
+var path = require('path');
+var url = require('url');
 var gulp = require('gulp');
 var $ = require ('gulp-load-plugins')();
 var del = require('del');
@@ -12,7 +14,7 @@ var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
 var exit = require('gulp-exit');
-var rev = require('gulp-rev')
+var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
 var notifier = require('node-notifier');
 var cp = require('child_process');
@@ -62,8 +64,15 @@ gulp.task('serve', ['vendorScripts', 'javascript', 'styles', 'jekyll'], function
   browserSync({
     port: 3000,
     server: {
-      baseDir: ['.tmp', '_site'],
+      baseDir: ['.tmp', '_site']
     }
+  }, function (err, bs) {
+    bs.addMiddleware("*", function (req, res) {
+      fs.readFile('_site/404.html', function (err, data) {
+        if (err) throw err;
+        else res.end(data);
+      });
+    });
   });
 
   // watch for changes

@@ -46,13 +46,32 @@ function onReady () {
   const page_content = document.getElementById('page-content');
   const unlisten = history.listen((location, action) => {
 
-    console.log(action, location.pathname, location.state);
-    switch (location.pathname) {
-    case '/404.html':
-      page_content.innerHTML = '<p style="margin: 100px;">404 - Not Found</p>';
-      break;
-    default:
+    const datasetPath = /^\/([a-z0-9]{2})\/datasets\/([a-z0-9._-]+)$/;
+    const matched = location.pathname.match(datasetPath);
+
+    if (matched) {
+      const language = matched[1];
+      const dataset = matched[2];
+
+      // We are rendering a single dataset
+      page_content.innerHTML = '<section><div class="wrapper wrapper-content-sm wrapper-content-dataset" id="dynamic-single-dataset"></div></section>';
+
+      // Modify the nav
+      const navLinkEnglish = document.getElementById('nav-link-english');
+      const navLinkFarsi = document.getElementById('nav-link-farsi');
+      const path = location.pathname.slice(3);
+
+      navLinkEnglish['href'] = `/en${path}`;
+      navLinkFarsi['href'] = `/fa${path}`;
+
+      // Render the dataset
+      render(h(Dataset, {lang: language, id: dataset}), document.getElementById('dynamic-single-dataset'));
     }
+
+    else {
+      page_content.innerHTML = '<p style="margin: 100px;">404 - Not Found</p>';
+    }
+
   });
 
   /////////////////////////////////////////////////////////////////////////
@@ -123,7 +142,7 @@ function onReady () {
 
   const dataset = document.getElementById('wrapper-content-dataset');
   if (dataset) {
-    render(h(Dataset), dataset);
+    render(h(Dataset, {lang: PAGE_LANG, id: DATASET_ID}), dataset);
   }
 
   //---------------//

@@ -26,31 +26,9 @@ for (var prop in categoryMap) {
  * and maps it to an object
  * suitable for rendering
  */
-function transformDatasetFromIndex (dataset) {
-    const title = {};
-    const description = {};
+function transformDatasetFromIndex (dataset, lang) {
+  lang = lang || PAGE_LANG;
 
-    dataset.title.forEach( (item) => {
-      title[item["lang"]] = item["text"];
-    });
-
-    dataset.description.forEach( (item) => {
-      description[item["lang"]] = item["text"];
-    });
-
-    return {
-      'category': categoryMap[dataset.category],
-      'title': title[PAGE_LANG],
-      'description': description[PAGE_LANG],
-      'period': dataset.period,
-      'source': dataset.source,
-      'format': dataset.format,
-      'updated_at': dataset.updated_at,
-      'name': dataset.name
-    };
-}
-
-function transformDatasetFromAPI (dataset) {
   const title = {};
   const description = {};
 
@@ -64,9 +42,34 @@ function transformDatasetFromAPI (dataset) {
 
   return {
     'category': categoryMap[dataset.category],
-    'title': title[PAGE_LANG],
+    'title': title[lang],
+    'description': description[lang],
+    'period': dataset.period,
+    'source': dataset.source,
+    'format': dataset.format,
+    'updated_at': dataset.updated_at,
+    'name': dataset.name
+  };
+}
+
+function transformDatasetFromAPI (dataset, lang) {
+  lang = lang || PAGE_LANG;
+  const title = {};
+  const description = {};
+
+  dataset.title.forEach( (item) => {
+    title[item["lang"]] = item["text"];
+  });
+
+  dataset.description.forEach( (item) => {
+    description[item["lang"]] = item["text"];
+  });
+
+  return {
+    'category': categoryMap[dataset.category],
+    'title': title[lang],
     'url': dataset.resources[0].url,
-    'description': description[PAGE_LANG],
+    'description': description[lang],
     'period': dataset.period,
     'source': dataset.resources[0].sources[0].name,
     'format': dataset.resources[0].schema.format,

@@ -39,7 +39,7 @@ class DatasetList extends Component {
   }
 
   transformDatasets (datasets) {
-    return datasets.map (transformDatasetFromIndex);
+    return datasets.map ( (dataset) => transformDatasetFromIndex(dataset));
   }
 
   onCheckCategory (category) {
