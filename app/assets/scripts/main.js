@@ -1,10 +1,12 @@
 import {h, render, Component} from 'preact';
+
 import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
 
 import Dataset from './components/Dataset';
 import DatasetList from './components/DatasetList';
+import FeaturedList from './components/FeaturedList';
 
 function hamburgerClick (e) {
 	e.preventDefault();
@@ -145,13 +147,17 @@ function onReady () {
     render(h(Dataset, {lang: PAGE_LANG, id: DATASET_ID}), dataset);
   }
 
+  const featuredList = document.getElementById('featured-homepage');
+  if (featuredList) {
+    render(h(FeaturedList), featuredList);
+  }
+
   //---------------//
   // SCROLL HACK
   //---------------//
   window.scrollTo(0, 1);
   window.scrollTo(0, 0);
 }
-
 
 
 if (document.readyState != 'loading'){
