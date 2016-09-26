@@ -52,7 +52,7 @@ class Dataset extends Component {
          );
       }
       return h(
-        'div', {class: `${categoryMap[category]} content-dataset`},
+        'div', {class: `${category} content-dataset`},
         h('span', {class: 'type-category type-category-lg'}, category),
         h('h1', {}, title),
         h('p', {class: 'description-md'}, description),

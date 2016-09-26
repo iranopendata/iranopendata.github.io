@@ -74,6 +74,7 @@ function transformDatasetFromAPI (dataset, lang) {
     'source': dataset.resources[0].sources[0].name,
     'format': dataset.resources[0].schema.format,
     'updated_at': dataset.updated_at,
+    'indexed_at': dataset.indexed_at,
     'name': dataset.name,
     'source_url': dataset.resources[0].sources[0].web,
     'maintainer': dataset.maintainer,
