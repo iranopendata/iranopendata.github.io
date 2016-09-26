@@ -1,7 +1,7 @@
 ---
 collection: dataset
-title: DatasetName
-lang: en
+title: GDP
+lang: fa
 id: gdp
 layout: dataset
 date: Jun. 30, 2016

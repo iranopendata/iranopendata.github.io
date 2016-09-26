@@ -31,9 +31,15 @@ class Dataset extends Component {
     description,
     format,
     source,
+    source_url,
     updated_at,
     period,
+    indexed_at,
+    license,
     url,
+    maintainer,
+    frequency,
+    keywords,
     name
   }) {
     if (title) {
@@ -46,24 +52,41 @@ class Dataset extends Component {
          );
       }
       return h(
-        'div', {class: `${categoryMap[category]} content-dataset`},
+        'div', {class: `${category} content-dataset`},
         h('span', {class: 'type-category type-category-lg'}, category),
         h('h1', {}, title),
         h('p', {class: 'description-md'}, description),
         h('dl', {class: 'metadata-lg'},
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
-          h('dd', {class: 'metadata-item'}, source),
+          h('dd', {class: 'metadata-item'},
+            h('a', {href: source_url}, source)
+           ),
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
           h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
+          h('dd', {class: 'metadata-item'},indexed_at),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
+          h('dd', {class: 'metadata-item'}, maintainer),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
+          h('dd', {class: 'metadata-item'}, frequency),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-license']),
+          h('dd', {class: 'metadata-item'}, license),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
+          h('dd', {class: 'metadata-item'}, name),
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
           h('dd', {class: 'metadata-item'},
             h('span', {class: 'element-file-type element-file-type-lg'}, format)
            ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
-          h('dd', {class: 'metadata-item'}, name)
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-keywords']),
+          h('dd', {class: 'metadata-item metadata-item-keywords'}, keywords)
          ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
         h('a', {class: 'button button-secondary', href:''}, lang['button-share']),

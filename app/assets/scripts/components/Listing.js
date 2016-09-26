@@ -8,6 +8,7 @@ export default ({
   description,
   format,
   source,
+  source_url,
   updated_at,
   name
 }) => {
@@ -18,11 +19,11 @@ export default ({
       h('a', {class: 'text-link', href: `/${PAGE_LANG}/datasets/${name}`}, title)
      ),
     h('dl', {class: 'metadata'},
-      h('dt', {}, 'Source:'), ' ',
-      h('dd', {}, source)
+      h('dt', {}, labels['datasets-source']), ': ',
+      h('dd', {}, h('a', {href: source_url}))
      ),
     h('dl', {class: 'metadata metadata-date'},
-      h('dt', {}, 'Updated:'), ' ',
+      h('dt', {}, labels['datasets-updated']), ': ',
       h('dd', {}, updated_at)
      ),
     h('p', {class: 'width-shortened'}, description),

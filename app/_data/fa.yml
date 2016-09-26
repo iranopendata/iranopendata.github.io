@@ -52,6 +52,11 @@
   dataset-source: Source
   dataset-dates: Dates
   dataset-formats: Format
+  dataset-added: Added
+  dataset-maintainer: Maintainer
+  dataset-frequency: Update Frequency
+  dataset-keywords: Keywords
+  dataset-license: License
   dataset-id: ID
   button-download: Download
   button-share: Share
