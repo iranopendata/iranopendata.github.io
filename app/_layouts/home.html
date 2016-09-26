@@ -1,5 +1,7 @@
 ---
 layout: default
+featured1: gdp
+featured2: writersblock
 ---
 {% assign lang = site.data[page.lang][0] %}
 <section class="wrapper-feature feature">
@@ -9,27 +11,7 @@ layout: default
 				<p class="description-lg">{{lang.homepage-descript}}</p>
 				<a class="button button-lg" href="/{{page.lang}}/data/">{{lang.homepage-button}}</a>
 			</div>
-			<div class="section-feature_secondary">
-				<ul class="list-type-none">
-					<li>
-						<span class="type-category">Population</span>
-						<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt class="metadata-title">Source:</dt>
-							<dd class="metadata-description">Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-					<li>
-						<span class="type-category">Trade</span>
-						<h5 class="header-with-description"><a class="text-link" href="">Name of Dataset</a></h5>
-						<dl class="metadata">
-							<dt class="metadata-title">Source:</dt>
-							<dd>Name of Source</dd>
-						</dl>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis. Sed sagittis tempor sapien ac sagittis.</p>
-					</li>
-				</ul>
+			<div class="section-feature_secondary" id="featured-homepage">
 			</div>
 	</div>
 </section>
@@ -53,3 +35,21 @@ layout: default
 		<a class="button" href="/{{page.lang}}/usecases/">{{lang.homepage-usecases-button}}</a>
 	</div>
 </section>
+
+<script>
+ const featured = {
+     'featured1': '{{page.featured1}}',
+     'featured2': '{{page.featured2}}'
+ }
+ const lang = {
+     'featured-source': '{{lang.homepage-featured-source}}',
+     'button-share': '{{lang.button-share}}',
+     'button-download': '{{lang.button-download}}',
+     'dataset-secondary-title': '{{lang.dataset-secondary-title}}',
+     'dataset-id': '{{lang.dataset-id}}',
+     'dataset-dates': '{{lang.dataset-dates}}',
+     'dataset-formats': '{{lang.dataset-formats}}',
+     'dataset-source': '{{lang.dataset-source}}'
+ }
+ const PAGE_LANG = '{{page.lang}}';
+</script>
