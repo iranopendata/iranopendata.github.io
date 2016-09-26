@@ -43,6 +43,9 @@ class Dataset extends Component {
     name
   }) {
     if (title) {
+      // Set the document title according to the metadata
+      document.title = title;
+
       let subsection = h('div', {style: 'display:none;'});
       if (typeof page !== 'undefined') {
         subsection = h('div', {class: 'subsection'},
