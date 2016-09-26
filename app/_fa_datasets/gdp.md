@@ -1,6 +1,5 @@
 ---
 collection: dataset
-title: GDP
 lang: fa
 id: gdp
 layout: dataset
