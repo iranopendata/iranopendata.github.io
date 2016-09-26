@@ -12,7 +12,7 @@ layout: default
 			<ul class="list-type-none">
 				{% for related in page.related %}
 	                {% for usecase in site.usecases %}
-	                {% if usecase.title == related %}
+	                {% if usecase.id == related %}
 	                <li class="list-item-block">
 	                    <a target="_blank" href="{{usecase.link}}"><img src="/assets/graphics/{{usecase.img}}"></a>
 	                    <h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
