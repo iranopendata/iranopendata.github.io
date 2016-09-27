@@ -4,6 +4,21 @@ layout: default
 {% assign lang = site.data[page.lang][0] %}
 <section>
 	<div class="wrapper wrapper-content-sm wrapper-content-dataset" id="wrapper-content-dataset"></div>
+  <div class="wrapper wrapper-content-sm wrapper-content-dataset">
+    {% if page.notes.size > 0 %}
+    <div class="subsection">
+      <h2>{{lang.dataset-secondary-title}}</h2>
+      <ul class="list-type-none">
+      {% for note in page.notes %} 
+        <li class="list-item-subsection">
+          <span>{{note.date}}</span> 
+          <p>{{note.text}}</p>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
 </section>
 <section class="section-black section-black-last">
 	<div class="wrapper wrapper-content">
@@ -35,7 +50,6 @@ layout: default
  const lang = {
      'button-share': '{{lang.button-share}}',
      'button-download': '{{lang.button-download}}',
-     'dataset-secondary-title': '{{lang.dataset-secondary-title}}',
      'dataset-id': '{{lang.dataset-id}}',
      'dataset-dates': '{{lang.dataset-dates}}',
      'dataset-formats': '{{lang.dataset-formats}}',
@@ -48,10 +62,5 @@ layout: default
      'dataset-license': '{{lang.dataset-license}}'
  }
 
-
- const page = {
-     'notes': '{{page.notes}}',
-     'date': '{{page.date}}'
- }
  const PAGE_LANG = '{{page.lang}}'
 </script>

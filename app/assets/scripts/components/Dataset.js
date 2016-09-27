@@ -47,14 +47,6 @@ class Dataset extends Component {
       // Set the document title according to the metadata
       document.title = title;
 
-      let subsection = h('div', {style: 'display:none;'});
-      if (typeof page !== 'undefined') {
-        subsection = h('div', {class: 'subsection'},
-          h('h2', {}, lang['dataset-secondary-title']),
-          h('span', {}, page['date']),
-          h('p', {}, page['notes'])
-         );
-      }
       return h(
         'div', {class: `${category} content-dataset`},
         h('span', {class: 'type-category type-category-lg'}, category),
@@ -96,8 +88,7 @@ class Dataset extends Component {
           h('dd', {class: 'metadata-item metadata-item-keywords'}, keywords)
          ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
-        h('a', {class: 'button button-secondary', href:''}, lang['button-share']),
-        subsection
+        h('a', {class: 'button button-secondary', href:''}, lang['button-share'])
       );
     }
     return h('div');
