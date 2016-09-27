@@ -1,5 +1,6 @@
 import {h, Component} from 'preact';
 import {invCategoryMap} from '../utils';
+import moment from 'moment';
 
 // Listing
 export default ({
@@ -24,7 +25,7 @@ export default ({
      ),
     h('dl', {class: 'metadata metadata-date'},
       h('dt', {}, labels['datasets-updated']), ': ',
-      h('dd', {}, updated_at)
+      h('dd', {}, moment(updated_at).format("MMM. D, YYYY"))
      ),
     h('p', {class: 'width-shortened'}, description),
     h('ul', {class: 'list-type-none'},

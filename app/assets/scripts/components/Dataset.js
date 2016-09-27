@@ -1,5 +1,6 @@
 import {h, render, Component} from 'preact';
 import {transformDatasetFromAPI, categoryMap} from '../utils';
+import moment from 'moment'
 
 import 'whatwg-fetch';
 class Dataset extends Component {
@@ -69,7 +70,10 @@ class Dataset extends Component {
           h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`),
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
-          h('dd', {class: 'metadata-item'},indexed_at),
+          h('dd', {class: 'metadata-item'}, moment(indexed_at).format("MMM. D, YYYY")),
+
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-updated']),
+          h('dd', {class: 'metadata-item'}, moment(indexed_at).format("MMM. D, YYYY")),
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
           h('dd', {class: 'metadata-item'}, maintainer),
