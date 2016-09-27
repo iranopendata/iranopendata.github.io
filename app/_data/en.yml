@@ -56,6 +56,7 @@
   dataset-formats: Format
   dataset-id: ID
   dataset-added: Added
+  dataset-updated: Updated
   dataset-frequency: Update Frequency
   dataset-keywords: Keywords
   dataset-maintainer: Maintainer
