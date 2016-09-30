@@ -8,26 +8,26 @@ layout: default
 			<h1>{{lang.contact}}</h1>
 			<p class="description-lg">{{lang.contact-descript}}</p>
 		</div>
-		<form class="form-contact">
+		<form method="POST" class="form-contact" action="https://formspree.io/contact@iranopendata.org">
 			<div class="form-contact-subsection">
 				<div class="list-item-contact">
 					<label class="label-form" for="name">{{lang.name}}</label>
-					<input type="text" id="name" name="" />
+					<input type="text" id="name" name="name" />
 				</div>
 				<div class="list-item-contact">
 					<label class="label-form" for="email">{{lang.email}}</label>
-					<input type="text" id="email" name="" />
+					<input type="text" id="email" name="_replyto" />
 				</div>
 				<div class="list-item-contact">
 					<label class="label-form" for="subject">{{lang.subject}}</label>
-					<input type="text" id="subject" name="" />
+					<input type="text" id="subject" name="_subject" />
 				</div>
 			</div>
 			<div class="list-item-contact form-contact-subsection">
 				<label class="label-form" for="message">{{lang.message}}</label>
-				<textarea></textarea>
+				<textarea name="message"></textarea>
 			</div>
-			<button class="button button-right button-contact">{{lang.button-submit}}</button>
+			<button type="submit" class="button button-right button-contact">{{lang.button-submit}}</button>
 		</form>
 		<div class="subsection subsection-bold content-centered">
 			<h2 class="header-centered">{{lang.other-ways}}</h2>
