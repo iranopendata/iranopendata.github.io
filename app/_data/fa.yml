@@ -1,34 +1,35 @@
 #nav
-- data: داده‌ها
-  contact: تماس
-  use_cases: کاربرد داده‌
-  resources: منابع
-  developers: توسعه‌ دهندگان
-  about: درباره
+- data: "داده‌ها"
+  contact: "تماس"
+  use_cases: "کاربرد داده‌"
+  resources: "منابع"
+  developers: "توسعه‌ دهندگان"
+  about: "درباره"
 
   # terms
   featured: Featured
   sort: Sort by
   filter-title: Filter Datasets
   category-title: Category
-  format-title: فرمت
-  date-title: تاریخ
-  source: منبع
-  to: به
+  format-title: "فرمت"
+  date-title: "تاریخ"
+  source: "منبع"
+  to: "به"
 
   # footer
-  button-github: ما را در گیت‌هاب پیدا کنید
-  sign_up-title: عضویت در خبرنامه
-  newsletter-descript:با عضویت در خبرنامه ما در جریان داده‌های جدید و به‌روز شده قرار بگیرید
+  button-github: "ما را در گیت‌هاب پیدا کنید"
+  sign_up-title: "عضویت در خبرنامه"
+  newsletter-descript: "با عضویت در خبرنامه ما در جریان داده‌های جدید و به‌روز شده قرار بگیرید"
 
   # buttons
-  button-api: مشاهده ای‌پی‌آی
-  button-submit: ارسال
+  button-api: "مشاهده ای‌پی‌آی"
+  button-submit: "ارسال"
 
   # Home Page
-  homepage-title: دسترسی آسان به داده 
-  homepage-descript: داده‌های تمیز شده از بخش مسکن گرفته تا کشاورزی و جمعیت. به تدریج داده‌های بیشتری اضافه خواهند شد، مجددا به سایت ما سر بزنید یا در خبرنامه ما عضو شوید تا در جریان آخرین داده‌های به روز شده قرار بگیرید. 
+  homepage-title: "دسترسی آسان به داده "
+  homepage-descript: "داده‌های تمیز شده از بخش مسکن گرفته تا کشاورزی و جمعیت. به تدریج داده‌های بیشتری اضافه خواهند شد، مجددا به سایت ما سر بزنید یا در خبرنامه ما عضو شوید تا در جریان آخرین داده‌های به روز شده قرار بگیرید. "
   homepage-usecases-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  homepage-button: View All Datasets
   homepage-usecase-link: View Site
   homepage-usecases-button: View All Use Cases
   homepage-featured-source: Source
