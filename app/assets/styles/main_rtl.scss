@@ -2,9 +2,55 @@
 @charset "UTF-8";
 @import "variables";
 
+@font-face {
+	font-family: 'rtlFont';
+	src: url("../../assets/fonts/NotoNaskhArabic-Regular.ttf") format("ttf");
+}
+@font-face {
+	font-family: 'rtlBold';
+	src: url("../../assets/fonts/NotoNaskhArabic-Bold.ttf") format("ttf");
+}
+
 body {
   direction: rtl;
   text-align: right;
+  font-family: 'rtlFont';
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'rtlBold';
+}
+
+.normal-link, .normal-link:visited, p a, p a:visited {
+	font-family: 'rtlBold';
+}
+
+.button, .button:visited,  {
+	font-family: 'rtlBold';
+}
+
+.header-filter {
+	font-family: 'rtlBold';
+}
+
+.metadata-item-header {
+	font-family: 'rtlBold';
+}
+
+.label-form {
+	font-family: 'rtlBold';
+}
+
+.pagination-link-active {
+	font-family: 'rtlBold';
+}
+
+.element-file-type {
+	font-family: 'rtlBold';
+}
+
+.type-category {
+	font-family: 'rtlBold';
 }
 
 .logo {
@@ -13,6 +59,9 @@ body {
 
 .nav-languages {
 	float: left;
+	.active {
+		font-family: 'rtlBold';
+	}
 }
 
 nav {
@@ -168,6 +217,7 @@ nav {
 .sort-filter-header {
 	float: right;
 	margin-left: .7em;
+	font-family: 'rtlBold';
 }
 
 .dropdown-categories {
