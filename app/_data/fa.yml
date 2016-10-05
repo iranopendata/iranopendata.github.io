@@ -73,17 +73,17 @@
 
   # Contact Page
   contact-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt.
-  name: Name
-  email: Email
-  subject: Subject
-  message: Message
-  other-ways: Other Ways to Reach Out
-  github: Github
+  name: نام
+  email: ایمیل
+  subject: موضوع
+  message: پیام شما
+  other-ways: راه‌های دیگر تماس
+  github: گیت‌هاب
 
   # Suggest Dataset - data page - black content block
-  suggest-title: Don't see what you're looking for?
+  suggest-title: آنچه را که به دنبالش هستید پیدا نمی‌کنید؟
   suggest-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
-  suggest-button: Suggest a Dataset
+  suggest-button: پیشنهاد داده بدهید 
 
   # Show Work - Use Cases page - black content block
   show-title: Show Us Your Work
