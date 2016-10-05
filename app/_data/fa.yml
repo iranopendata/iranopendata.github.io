@@ -29,14 +29,14 @@
   homepage-title: "دسترسی آسان به داده "
   homepage-descript: "داده‌های تمیز شده از بخش مسکن گرفته تا کشاورزی و جمعیت. به تدریج داده‌های بیشتری اضافه خواهند شد، مجددا به سایت ما سر بزنید یا در خبرنامه ما عضو شوید تا در جریان آخرین داده‌های به روز شده قرار بگیرید. "
   homepage-usecases-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
-  homepage-button: دیدن همه داده‌ها
+  homepage-button: مشاهده همه داده‌ها
   homepage-usecase-link: View Site
   homepage-usecases-button: View All Use Cases
   homepage-featured-source: Source
 
   # Datasets Page
   data-title: داده‌های در دسترس
-  data-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  data-descript: در این‌جا داده‌های در دسترس برای شما نمایش داده می‌شود. به تدریج بر داده‌های سایت افزوده می‌شود. مجددا به سایت ما سر بزنید. 
   button-apply: Apply
   button-cancel: Cancel
   dataset-num-title1: Showing
