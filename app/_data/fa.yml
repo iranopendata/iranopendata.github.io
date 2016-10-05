@@ -36,15 +36,15 @@
 
   # Datasets Page
   data-title: داده‌های در دسترس
-  data-descript: در این‌جا داده‌های در دسترس برای شما نمایش داده می‌شود. به تدریج بر داده‌های سایت افزوده می‌شود. مجددا به سایت ما سر بزنید. 
-  button-apply: Apply
-  button-cancel: Cancel
-  dataset-num-title1: Showing
-  dataset-num-title2: Datasets
-  sortby-option1: Recent Updates
-  sortby-option2: Alphabetically
-  previous: Previous
-  next: Next
+  data-descript: در این‌جا داده‌های در دسترس را می‌بینید. به تدریج داده‌های بیشتری اضافه می‌شود. مجددا به سایت ما سر بزنید. 
+  button-apply: اعمال
+  button-cancel: لغو
+  dataset-num-title1: نمایش
+  dataset-num-title2: داده
+  sortby-option1: داده‌های تازه اضافه شده
+  sortby-option2: به ترتیب الفبا
+  previous: قبلی
+  next: بعدی
 
   #Dataset Page
   dataset-secondary-title: Issues or Notes
