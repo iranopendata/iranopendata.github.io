@@ -86,9 +86,9 @@
   suggest-button: پیشنهاد داده بدهید 
 
   # Show Work - Use Cases page - black content block
-  show-title: Show Us Your Work
-  show-descript: Have a project that you’ve build off of an Open Iran Data dataset? Send us your information so that we can feature it on the site.
-  show-button: Submit Your Project
+  show-title: کار خود را برای ما بفرستید
+  show-descript: پروژه‌ای دارید که با استفاده از داده‌های  پایگاه داده باز ایران ساخته‌اید؟ کارتان را برای ما بفرستید تا در سایت نمایش دهیم. 
+  show-button: ارسال پروژه
 
   # How to Contribute - Developer page - black content block
   contribute-title: How to Contribute
