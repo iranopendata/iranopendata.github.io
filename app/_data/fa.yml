@@ -8,7 +8,7 @@
 
   # terms
   featured: Featured
-  sort: Sort by
+  sort: مرتب‌سازی بر اساس
   filter-title: فیلتر کردن داده
   category-title: دسته‌بندی موضوعی
   format-title: "فرمت"
@@ -101,7 +101,7 @@
   involved-button: تماس با ما
 
   # Methodology - Home page - black content block
-  methodology-title: Our Methodology
+  methodology-title: متدولوژی ما
   methodology-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
-  methodology-button: Learn More
-  methodology-button2: Contribute
+  methodology-button: بیشتر بخوانید
+  methodology-button2: مشارکت کنید
