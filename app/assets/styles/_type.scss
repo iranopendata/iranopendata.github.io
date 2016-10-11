@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-weight: 900;
-	line-height: .95em;
+	line-height: 1.2em;
 	@media screen and (min-width: 320px) {
 		font-size: 3.2em;
 	}
@@ -75,7 +75,7 @@ h6 {
 .metadata-item-header {
 	font-weight: 700;
 	&:nth-of-type(3n) {
-		clear: left;
+		clear: right;
 	}
 }
 
