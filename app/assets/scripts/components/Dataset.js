@@ -47,6 +47,23 @@ class Dataset extends Component {
       // Set the document title according to the metadata
       document.title = title;
 
+      let period = h('div');
+      let frequency = h('div');
+
+      if (period.length > 0) {
+        period = h('div', {},
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
+          h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`)
+        );
+      }
+
+      if (frequency.length > 0) {
+        frequency = h('div', {}, 
+          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
+          h('dd', {class: 'metadata-item'}, frequency),
+        )
+      }
+
       return h(
         'div', {class: `${category} content-dataset`},
         h('span', {class: 'type-category type-category-lg'}, category),
@@ -58,8 +75,7 @@ class Dataset extends Component {
             h('a', {href: source_url}, source)
            ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
-          h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`),
+          period,
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
           h('dd', {class: 'metadata-item'}, moment(indexed_at).format("MMM. D, YYYY")),
@@ -70,8 +86,7 @@ class Dataset extends Component {
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
           h('dd', {class: 'metadata-item'}, maintainer),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
-          h('dd', {class: 'metadata-item'}, frequency),
+          frequency,
 
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-license']),
           h('dd', {class: 'metadata-item'}, license),
