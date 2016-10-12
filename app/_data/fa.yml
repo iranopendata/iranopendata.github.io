@@ -4,7 +4,7 @@
   use_cases: "کاربرد داده‌"
   resources: "منابع"
   developers: "توسعه‌ دهندگان"
-  about: "درباره"
+  about: "درباره ما"
 
   # terms
   featured: Featured
@@ -101,7 +101,7 @@
   involved-button: تماس با ما
 
   # Methodology - Home page - black content block
-  methodology-title: متدولوژی ما
+  methodology-title:روش کار ما
   methodology-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
   methodology-button: بیشتر بخوانید
   methodology-button2: مشارکت کنید
