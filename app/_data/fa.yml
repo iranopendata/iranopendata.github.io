@@ -2,7 +2,7 @@
 - data: "داده‌ها"
   contact: "تماس"
   use_cases: "کاربرد داده‌"
-  resources: "منبع‌ها"
+  resources: "منابع"
   developers: "توسعه‌ دهندگان"
   about: "درباره ما"
 
@@ -81,8 +81,8 @@
   github: گیت‌هاب
 
   # Suggest Dataset - data page - black content block
-  suggest-title: آنچه را که به دنبالش هستید پیدا نمی‌کنید؟
-  suggest-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  suggest-title: داده مورد نظر خود را پیدا نمی‌کنید؟
+  suggest-descript: داده‌های ما به مرور زمان زیاد می‌شود. داده‌های درخواستی خود را برای ما بفرستید
   suggest-button: پیشنهاد داده بدهید 
 
   # Show Work - Use Cases page - black content block
