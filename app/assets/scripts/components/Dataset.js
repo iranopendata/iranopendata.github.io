@@ -102,8 +102,7 @@ class Dataset extends Component {
           h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-updated']),
           h('dd', {class: 'metadata-item'}, moment(indexed_at).format("MMM. D, YYYY"))
          ),
-        h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download']),
-        h('a', {class: 'button button-secondary', href:''}, lang['button-share'])
+        h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download'])
       );
     }
     return h('div');
