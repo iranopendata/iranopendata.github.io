@@ -20,6 +20,8 @@ layout: default
     {% endif %}
   </div>
 </section>
+
+{% if page.related %}
 <section class="section-black section-black-last">
 	<div class="wrapper wrapper-content">
 		<h2 class="section-black-header">{{lang.dataset-projects-made}}</h2>
@@ -45,6 +47,7 @@ layout: default
 	</div>
 </section>
 
+{% endif %}
 <script>
  const DATASET_ID = `{{page.id}}`;
  const lang = {
