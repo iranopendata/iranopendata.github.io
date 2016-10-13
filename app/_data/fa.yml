@@ -82,7 +82,8 @@
 
   # Suggest Dataset - data page - black content block
   suggest-title: "داده مورد نظر خود را پیدا نمی‌کنید؟"
-  suggest-descript: "داده‌های ما به مرور زمان زیاد می‌شود. داده‌های درخواستی خود را برای ما بفرستید"
+  suggest-descript: "
+اگر مجموعه داده‌ای سراغ دارید که فکر می‌کنید باید در پایگاه داده باز ایران در دسترس باشد لطفا آن را به ما پیشنهاد دهید. اگر مجموعه داده جالب باشد، آن را به لیست کارهای خود اضافه می‌کنیم. "
   suggest-button: "پیشنهاد داده بدهید "
 
   # Show Work - Use Cases page - black content block
