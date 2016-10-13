@@ -85,7 +85,7 @@
 
   # Suggest Dataset - data page - black content block
   suggest-title: Don't see what you're looking for?
-  suggest-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  suggest-descript: If you know of a dataset that you think should be made available on Iran Open Data, please suggest it to us. If we think the dataset is interesting, we’ll add it to our to-do list. 
   suggest-button: Suggest a Dataset
 
   # Show Work - Use Cases page - black content block
