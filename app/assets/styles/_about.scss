@@ -3,19 +3,6 @@
 		font-size: 1.1em;
 		line-height: 1.9em;
 		color: $dark-grey;
-		&:nth-of-type(3) {
-			width: 62%;
-			float: left;
-			@media screen and (max-width: 600px) {
-				width: 100%;
-			}
-		}
-		&:first-of-type {
-			width: 90%;
-			@media screen and (max-width: 600px) {
-				width: 100%;
-			}
-		}
 	}
 }
 
