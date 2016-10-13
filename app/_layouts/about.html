@@ -5,7 +5,7 @@ layout: default
 <section>
 	<div class="wrapper wrapper-content wrapper-content-sm wrapper-content-about">
 		<h1>{{lang.about}}</h1>
-		{% for post in site.about | where:"lang",page.lang %}
+		{% for post in site.about | where:"lang", post.lang %}
 		  {{post.content}}
 		{% endfor %}
 	</div>

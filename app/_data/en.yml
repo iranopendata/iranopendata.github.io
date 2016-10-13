@@ -29,7 +29,7 @@
   homepage-title: Making Iranian Data Available to the Public
   homepage-descript: Find clean, reliable data from housing to transportation. With our growing database, check back for updates or sign up for our newsletter, to see when new sets are added.
   homepage-button: View All Datasets
-  homepage-usecases-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  homepage-usecases-descript: Here we feature projects that are based upon Iran Open Data's datasets.
   homepage-usecase-link: View Site
   homepage-usecases-button: View All Use Cases
   homepage-featured-source: Source
@@ -66,7 +66,7 @@
 
 
   # Resources Page
-  resources-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit metus. Vestibulum at mauris vestibulum, interdum quam id, egestas metus. In viverra elit id auctor pharetra.
+  resources-descript: On this page we've gathered some resources relating to open data in Iran and around the world, as well as a number of training courses to help you work with our datasets.
   jump-to: Jump to
   select-category: Select a Category
 
@@ -85,7 +85,7 @@
 
   # Suggest Dataset - data page - black content block
   suggest-title: Don't see what you're looking for?
-  suggest-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  suggest-descript: If you know of a dataset that you think should be made available on Iran Open Data, please suggest it to us. If we think the dataset is interesting, we’ll add it to our to-do list. 
   suggest-button: Suggest a Dataset
 
   # Show Work - Use Cases page - black content block

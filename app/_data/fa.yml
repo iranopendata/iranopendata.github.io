@@ -63,7 +63,7 @@
   button-share: "به اشتراک گذاری"
 
   # Resources Page
-  resources-descript: "در اینجا منابع مرتبط با داده باز در ایران و سایر کشورها را معرفی می‌کنیم "
+  resources-descript: " در این بخش، منابعی مربوط به داده باز در ایران و سایر کشورها را جمع‌آوری کرده‌ایم. هم‌چنین برخی دوره‌های آموزشی که به کار با داده کمک می‌کند را نیز معرفی می‌کنیم. "
   jump-to: "رجوع به"
   select-category: "انتخاب گروه"
 
@@ -82,7 +82,8 @@
 
   # Suggest Dataset - data page - black content block
   suggest-title: "داده مورد نظر خود را پیدا نمی‌کنید؟"
-  suggest-descript: "داده‌های ما به مرور زمان زیاد می‌شود. داده‌های درخواستی خود را برای ما بفرستید"
+  suggest-descript: "
+اگر مجموعه داده‌ای سراغ دارید که فکر می‌کنید باید در پایگاه داده باز ایران در دسترس باشد لطفا آن را به ما پیشنهاد دهید. اگر مجموعه داده جالب باشد، آن را به لیست کارهای خود اضافه می‌کنیم. "
   suggest-button: "پیشنهاد داده بدهید "
 
   # Show Work - Use Cases page - black content block
@@ -102,6 +103,6 @@
 
   # Methodology - Home page - black content block
   methodology-title: "روش کار ما"
-  methodology-descript: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam."
+  methodology-descript: "پلتفرم داده باز خود نیز باید باز باشد. یکی از ویژگی‌های پایگاه داده باز ایران این است که همه‌ی تکنولوژی به کار رفته و ساختار پلتفرم بر روی گیت‌هاب در دسترس عموم است. "
   methodology-button: "بیشتر بخوانید"
   methodology-button2: "مشارکت کنید"
