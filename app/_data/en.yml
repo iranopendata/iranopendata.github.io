@@ -36,7 +36,7 @@
 
   # Datasets Page
   data-title: Available Data
-  data-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut augue aliquet ligula aliquam faucibus a ac mauris. Sed sagittis tempor sapien ac sagittis.
+  data-descript:
   button-apply: Apply
   button-cancel: Cancel
   dataset-num-title1: Showing
