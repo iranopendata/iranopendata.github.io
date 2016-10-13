@@ -75,7 +75,7 @@
   partners-descript: 
 
   # Contact Page
-  contact-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt.
+  contact-descript: 
   name: Name
   email: Email
   subject: Subject
@@ -105,7 +105,7 @@
 
   # Methodology - Home page - black content block
   methodology-title: Our Methodology
-  methodology-descript: The main feature of Iran Open Data is that its entire technology process and platform behind is publicly available on Github.
+  methodology-descript: An open data platform should itself be open. A defining feature of Iran Open Data is that all of its technology processes, and the architecture of the platform are publicly available on Github
   methodology-button: Learn More
   methodology-button2: Contribute
 
