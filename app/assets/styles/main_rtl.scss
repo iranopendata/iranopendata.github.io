@@ -34,307 +34,310 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metadata-item-header {
-	font-family: 'rtlBold';
+  font-family: 'rtlBold';
+  &:nth-of-type(3n) {
+    clear: left;
+  }
 }
 
 .label-form {
-	font-family: 'rtlBold';
+  font-family: 'rtlBold';
 }
 
 .pagination-link-active {
-	font-family: 'rtlBold';
+  font-family: 'rtlBold';
 }
 
 .element-file-type {
-	font-family: 'rtlBold';
+  font-family: 'rtlBold';
 }
 
 .type-category {
-	font-family: 'rtlBold';
+  font-family: 'rtlBold';
 }
 
 .logo {
-	float: right;
+  float: right;
 }
 
 .nav-languages {
-	float: left;
-	.active {
-		font-family: 'rtlBold';
-	}
+  float: left;
+  .active {
+    font-family: 'rtlBold';
+  }
 }
 
 nav {
-	float: right;
-	@media screen and (max-width: 920px) {
-		float: initial;
-	}
+  float: right;
+  @media screen and (max-width: 920px) {
+    float: initial;
+  }
 }
 
 .menu-hamburger {
-	float: left;
+  float: left;
 }
 
 .nav-mobile {
-	@media screen and (max-width: 920px) {
-		right: initial;
-		left: 0;
-	}
+  @media screen and (max-width: 920px) {
+    right: initial;
+    left: 0;
+  }
 }
 
 .nav-list_item {
-	&:first-of-type {
-		margin-right: 3em;
-		margin-left: 0;
-		@media screen and (max-width: 960px) {
-			margin-right: 0em;
-		}
-	}
+  &:first-of-type {
+    margin-right: 3em;
+    margin-left: 0;
+    @media screen and (max-width: 960px) {
+      margin-right: 0em;
+    }
+  }
 }
 
 .nav-languages {
-	li {
-		&:first-of-type {
-			padding-right: 0em;
-			padding-left: 2em;
-			border-right: 0;
-			border-left: 1px solid $light-grey;
-			@media screen and (max-width: 960px) {
-				border-left: 0;
-				padding-right: 1em;
-			}
-		}
-	}
-	@media screen and (max-width: 960px) {
-		float: initial;
-	}
+  li {
+    &:first-of-type {
+      padding-right: 0em;
+      padding-left: 2em;
+      border-right: 0;
+      border-left: 1px solid $light-grey;
+      @media screen and (max-width: 960px) {
+        border-left: 0;
+        padding-right: 1em;
+      }
+    }
+  }
+  @media screen and (max-width: 960px) {
+    float: initial;
+  }
 }
 
 .section-feature_main {
-	float: right;
-	@media screen and (max-width: 768px) {
-		float: initial;
-	}
+  float: right;
+  @media screen and (max-width: 768px) {
+    float: initial;
+  }
 }
 
 .section-feature_secondary {
-	border-right: 4px solid #151515;
+  border-right: 4px solid #151515;
   padding-right: 4%;
   margin-right: 7%;
   border-left: 0;
   padding-left: 0;
   margin-left: 0;
   li {
-		@media screen and (max-width: 768px) {
-			float: right;
-			margin-right: 0;
-			margin-left: 4%;
-		}
-	}
+    @media screen and (max-width: 768px) {
+      float: right;
+      margin-right: 0;
+      margin-left: 4%;
+    }
+  }
   @media screen and (max-width: 768px) {
-  	border-right: 0;
-  	padding-right: 0;
-  	margin-right: 0;
+    border-right: 0;
+    padding-right: 0;
+    margin-right: 0;
   }
 }
 
 .button-secondary {
-	margin-right: 1.1em;
-	@media screen and (max-width: 440px) {
-		margin-right: 0;
-		float: initial;
-	}
+  margin-right: 1.1em;
+  @media screen and (max-width: 440px) {
+    margin-right: 0;
+    float: initial;
+  }
 }
 
 .section-black-header {
-	float: right;
+  float: right;
 }
 
 .section-black-description {
-	border-left: 0;
+  border-left: 0;
   padding-left: 0;
   margin-left: 0;
   border-right: 3px solid #fff;
   padding-right: 4%;
   margin-right: 6%;
   @media screen and (max-width: 768px) {
-  	border-right: 0;
+    border-right: 0;
   }
 }
 
 .sidebar {
-	float: right;
+  float: right;
 }
 
 .checkbox {
-	float: right;
+  float: right;
 }
 
 .wrapper-dropdown-sort {
-	select {
-		float: left;
-		width: 11.6rem;
-	}
-	&:after {
-		left: 1rem;
-		right: initial;
-	}
+  select {
+    float: left;
+    width: 11.6rem;
+  }
+  &:after {
+    left: 1rem;
+    right: initial;
+  }
 }
 
 .wrapper-dropdown-sort-sm .dropdown-sm-date {
-	width: 7.6rem;
+  width: 7.6rem;
 }
 
 .dropdown-resources {
-	float: right;
+  float: right;
 }
 
 .header-filter-resources {
-	@media screen and (max-width: 768px) {
-		float: right;
-		margin-right: 0;
-		margin-left: 1em;
-	}
+  @media screen and (max-width: 768px) {
+    float: right;
+    margin-right: 0;
+    margin-left: 1em;
+  }
 }
 
 .list-item-datarange {
-	float: right;
+  float: right;
   margin-right: 0em;
   margin-left: 1em;
 }
 
 .list-item-vertical {
-	.metadata-date {
-		left: 0;
-		right: initial;
-	}
+  .metadata-date {
+    left: 0;
+    right: initial;
+  }
 }
 
 .sort-filter {
-	float: left;
+  float: left;
 }
 
 .sort-filter-header {
-	float: right;
-	margin-left: .7em;
-	font-family: 'rtlBold';
+  float: right;
+  margin-left: .7em;
+  font-family: 'rtlBold';
 }
 
 .dropdown-categories {
-	right: initial;
-	left: 0;
+  right: initial;
+  left: 0;
 }
 
 .list-item-block {
-	float: right;
-	margin-right: 0em;
-	margin-left: 4.5em;
+  float: right;
+  margin-right: 0em;
+  margin-left: 4.5em;
 }
 
 .list-item-block-sm {
-	&:nth-child(2) {
-		margin-right: 0em;
-	}
-	&:nth-child(3) {
-		margin-left: 0em;
-	}
+  &:nth-child(2) {
+    margin-right: 0em;
+  }
+  &:nth-child(3) {
+    margin-left: 0em;
+  }
 }
 
 .section-black {
-	.list-item-block {
-		margin-right: 0;
-		&:nth-child(2) {
-			margin-left: 0;
-		}
-	}
+  .list-item-block {
+    margin-right: 0;
+    &:nth-child(2) {
+      margin-left: 0;
+    }
+  }
 }
 
 .faux-list-item {
-	.list-item-block {
-		&:nth-child(even) {
-			margin-left: 0;
-		}
-	}
+  .list-item-block {
+    &:nth-child(even) {
+      margin-left: 0;
+    }
+  }
 }
 
 .block-partners {
-	margin-top: .8em;
-	float: left;
-	border-left: 0;
-	margin-left: 0em;
-	padding-left: 0em;
-	border-right: 3px solid $black;
-	margin-right: 4em;
-	padding-right: 4em;
-	li {
-		@media screen and (max-width: 600px) {
-			float: right;
-			margin-right: 0;
-			margin-left: 4%;
-		}
-	}
+  margin-top: .8em;
+  float: left;
+  border-left: 0;
+  margin-left: 0em;
+  padding-left: 0em;
+  border-right: 3px solid $black;
+  margin-right: 4em;
+  padding-right: 4em;
+  li {
+    @media screen and (max-width: 600px) {
+      float: right;
+      margin-right: 0;
+      margin-left: 4%;
+    }
+  }
 }
 
 .wrapper-content-about {
-	p {
-		&:nth-of-type(3) {
-			float: right;
-		}
-	}
+  p {
+    &:nth-of-type(3) {
+      float: right;
+    }
+  }
 }
 
 .form-contact-subsection {
-	float: right;
-	@media screen and (max-width: 600px) {
-		float: none;
-	}
-	&:first-of-type {
-		margin-right: 0;
-		margin-left: 3.5em;
-	}
+  float: right;
+  @media screen and (max-width: 600px) {
+    float: none;
+  }
+  &:first-of-type {
+    margin-right: 0;
+    margin-left: 3.5em;
+  }
 }
 
 .metadata-item {
-	float: right;
+  float: right;
 }
 
 .wrapper-half {
-	float: right;
+  float: right;
 }
 
 .float-right {
-	float: left;
+  float: left;
 }
 
 .content-sidebar{
-	float: right;
+  float: right;
 }
 
 .icon-close:before, .icon-close:visited:before {
-	float: left;
+  float: left;
 }
 
 footer .button-standalone {
-	@media screen and (max-width: 440px) {
-		float: right;
-	}
+  @media screen and (max-width: 440px) {
+    float: right;
+  }
 }
 
 .button-grey {
-	margin-right: 1em;
+  margin-right: 1em;
 }
 
 #mc_embed_signup_scroll {
-	.mc-field-group {
-		float: right;
-	}
-	.clear {
-		float: right;
-		input {
-			@media screen and (max-width: 744px) {
-				margin-right: 0;
-				clear: right;
-			}
-		}
-	}
+  .mc-field-group {
+    float: right;
+  }
+  .clear {
+    float: right;
+    input {
+      @media screen and (max-width: 744px) {
+        margin-right: 0;
+        clear: right;
+      }
+    }
+  }
 }
