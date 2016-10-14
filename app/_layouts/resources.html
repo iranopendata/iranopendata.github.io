@@ -43,7 +43,7 @@ The following part removes dulpicated categories and invalid categories like bla
 				<ul class="list-type-none dropdown-resources-options">
 					{% for category in categories %}
 					<li class="list-item-filter link-filter">
-						<a href="#{{category | split:' ' | join:'-'}}">{{category}} <span class="filter-number">(2)</span></a>
+            <a href="/{{page.lang}}/resources#{{category | split:' ' | join:'-'}}">{{category}} <span class="filter-number">(2)</span></a>
 					</li>
 					{% endfor %}
 				</ul>
