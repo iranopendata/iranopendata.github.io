@@ -100,8 +100,7 @@
 
   # Get Involved - About page - black content block
   involved-title: Get Involved
-  involved-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
-  involved-button: Contact Us
+  involved-descript: There are a number of different ways you can get involved in the project: publish your datasets, suggest datasets, write ingest codes or sponsor us for more information! 
 
   # Methodology - Home page - black content block
   methodology-title: Our Methodology
