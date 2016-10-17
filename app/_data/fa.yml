@@ -58,8 +58,8 @@
   dataset-frequency: "گستره به روز رسانی"
   dataset-keywords: "کلمات کلیدی"
   dataset-license: "مجوز"
-  dataset-id: "ID"
-  button-download: "بارگذاری"
+  dataset-id: "شناسه"
+  button-download: "دریافت"
   button-share: "به اشتراک گذاری"
 
   # Resources Page
