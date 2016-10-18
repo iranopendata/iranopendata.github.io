@@ -68,20 +68,28 @@ h6 {
 
 .metadata-item {
 	float: left;
-	width: 25%;
-	line-height: 2.5em
+	width: 24%;
+	margin-bottom: 1em;
 }
 
 .metadata-item-header {
 	font-weight: 700;
-	&:nth-of-type(3n) {
-		clear: right;
-	}
+}
+
+.metadata-descript {
+	margin-right: .5em;
 }
 
 .metadata-lg {
 	@extend %clearfix;
 	margin-bottom: 1.5em;
+	margin-top: 2.5em;
+	li {
+		margin-right: .5em;
+		&:nth-of-type(odd) {
+			clear: both;
+		}
+	}
 }
 
 .description-md {
