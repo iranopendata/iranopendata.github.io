@@ -135,7 +135,7 @@ nav {
 
 .nav-list_item {
 	display: inline-block;
-	margin: 1.6em 1em 0;
+	margin: 2.1em 1em 0;
 	@media screen and (max-width: 920px) {
 		margin: 0;
 		padding: 1.6em 1em 1.6em;
@@ -266,6 +266,7 @@ nav {
 .faux-list-item {
 	margin-bottom: 3em;
 	@extend %clearfix;
+	display: inline-block;
 
 	.list-item-block {
 		&:nth-child(even) {
@@ -350,6 +351,7 @@ img {
 
 .content-sidebar {
 	float: left;
+	display: block;
 	@media screen and (min-width: 320px) {
 		width: 100%;
 	}

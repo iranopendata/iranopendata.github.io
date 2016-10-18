@@ -47,20 +47,20 @@ class Dataset extends Component {
       // Set the document title according to the metadata
       document.title = title;
 
-      let period_div = h('div');
-      let frequency_div = h('div');
+      let period_div = h('li');
+      let frequency_div = h('li');
 
       if (period.length > 0) {
-        period_div = h('div', {},
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
+        period_div = h('li', {},
+          h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-dates']),
           h('dd', {class: 'metadata-item'}, `${period[0]} - ${period[1]}`)
         );
       }
 
       if (frequency.length > 0) {
-        frequency_div = h('div', {}, 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
-          h('dd', {class: 'metadata-item'}, frequency),
+        frequency_div = h('li', {}, 
+          h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-frequency']),
+          h('span', {class: 'metadata-item'}, frequency),
         )
       }
 
@@ -69,39 +69,55 @@ class Dataset extends Component {
         h('span', {class: 'type-category type-category-lg'}, category),
         h('h1', {}, title),
         h('p', {class: 'description-md'}, description),
-        h('dl', {class: 'metadata-lg'},
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
-          h('dd', {class: 'metadata-item'},
-            h('a', {href: source_url}, source)
-           ),
+        h('ul', {class: 'metadata-lg list-type-none'},
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
+            h('span', {class: 'metadata-item metadata-descript'},
+              h('a', {href: source_url}, source)
+             ),
+          ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
-          h('dd', {class: 'metadata-item'}, name),
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-id']),
+            h('span', {class: 'metadata-item metadata-descript'}, name),
+          ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-keywords']),
-          h('dd', {class: 'metadata-item metadata-item-keywords'}, keywords),
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-keywords']),
+            h('span', {class: 'metadata-item metadata-item-keywords metadata-descript'}, keywords),
+          ),
 
-          period_div,
+            period_div,
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
-          h('dd', {class: 'metadata-item'}, maintainer),
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
+            h('span', {class: 'metadata-item metadata-descript'}, maintainer),
+          ),
 
-          frequency_div,
+            frequency_div,
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-license']),
-          h('dd', {class: 'metadata-item'}, license),
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-license']),
+            h('span', {class: 'metadata-item metadata-descript'}, license),
+          ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
-          h('dd', {class: 'metadata-item'}, moment(indexed_at).format("MMM. D, YYYY")),
-          
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
-          h('dd', {class: 'metadata-item'},
-            h('span', {class: 'element-file-type element-file-type-lg'}, format)
-           ),
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
+            h('span', {class: 'metadata-item metadata-descript'}, moment(indexed_at).format("MMM. D, YYYY")),
+          ),
 
-          h('dt', {class: 'metadata-item metadata-item-header'}, lang['dataset-updated']),
-          h('dd', {class: 'metadata-item'}, moment(indexed_at).format("MMM. D, YYYY"))
-         ),
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
+            h('span', {class: 'metadata-item metadata-descript'},
+              h('span', {class: 'element-file-type element-file-type-lg'}, format)
+             ),
+          ),
+
+          h('li', {},
+            h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-updated']),
+            h('span', {class: 'metadata-item metadata-descript'}, moment(indexed_at).format("MMM. D, YYYY"))
+          ),
+        ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download'])
       );
     }
