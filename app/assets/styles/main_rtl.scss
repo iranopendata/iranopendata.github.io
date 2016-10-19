@@ -4,38 +4,42 @@
 
 @font-face {
 	font-family: 'rtlFont';
-	src: url("../../assets/fonts/NotoNaskhArabic-Regular.ttf") format("ttf");
+	src: url("/assets/fonts/NotoNaskhArabic-Regular.ttf") format("truetype"),
+       url('/assets/fonts/NotoNaskhArabic-Regular.eot') format('eot'),  /* IE6–8 */
+       url('/assets/fonts/NotoNaskhArabic-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 @font-face {
 	font-family: 'rtlBold';
-	src: url("../../assets/fonts/NotoNaskhArabic-Bold.ttf") format("ttf");
+	src: url('/assets/fonts/NotoNaskhArabic-Bold.ttf') format('truetype'), /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+       url('/assets/fonts/NotoNaskhArabic-Bold.eot') format('eot'),  /* IE6–8 */
+       url('/assets/fonts/NotoNaskhArabic-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
 body {
   direction: rtl;
   text-align: right;
-  font-family: 'rtlFont';
+  font-family: 'rtlFont', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'rtlBold';
+	font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .normal-link, .normal-link:visited, p a, p a:visited {
-	font-family: 'rtlBold';
+	font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .button, .button:visited,  {
-	font-family: 'rtlBold';
+	font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .header-filter {
-	font-family: 'rtlBold';
+	font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .metadata-item-header {
-  font-family: 'rtlBold';
+  font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   &:nth-of-type(3n) {
     clear: left;
   }
@@ -47,19 +51,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .label-form {
-  font-family: 'rtlBold';
+  font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .pagination-link-active {
-  font-family: 'rtlBold';
+  font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .element-file-type {
-  font-family: 'rtlBold';
+  font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .type-category {
-  font-family: 'rtlBold';
+  font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .logo {
@@ -69,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-languages {
   float: left;
   .active {
-    font-family: 'rtlBold';
+    font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 }
 
@@ -226,7 +230,7 @@ nav {
 .sort-filter-header {
   float: right;
   margin-left: .7em;
-  font-family: 'rtlBold';
+  font-family: 'rtlBold', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .dropdown-categories {
