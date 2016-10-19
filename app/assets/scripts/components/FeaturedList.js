@@ -1,6 +1,7 @@
 import {h, render, Component} from 'preact';
+import {categoryMap, transformDatasetFromIndex} from '../utils';
 
-import {transformDatasetFromIndex} from '../utils';
+const lang = lang || PAGE_LANG;
 
 class FeaturedList extends Component {
   constructor () {
@@ -41,7 +42,7 @@ class FeaturedList extends Component {
       return h(
         'ul', {class: 'list-type-none'},
         h('li', {},
-          h('span', {class: 'type-category'}, featured1.category),
+          h('span', {class: 'type-category'}, categoryMap[lang][featured1.category]),
           h('h5', {class: 'header-with-description'},
             h('a', {class: 'text-link', 'href': `/${PAGE_LANG}/datasets/${featured1.name}`}, featured1.title)
            ),
@@ -54,7 +55,7 @@ class FeaturedList extends Component {
          ),
 
         h('li', {},
-          h('span', {class: 'type-category'}, featured2.category),
+          h('span', {class: 'type-category'}, categoryMap[lang][featured2.category]),
           h('h5', {class: 'header-with-description'},
             h('a', {class: 'text-link', 'href': `/${PAGE_LANG}/datasets/${featured2.name}`}, featured2.title)
            ),

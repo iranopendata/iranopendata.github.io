@@ -1,6 +1,7 @@
 import {h} from 'preact';
-import {invCategoryMap} from '../utils.js';
+import {categoryMap} from '../utils.js';
 
+const lang = lang || PAGE_LANG;
 
 const CategoryFilter = ({categories, checked, onClick}) => {
   let filterItems = [];
@@ -10,7 +11,7 @@ const CategoryFilter = ({categories, checked, onClick}) => {
     const selected = checkedSet.has(category);
     let item = h(
       'li', {class: `list-item-filter list-item-filter-${category}`},
-      h('label', {}, invCategoryMap[category],
+      h('label', {}, categoryMap[lang][category],
         ' ',
         h('span', {class: 'filter-number'}, `(${categories[category]})`),
         h('input', {
