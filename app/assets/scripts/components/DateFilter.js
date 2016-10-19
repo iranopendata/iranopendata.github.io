@@ -3,19 +3,17 @@ import {h} from 'preact';
 export default ({minMaxDates, selectedDates, onSelectDate}) => {
   let mindates = [], maxdates = [];
   let {min, max} = selectedDates;
-  for (var i = minMaxDates.min; i <= minMaxDates.max; i++) {
+  let minn = minMaxDates.min;
+  let maxx = minMaxDates.max;
+  
+  for (var i = minn; i <= maxx; i++) {
+    mindates.push(
+      h('option', {value: i, key: i}, i)
+    );
 
-    if (i <= max) {
-      mindates.push(
-        h('option', {value: i, key: i}, i)
-      );
-    }
-
-    if (i >= min) {
-      maxdates.push(
-        h('option', {value: i, key: i}, i)
-      );
-    }
+    maxdates.push(
+      h('option', {value: i, key: i}, i)
+    );
   }
 
   // Render

@@ -1,6 +1,7 @@
 import {h, Component} from 'preact';
-import {invCategoryMap} from '../utils';
+import {categoryMap} from '../utils';
 import moment from 'moment';
+const lang = lang || PAGE_LANG;
 
 // Listing
 export default ({
@@ -13,15 +14,16 @@ export default ({
   updated_at,
   name
 }) => {
+  let categories = category.map( (item) => categoryMap[lang][category]).join(", ");
   return h(
     'li', {class: `${category} list-item-vertical`},
-    h('span', {class: 'type-category'}, `${invCategoryMap[category]}`),
+    h('span', {class: 'type-category'}, categories),
     h('h5', {class: 'header-with-description'},
       h('a', {class: 'text-link', href: `/${PAGE_LANG}/datasets/${name}`}, title)
      ),
     h('dl', {class: 'metadata'},
       h('dt', {}, labels['datasets-source']), ': ',
-      h('dd', {}, h('a', {href: source_url}))
+      h('dd', {}, h('a', {href: source_url}), source)
      ),
     h('dl', {class: 'metadata metadata-date'},
       h('dt', {}, labels['datasets-updated']), ': ',

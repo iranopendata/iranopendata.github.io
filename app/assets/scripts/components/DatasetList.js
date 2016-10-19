@@ -81,7 +81,9 @@ class DatasetList extends Component {
     const checkedSet = new Set(component.state.checked);
     if (checkedSet.size > 0) {
       newDatasets = newDatasets.filter((dataset) => {
-        return checkedSet.has(dataset.category);
+        return dataset.category.reduce(function (prevItem, curItem) {
+           return checkedSet.has(curItem) && prevItem;
+        }, true);
       });
     }
 
@@ -121,7 +123,7 @@ class DatasetList extends Component {
         const datasets = component.transformDatasets(json.datasets);
 
         // Calculate min/max dates of datasets initially
-        let minMaxDates = {min: datasets[0].period[0], max: datasets[0].period[1]};
+        let minMaxDates = {min: datasets[0].period[0] || 1300, max: datasets[0].period[1] || 1400};
         datasets.forEach( (dataset) => {
           let min, max;
           [min, max] = dataset.period;
@@ -133,6 +135,7 @@ class DatasetList extends Component {
           fromAPI: datasets,
           checked: [],
           selectedDates: minMaxDates,
+          minMaxDates: Object.assign({}, minMaxDates),
           sort: 'update'
         });
       })
@@ -142,7 +145,7 @@ class DatasetList extends Component {
     ;
   }
 
-  render ({}, {fromAPI, checked, selectedDates}) {
+  render ({}, {fromAPI, checked, selectedDates, minMaxDates}) {
     const component = this;
     if (fromAPI) {
 
@@ -161,15 +164,6 @@ class DatasetList extends Component {
         } else {
           categoryCounts[category] += 1;
         }
-      });
-
-      // Calculate min/max dates of datasets
-      let minMaxDates = {min: datasets[0].period[0], max: datasets[0].period[1]};
-      datasets.forEach( (dataset) => {
-        let min, max;
-        [min, max] = dataset.period;
-        if (min < minMaxDates.min) { minMaxDates.min = min;}
-        if (max > minMaxDates.max) { minMaxDates.max = max;}
       });
 
       // Render!
