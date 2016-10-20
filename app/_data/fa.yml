@@ -81,6 +81,7 @@
   message: "پیام شما"
   other-ways: "راه‌های دیگر تماس"
   github: "گیت‌هاب"
+  facebook: "فیس بوک"
 
   # Suggest Dataset - data page - black content block
   suggest-title: "داده مورد نظر خود را پیدا نمی‌کنید؟"
