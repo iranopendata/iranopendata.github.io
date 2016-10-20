@@ -1,6 +1,6 @@
 import {h, Component} from 'preact';
 import {categoryMap} from '../utils';
-import moment from 'moment';
+import moment from 'moment-jalaali';
 const lang = lang || PAGE_LANG;
 
 // Listing
@@ -15,6 +15,10 @@ export default ({
   name
 }) => {
   let categories = category.map( (item) => categoryMap[lang][item]).join(", ");
+  let date = moment(updated_at).format('MMM. D, YYYY');
+  if (lang == 'fa') {
+   date = moment(updated_at).format('jYYYY/jM/jD');
+  }
   return h(
     'li', {class: `${category[0]} list-item-vertical`},
     h('span', {class: 'type-category'}, categories),
@@ -27,7 +31,7 @@ export default ({
      ),
     h('dl', {class: 'metadata metadata-date'},
       h('dt', {}, labels['datasets-updated']), ': ',
-      h('dd', {}, moment(updated_at).format("MMM. D, YYYY"))
+      h('dd', {}, date)
      ),
     h('p', {class: 'width-shortened'}, description),
     h('ul', {class: 'list-type-none'},
