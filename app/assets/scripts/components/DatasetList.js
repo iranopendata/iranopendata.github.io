@@ -162,7 +162,11 @@ class DatasetList extends Component {
       const listings = datasets.map ((dataset) => h(Listing, dataset));
 
       // Count categories to render category filter
-      const categories = fromAPI.map ( (dataset) => dataset.category).sort();
+      const categories = fromAPI.map ( (dataset) => dataset.category).reduce((a, b) => {
+        // flatten arrays
+        return a.concat(b);
+      }).sort();
+
       let categoryCounts = {};
       categories.forEach( (category) => {
         if (!categoryCounts[category]) {
