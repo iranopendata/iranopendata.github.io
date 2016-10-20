@@ -1,4 +1,16 @@
 /*Type*/
+
+@font-face {
+	font-family: 'rtlFont';
+	src: url("/assets/fonts/NotoNaskhArabic-Regular.ttf") format("truetype"),
+       url('/assets/fonts/NotoNaskhArabic-Regular.eot') format('eot'),  /* IE6–8 */
+       url('/assets/fonts/NotoNaskhArabic-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+#nav-link-farsi {
+	font-family: 'rtlFont';
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $header-font;
 }

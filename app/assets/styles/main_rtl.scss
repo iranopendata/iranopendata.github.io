@@ -20,6 +20,7 @@ body {
   text-align: right;
   font-family: 'rtlFont', 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
   overflow-x: hidden;
+  font-size: .8em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -185,8 +186,9 @@ nav {
 
 .wrapper-dropdown-sort {
   select {
-    float: left;
-    width: 11.6rem;
+    float: right;
+    width: 13.6rem;
+    -webkit-appearance: none;
   }
   &:after {
     left: 1rem;
@@ -195,7 +197,7 @@ nav {
 }
 
 .wrapper-dropdown-sort-sm .dropdown-sm-date {
-  width: 7.6rem;
+  width: 9.6rem;
 }
 
 .dropdown-resources {
@@ -303,7 +305,7 @@ nav {
   }
   &:first-of-type {
     margin-right: 0;
-    margin-left: 3.5em;
+    margin-left: 2em;
   }
 }
 

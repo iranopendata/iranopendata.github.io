@@ -23,6 +23,7 @@ input {
 
 .wrapper-filter-item {
 	margin-bottom: 2.5em;
+	list-style-type: none;
 }
 
 .label-form {
@@ -65,12 +66,13 @@ textarea {
 
 
 .wrapper-dropdown-sort {
-	padding: 0 0 0 0.1rem;
+  padding: 0 0 0 0.1rem;
   width: 11rem;
   height: 1.8rem;
   overflow: hidden;
   position: relative;
   border: 1px solid $light-grey;
+  background-color: #fff;
 
   &:after {
   	background-image: url("/assets/graphics/collecticons/chevron-down.svg");
