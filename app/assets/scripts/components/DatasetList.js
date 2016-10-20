@@ -126,8 +126,11 @@ class DatasetList extends Component {
         const datasets = component.transformDatasets(json.datasets);
 
         // Calculate min/max dates of datasets initially
-        let minMaxDates = {min: datasets[0].period[0] || 1300, max: datasets[0].period[1] || 1400};
-        datasets.forEach( (dataset) => {
+        const datasetsThatHavePeriod = datasets.filter((dataset) => {
+          return dataset.period.length > 0;
+        })
+        let minMaxDates = {min: datasetsThatHavePeriod[0].period[0], max: datasetsThatHavePeriod[0].period[1]};
+        datasetsThatHavePeriod.forEach( (dataset) => {
           let min, max;
           [min, max] = dataset.period;
           if (min < minMaxDates.min) { minMaxDates.min = min;}
