@@ -39,10 +39,13 @@ class FeaturedList extends Component {
 
   render ({}, {featured1, featured2}) {
     if (featured1 && featured2) {
+
+      let featured1Categories = featured1.category.map( (item) => categoryMap[PAGE_LANG][item]).join(", ");
+      let featured2Categories = featured2.category.map( (item) => categoryMap[PAGE_LANG][item]).join(", ");
       return h(
         'ul', {class: 'list-type-none'},
         h('li', {},
-          h('span', {class: 'type-category'}, categoryMap[lang][featured1.category]),
+          h('span', {class: 'type-category'}, featured1Categories),
           h('h5', {class: 'header-with-description'},
             h('a', {class: 'text-link', 'href': `/${PAGE_LANG}/datasets/${featured1.name}`}, featured1.title)
            ),
@@ -55,7 +58,7 @@ class FeaturedList extends Component {
          ),
 
         h('li', {},
-          h('span', {class: 'type-category'}, categoryMap[lang][featured2.category]),
+          h('span', {class: 'type-category'}, featured2Categories),
           h('h5', {class: 'header-with-description'},
             h('a', {class: 'text-link', 'href': `/${PAGE_LANG}/datasets/${featured2.name}`}, featured2.title)
            ),

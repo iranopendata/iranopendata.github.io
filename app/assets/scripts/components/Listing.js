@@ -14,9 +14,9 @@ export default ({
   updated_at,
   name
 }) => {
-  let categories = category.map( (item) => categoryMap[lang][category]).join(", ");
+  let categories = category.map( (item) => categoryMap[lang][item]).join(", ");
   return h(
-    'li', {class: `${category} list-item-vertical`},
+    'li', {class: `${category[0]} list-item-vertical`},
     h('span', {class: 'type-category'}, categories),
     h('h5', {class: 'header-with-description'},
       h('a', {class: 'text-link', href: `/${PAGE_LANG}/datasets/${name}`}, title)
