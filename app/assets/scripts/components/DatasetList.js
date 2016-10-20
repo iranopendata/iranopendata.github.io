@@ -82,15 +82,18 @@ class DatasetList extends Component {
     if (checkedSet.size > 0) {
       newDatasets = newDatasets.filter((dataset) => {
         return dataset.category.reduce(function (prevItem, curItem) {
-           return checkedSet.has(curItem) && prevItem;
-        }, true);
+           return checkedSet.has(curItem) || prevItem;
+        }, false);
       });
     }
 
     // Filter datasets by date
     const {min, max}  = component.state.selectedDates;
     newDatasets = newDatasets.filter((dataset) => {
-      return dataset.period[0] <= max && dataset.period[1] >= min;
+      // only filter if the dataset covers a period
+      if (dataset.period.length > 0) {
+        return dataset.period[0] <= max && dataset.period[1] >= min;
+      } else { return true;}
     });
 
     // Sort datasets

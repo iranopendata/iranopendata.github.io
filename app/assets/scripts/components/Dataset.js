@@ -43,7 +43,9 @@ class Dataset extends Component {
     keywords,
     name
   }) {
+    
     if (title) {
+      let categories = category.map( (item) => categoryMap[PAGE_LANG][item]).join(", ");
       // Set the document title according to the metadata
       document.title = title;
 
@@ -65,8 +67,8 @@ class Dataset extends Component {
       }
 
       return h(
-        'div', {class: `${category} content-dataset`},
-        h('span', {class: 'type-category type-category-lg'}, category),
+        'div', {class: `${category[0]} content-dataset`},
+        h('span', {class: 'type-category type-category-lg'}, categories),
         h('h1', {}, title),
         h('p', {class: 'description-md'}, description),
         h('ul', {class: 'metadata-lg list-type-none'},

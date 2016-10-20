@@ -99,7 +99,7 @@ function transformDatasetFromAPI (dataset, lang) {
   });
 
   return {
-    'category': categoryMap[dataset.category],
+    'category': dataset.category,
     'title': title[lang],
     'url': dataset.resources[0].url,
     'description': description[lang],
