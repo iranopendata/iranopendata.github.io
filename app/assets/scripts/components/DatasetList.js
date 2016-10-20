@@ -177,6 +177,12 @@ class DatasetList extends Component {
       });
 
       // Render!
+      let listing_length = listings.length;
+      let sentence = [labels['showing'], listings.length, labels['datasets']];
+      let sentenceJoined = sentence.join(' ');
+      if (PAGE_LANG === 'fa') {
+        sentenceJoined = sentence.reverse().join(' ');
+      }
       return  h(
         'div', {class: 'content-internal wrapper-datasets'},
         h('a', {class:'button button-filter', href:'', onclick:filterDatasets}, labels['filter-title']),
@@ -201,7 +207,7 @@ class DatasetList extends Component {
           ),
          ),
         h('div', {class: 'content-sidebar'},
-          h('h6', {class: 'content-sidebar-header'}, `Showing ${listings.length} Datasets`),
+          h('h6', {class: 'content-sidebar-header'}, sentenceJoined),
           h(SortFilter, {sort: component.state.sort, onSort: component.onSort}),
           h('ul', {class: 'list-type-none'}, listings)
          )

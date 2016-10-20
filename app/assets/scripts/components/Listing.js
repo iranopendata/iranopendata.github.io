@@ -26,11 +26,11 @@ export default ({
       h('a', {class: 'text-link', href: `/${PAGE_LANG}/datasets/${name}`}, title)
      ),
     h('dl', {class: 'metadata'},
-      h('dt', {}, labels['datasets-source']), ': ',
+      h('dt', {}, labels['source']), ': ',
       h('dd', {}, h('a', {href: source_url}), source)
      ),
     h('dl', {class: 'metadata metadata-date'},
-      h('dt', {}, labels['datasets-updated']), ': ',
+      h('dt', {}, labels['dataset-updated']), ': ',
       h('dd', {}, date)
      ),
     h('p', {class: 'width-shortened'}, description),

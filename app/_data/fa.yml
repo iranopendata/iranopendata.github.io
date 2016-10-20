@@ -16,6 +16,8 @@
   date-title: "تاریخ"
   source: "منبع"
   to: "به"
+  showing: Showing
+  datasets: Datasets
 
   # footer
   button-github: "ما را در گیت‌هاب پیدا کنید"
@@ -42,8 +44,6 @@
   button-cancel: "لغو"
   dataset-num-title1: "نمایش"
   dataset-num-title2: "داده"
-  datasets-source: Source
-  datasets-updated: Updated
   sortby-option1: "داده‌های تازه اضافه شده"
   sortby-option2: "به ترتیب الفبا"
   previous: "قبلی"

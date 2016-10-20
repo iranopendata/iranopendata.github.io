@@ -16,6 +16,8 @@
   date-title: Date
   source: Source
   to: to
+  showing: Showing
+  datasets: Datasets
 
   # footer
   button-github: Find Us On Github

@@ -34,7 +34,7 @@ export default ({minMaxDates, selectedDates, onSelectDate}) => {
           value: min
         }, mindates),
       ),
-      h('span', {}, ' to '),
+      h('span', {}, labels['to']),
       h('div', {class: 'wrapper-dropdown-sort wrapper-dropdown-sort-sm'},
         h('select', { class: 'dropdown-sm dropdown-sm-date',
           onChange: (e) => {
