@@ -82,6 +82,7 @@
   message: Message
   other-ways: Other Ways to Reach Out
   github: Github
+  facebook: Facebook
 
   # Suggest Dataset - data page - black content block
   suggest-title: Don't see what you're looking for?
