@@ -15,9 +15,9 @@
   format-title: "فرمت"
   date-title: "تاریخ"
   source: "منبع"
-  to: "به"
-  showing: نمایش
-  datasets: مجموعه داده
+  to: "تا"
+  showing: مجموعه داده
+  datasets: نمایش
 
   # footer
   button-github: "ما را در گیت‌هاب پیدا کنید"
