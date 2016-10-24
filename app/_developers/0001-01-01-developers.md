@@ -4,4 +4,8 @@ title: Developers
 lang: en
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra leo sed libero bibendum pharetra vitae at nibh. Praesent quis sem mattis, ullamcorper ligula sed, venenatis metus. Maecenas ornare tempor eleifend. Vivamus eleifend congue erat, quis rhoncus leo semper ac. In efficitur justo eu mattis vestibulum. Nullam auctor dui eros, eu pharetra erat molestie eu. Sed in nisl risus. Aenean posuere quam ac sapien semper molestie. Nunc congue nulla mi, et consequat tellus dapibus ac. Fusce eget magna ante. Vestibulum quis varius libero. Proin ac tellus eu massa consequat fringilla quis id eros. Etiam laoreet fermentum nibh vel auctor. Cras sed ipsum ac nunc consequat interdum eu quis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Iran Open Data would like to develop a community of developerswho can help with its further development. If you are a developer, there are a number of ways that you can help us, dependent on your background or interest: 
+- API integration: using IOD data feeds (APIs) in the application and services that you are developing.  
+- Visualisations: one of the challenges is making data come to life. Have you found a great way of displaying our data? Does it combine with other data to give a new insight? Please share them with us.
+- Comments:  We need your comments on our methodology and its design and code. Please share your comments and feedback with us.
+
