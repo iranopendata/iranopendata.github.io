@@ -16,8 +16,8 @@
   date-title: "تاریخ"
   source: "منبع"
   to: "به"
-  showing: Showing
-  datasets: Datasets
+  showing: نمایش
+  datasets: مجموعه داده
 
   # footer
   button-github: "ما را در گیت‌هاب پیدا کنید"
