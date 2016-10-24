@@ -91,11 +91,11 @@ textarea {
 	select {
     background: transparent;
     border: 0;
-    height: 1.8rem;
-    padding: 0.5rem;
+    padding: .4rem .5rem .6rem;
     width: 15rem;
     cursor: pointer;
     color: inherit;
+    -webkit-appearance: caret;
 
     &:focus {
       outline: none;
