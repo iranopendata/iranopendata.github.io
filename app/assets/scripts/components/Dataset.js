@@ -1,6 +1,6 @@
 import {h, render, Component} from 'preact';
 import {transformDatasetFromAPI, categoryMap} from '../utils';
-import moment from 'moment'
+import moment from 'moment-jalaali';
 
 import 'whatwg-fetch';
 class Dataset extends Component {
@@ -46,6 +46,14 @@ class Dataset extends Component {
     
     if (title) {
       let categories = category.map( (item) => categoryMap[PAGE_LANG][item]).join(", ");
+      let updated_at_text = moment(updated_at).format("MMM. D, YYYY");
+      let indexed_at_text = moment(indexed_at).format("MMM. D, YYYY");
+
+      if (PAGE_LANG == 'fa') {
+        updated_at_text = moment(updated_at).format('jYYYY/jM/jD');
+        indexed_at_text = moment(indexed_at).format('jYYYY/jM/jD');
+      }
+
       // Set the document title according to the metadata
       document.title = title;
 
@@ -76,7 +84,7 @@ class Dataset extends Component {
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
             h('span', {class: 'metadata-item metadata-descript'},
               h('a', {href: source_url}, lang['dataset-source'])
-             ),
+            ),
           ),
 
           h('li', {},
@@ -89,14 +97,14 @@ class Dataset extends Component {
             h('span', {class: 'metadata-item metadata-item-keywords metadata-descript'}, keywords),
           ),
 
-            period_div,
+          period_div,
 
           h('li', {},
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-maintainer']),
             h('span', {class: 'metadata-item metadata-descript'}, maintainer),
           ),
 
-            frequency_div,
+          frequency_div,
 
           h('li', {},
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-license']),
@@ -105,19 +113,19 @@ class Dataset extends Component {
 
           h('li', {},
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-added']),
-            h('span', {class: 'metadata-item metadata-descript'}, moment(indexed_at).format("MMM. D, YYYY")),
+            h('span', {class: 'metadata-item metadata-descript'}, indexed_at_text),
           ),
 
           h('li', {},
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-formats']),
             h('span', {class: 'metadata-item metadata-descript'},
               h('span', {class: 'element-file-type element-file-type-lg'}, format)
-             ),
+            ),
           ),
 
           h('li', {},
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-updated']),
-            h('span', {class: 'metadata-item metadata-descript'}, moment(indexed_at).format("MMM. D, YYYY"))
+            h('span', {class: 'metadata-item metadata-descript'}, updated_at_text)
           ),
         ),
         h('a', {class: 'button', href: url, download: url.substring(url.lastIndexOf('/')+1)}, lang['button-download'])
@@ -126,5 +134,4 @@ class Dataset extends Component {
     return h('div');
   }
 }
-
 module.exports = Dataset;
