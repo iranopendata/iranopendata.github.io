@@ -71,7 +71,8 @@ function onReady () {
     }
 
     else {
-      page_content.innerHTML = '<p style="margin: 100px;">404 - Not Found</p>';
+      var errorText = "<p style='text-align: center; margin-bottom: 20em; font-size: 1em;'>Sorry, we can't seem to find the page you're looking for. Try going to the <a href='/"+PAGE_LANG+"'>homepage</a> or checkout some of our <a href='/"+PAGE_LANG+"/datasets'>datasets</a.</p>"
+      page_content.innerHTML = '<h2 style="text-align: center; margin-top: 5em; margin-bottom: .4em;">404 - Page Not Found</h2>' + errorText;
     }
 
   });
