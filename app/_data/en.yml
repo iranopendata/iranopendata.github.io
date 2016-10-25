@@ -18,6 +18,7 @@
   to: to
   showing: Showing
   datasets: Datasets
+  no_use_cases: "There are currently no English use cases available."
 
   # footer
   button-github: Find Us On Github
