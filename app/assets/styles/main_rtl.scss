@@ -80,6 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
   float: right;
+  font-size: 1.1em;
   @media screen and (max-width: 920px) {
     float: initial;
   }
@@ -97,6 +98,7 @@ nav {
 }
 
 .nav-list_item {
+  margin-top: 1.5em;
   &:first-of-type {
     margin-right: 3em;
     margin-left: 0;
