@@ -1,14 +1,23 @@
 {% assign lang = site.data[page.lang][0] %}
 
-<section class="section-black">
-	<div class="wrapper wrapper-content">
-		<div class="centered-content">
-			<h2 class="section-black-header">{{lang.methodology-title}}</h2>
-			<div class="section-black-description">
-				<p class="description-md">{{lang.methodology-descript}}</p>
-				<a class="button button-white" href="/{{page.lang}}/about/">{{lang.methodology-button}}</a>
-				<a class="button button-white button-secondary" href="/{{page.lang}}/developers/">{{lang.methodology-button2}}</a>
-			</div>
-		</div>
-	</div>
+{% for usecase in site.usecases %}
+  {% if usecase.lang == page.lang %}
+    {% assign counter = counter | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% if counter > 0 %}
+  <section class="section-black">
+{% else %}
+  <section class="section-black section-black-last">
+{% endif %}
+  <div class="wrapper wrapper-content">
+    <div class="centered-content">
+      <h2 class="section-black-header">{{lang.methodology-title}}</h2>
+      <div class="section-black-description">
+        <p class="description-md">{{lang.methodology-descript}}</p>
+        <a class="button button-white" href="/{{page.lang}}/about/">{{lang.methodology-button}}</a>
+        <a class="button button-white button-secondary" href="/{{page.lang}}/developers/">{{lang.methodology-button2}}</a>
+      </div>
+    </div>
+  </div>
 </section>

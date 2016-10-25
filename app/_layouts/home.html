@@ -16,45 +16,50 @@ featured2: mhmelih16
 	</div>
 </section>
 {% include methodology-home.html %}
-	<section  class="wrapper wrapper-content">
-		<h2>{{lang.use_cases}}</h2>
-		<p class="description-md width-shortened">{{lang.homepage-usecases-descript}}</p>
-		<div class="feature-overlay">
-			{% for usecase in site.usecases %}
-				{% if usecase.featured == true %}
-				<img class="img-feature" src="/assets/graphics/{{usecase.img}}">
-				<div class="overlay-description">
-					<span class="type-category">{{lang.featured}}</span>
-					<h5><a target="_blank"  class="text-link" href="{{lang.homepage-usecase-link}}">{{usecase.title}}</a></h5>
-					<p class="width-shortened">{{usecase.description}}</p>
-					<a target="_blank" href="{{usecase.link}}" class="normal-link" href="">{{lang.homepage-usecase-link}}</a>
-				</div>
-				{% endif %}
-			{% endfor %}
-		</div>
-		<a class="button" href="/{{page.lang}}/usecases/">{{lang.homepage-usecases-button}}</a>
-	</div>
-</section>
-
+{% for usecase in site.usecases %}
+  {% if usecase.lang == page.lang %}
+    {% assign counter = counter | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% if counter > 0 %}
+  <section  class="wrapper wrapper-content">
+    <h2>{{lang.use_cases}}</h2>
+    <p class="description-md width-shortened">{{lang.homepage-usecases-descript}}</p>
+    <div class="feature-overlay">
+      {% for usecase in site.usecases %}
+        {% if usecase.featured == true %}
+          <img class="img-feature" src="/assets/graphics/{{usecase.img}}">
+          <div class="overlay-description">
+            <span class="type-category">{{lang.featured}}</span>
+            <h5><a target="_blank"  class="text-link" href="{{lang.homepage-usecase-link}}">{{usecase.title}}</a></h5>
+            <p class="width-shortened">{{usecase.description}}</p>
+            <a target="_blank" href="{{usecase.link}}" class="normal-link" href="">{{lang.homepage-usecase-link}}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <a class="button" href="/{{page.lang}}/usecases/">{{lang.homepage-usecases-button}}</a>
+  </section>
+{% endif %}
 <script>
- const featured = {
-     'featured1': '{{page.featured1}}',
-     'featured2': '{{page.featured2}}'
- }
- const lang = {
-     'featured-source': '{{lang.homepage-featured-source}}',
-     'button-share': '{{lang.button-share}}',
-     'button-download': '{{lang.button-download}}',
-     'dataset-secondary-title': '{{lang.dataset-secondary-title}}',
-     'dataset-id': '{{lang.dataset-id}}',
-     'dataset-dates': '{{lang.dataset-dates}}',
-     'dataset-formats': '{{lang.dataset-formats}}',
-     'dataset-source': '{{lang.dataset-source}}',
-     'dataset-added': '{{lang.dataset-added}}',
-     'dataset-updated': '{{lang.dataset-updated}}',
-     'dataset-maintainer': '{{lang.dataset-maintainer}}',
-     'dataset-frequency': '{{lang.dataset-frequency}}',
-     'dataset-keywords': '{{lang.dataset-keywords}}',
-     'dataset-license': '{{lang.dataset-license}}'
- }
+  const featured = {
+    'featured1': '{{page.featured1}}',
+    'featured2': '{{page.featured2}}'
+  }
+const lang = {
+  'featured-source': '{{lang.homepage-featured-source}}',
+  'button-share': '{{lang.button-share}}',
+  'button-download': '{{lang.button-download}}',
+  'dataset-secondary-title': '{{lang.dataset-secondary-title}}',
+  'dataset-id': '{{lang.dataset-id}}',
+  'dataset-dates': '{{lang.dataset-dates}}',
+  'dataset-formats': '{{lang.dataset-formats}}',
+  'dataset-source': '{{lang.dataset-source}}',
+  'dataset-added': '{{lang.dataset-added}}',
+  'dataset-updated': '{{lang.dataset-updated}}',
+  'dataset-maintainer': '{{lang.dataset-maintainer}}',
+  'dataset-frequency': '{{lang.dataset-frequency}}',
+  'dataset-keywords': '{{lang.dataset-keywords}}',
+  'dataset-license': '{{lang.dataset-license}}'
+}
 </script>
