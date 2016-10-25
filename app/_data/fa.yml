@@ -16,8 +16,9 @@
   date-title: "تاریخ"
   source: "منبع"
   to: "تا"
-  showing: مجموعه داده
-  datasets: نمایش
+  showing: "مجموعه داده"
+  datasets: "نمایش"
+  no_use_cases: "برای داده‌ها نمونه کاربرد وجود ندارد"
 
   # footer
   button-github: "ما را در گیت‌هاب پیدا کنید"

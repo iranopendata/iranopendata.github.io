@@ -5,34 +5,43 @@ layout: default
 <section>
 	<div class="wrapper wrapper-content">
 		<h1>{{lang.use_cases}}</h1>
-		<div class="feature-overlay">
-			{% for usecase in site.usecases %}
-				{% if usecase.featured == true %}
-					<img class="img-feature" src="/assets/graphics/{{usecase.img}}">
-					<div class="overlay-description">
-						<span class="type-category">{{lang.featured}}</span>
-						<h4><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h4>
-						<p class="width-shortened">{{usecase.description}}</p>
-						<a target="_blank" class="normal-link" href="{{usecase.link}}">{{homepage-usecase-link}}</a>
-					</div>
-				{% endif %}
-			{% endfor %}
-		</div>
-		<ul class="list-type-none">
-			{% for usecase in site.usecases %}
-				{% if usecase.featured == false %}
-					<li class="list-item-block list-item-block-sm">
-						<a target="_blank" href="{{usecase.link}}"><img class="img-feature image-usecase" src="/assets/graphics/{{usecase.img}}"></a>
-						<h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
-						<dl class="metadata">
-							<dt>{{lang.source}}:</dt>
-							<dd>{{usecase.source}}</dd>
-						</dl>
-						<p>{{usecase.description}}</p>
-					</li>
-				{% endif %}
-			{% endfor %}
-		</ul>
-	</div>
+    {% assign counter = 0 %}
+    {% for usecase in site.usecases %}
+      {% if usecase.lang == page.lang %}
+        {% assign counter = counter | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if counter == 0 %}
+      {{lang.no_use_cases}}
+    {% endif %}
+    <div class="feature-overlay">
+      {% for usecase in site.usecases %}
+        {% if usecase.lang == page.lang and usecase.featured == true %}
+          <img class="img-feature" src="/assets/graphics/{{usecase.img}}">
+          <div class="overlay-description">
+            <span class="type-category">{{lang.featured}}</span>
+            <h4><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h4>
+            <p class="width-shortened">{{usecase.description}}</p>
+            <a target="_blank" class="normal-link" href="{{usecase.link}}">{{homepage-usecase-link}}</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <ul class="list-type-none">
+      {% for usecase in site.usecases %}
+        {% if usecase.lang == page.lang and usecase.featured == false %}
+          <li class="list-item-block list-item-block-sm">
+            <a target="_blank" href="{{usecase.link}}"><img class="img-feature image-usecase" src="/assets/graphics/{{usecase.img}}"></a>
+            <h5 class="header-with-description"><a target="_blank" class="text-link" href="{{usecase.link}}">{{usecase.title}}</a></h5>
+            <dl class="metadata">
+              <dt>{{lang.source}}:</dt>
+              <dd>{{usecase.source}}</dd>
+            </dl>
+            <p>{{usecase.description}}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </section>
 {% include show-work.html %}

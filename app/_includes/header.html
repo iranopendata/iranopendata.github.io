@@ -10,8 +10,16 @@
 					<ul class="nav-list list-type-none">
             {% if page.id == 'data' %}<li class="nav-list_item active data">{% else %}<li class="nav-list_item data">{% endif %}
               <a class="nav-link" href="/{{page.lang}}/datasets/">{{lang.data}}</a></li>
-            {% if page.id == 'usecases' %}<li class="nav-list_item active usecases">{% else %}<li class="nav-list_item usecases">{% endif %}
+            {% assign counter = 0 %}
+            {% for usecase in site.usecases %}
+              {% if usecase.lang == page.lang %}
+                {% assign counter = counter | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+            {% if counter > 0 %}
+              {% if page.id == 'usecases' %}<li class="nav-list_item active usecases">{% else %}<li class="nav-list_item usecases">{% endif %}
 						  <a class="nav-link" href="/{{page.lang}}/usecases/">{{lang.use_cases}}</a></li>
+            {% endif %}
             {% if page.id == 'resources' %}<li class="nav-list_item active resources">{% else %}<li class="nav-list_item resources">{% endif %}
 						  <a class="nav-link" href="/{{page.lang}}/resources/">{{lang.resources}}</a></li>
             {% if page.id == 'developers' %}<li class="nav-list_item active developers">{% else %}<li class="nav-list_item developers">{% endif %}
