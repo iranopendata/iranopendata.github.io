@@ -40,6 +40,22 @@ const categoryMap = {
   }
 };
 
+const frequencyMap = {
+  'fa': {
+    'daily': 'روزانه',
+    'weekly': 'هفتگی',
+    'monthly': 'ماهانه',
+    'quarterly': 'فصلی',
+    'yearly': 'سالانه'
+  },
+  'en': {
+    'daily': 'Daily',
+    'weekly': 'Weekly',
+    'monthly': 'Monthly',
+    'quarterly': 'Quarterly',
+    'yearly': 'Yearly'
+  }
+};
 
 const invCategoryMap = {};
 for (var prop in categoryMap) {
@@ -111,7 +127,7 @@ function transformDatasetFromAPI (dataset, lang) {
     'name': dataset.name,
     'source_url': dataset.author.web,
     'maintainer': maintainer[lang],
-    'frequency': dataset.frequency || "",
+    'frequency': dataset.frequency ? frequencyMap[lang][dataset.frequency]: "",
     'license': dataset.license,
     'keywords': keywords[lang]
   };
