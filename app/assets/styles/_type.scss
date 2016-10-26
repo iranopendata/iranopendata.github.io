@@ -21,7 +21,7 @@ h1 {
 	@media screen and (min-width: 320px) {
 		font-size: 3.2em;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		font-size: 4.2em;
 	}
 }
@@ -32,7 +32,7 @@ h2 {
 	@media screen and (min-width: 320px) {
 		font-size: 2.4em;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		font-size: 2.85em;
 	}
 }
@@ -101,6 +101,15 @@ h6 {
 		&:nth-of-type(odd) {
 			clear: both;
 		}
+		@media screen and (max-width: 766px) {
+			clear: both;
+			.metadata-item-header {
+				width: 50%;
+			}
+			.metadata-descript {
+				width: 40%;
+			}
+		}
 	}
 }
 
@@ -109,7 +118,7 @@ h6 {
 	@media screen and (min-width: 320px) {
 		font-size: 1em;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		font-size: 1.1em;
 	}
 }
@@ -120,7 +129,7 @@ h6 {
 	@media screen and (min-width: 320px) {
 		font-size: 1em;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		font-size: 1.15em;
 	}
 }
@@ -147,7 +156,7 @@ h6 {
 	@media screen and (min-width: 320px) {
 		font-size: 4em;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		font-size: 5em;
 	}
 }
