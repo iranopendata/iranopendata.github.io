@@ -67,7 +67,7 @@
 	@media screen and (min-width: 320px) {
 		margin-left: 0;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		margin-left: 1.1em;
 	}
 }
@@ -89,7 +89,7 @@
 	@media screen and (min-width: 320px) {
 		display: inherit;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		display: none;
 	}
 }
@@ -107,7 +107,7 @@
 }
 
 .button-contact {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 766px) {
 		float: none;
 		clear: left;
 		display: block;
@@ -116,7 +116,7 @@
 
 .filter-buttons-mobile {
 	display: none;
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 766px) {
 		display: initial;
 	}
 }

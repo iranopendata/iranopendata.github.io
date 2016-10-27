@@ -35,15 +35,6 @@ function closeResourceList () {
 }
 
 
-function closeDataFilter (e) {
-	e.preventDefault();
-  document.querySelector('.sidebar').classList.remove('open');
-}
-
-function reviseDataFilter () {
-  document.querySelector('body').classList.remove('filter-overlay');
-}
-
 function onReady () {
   const page_content = document.getElementById('page-content');
   const unlisten = history.listen((location, action) => {
@@ -117,23 +108,6 @@ function onReady () {
     dropdown.addEventListener('click', scrollTo);
     document.addEventListener('click', closeResourceList);
   }
-
-  var buttonFilterApply = document.querySelector('.button-filter-apply');
-  if (buttonFilterApply) {
-    buttonFilterApply.addEventListener('click', closeDataFilter);
-  }
-
-  var buttonFilterCancel = document.querySelector('.button-filter-cancel');
-  if (buttonFilterCancel) {
-    buttonFilterCancel.addEventListener('click', closeDataFilter);
-  }
-
-  var iconClose = document.querySelector('.icon-close');
-  if (iconClose) {
-    iconClose.addEventListener('click', closeDataFilter);
-  }
-
-  document.addEventListener('click', reviseDataFilter);
 
   //-------------------//
   // RENDER REACT

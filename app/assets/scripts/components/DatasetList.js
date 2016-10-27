@@ -23,6 +23,12 @@ function filterDatasets (e) {
 	}
 }
 
+function closeDataFilter (e) {
+	e.preventDefault();
+  document.querySelector('.sidebar').classList.remove('open');
+  document.querySelector('body').classList.remove('filter-overlay');
+}
+
 class DatasetList extends Component {
   constructor () {
     super();
@@ -31,6 +37,8 @@ class DatasetList extends Component {
     this.onCheckCategory = this.onCheckCategory.bind(this);
     this.onSelectDate = this.onSelectDate.bind(this);
     this.onSort = this.onSort.bind(this);
+    this.mobileFilterOpen = this.mobileFilterOpen.bind(this);
+    this.mobileFilterCancel = this.mobileFilterCancel.bind(this);
 
     this.APIUrl = 'http://iranopendata.org/catalog/index.json';
     if (process.env.NODE_ENV == 'development') {
@@ -151,6 +159,21 @@ class DatasetList extends Component {
     ;
   }
 
+  mobileFilterOpen (e) {
+    e.preventDefault();
+    const component = this;
+    component.tempState = Object.assign({}, component.state);
+
+    filterDatasets(e);
+  }
+
+  mobileFilterCancel (e) {
+    e.preventDefault();
+    const component = this;
+    component.setState(component.tempState);
+
+    closeDataFilter(e);
+  }
   render ({}, {fromAPI, checked, selectedDates, minMaxDates}) {
     const component = this;
     if (fromAPI) {
@@ -185,9 +208,9 @@ class DatasetList extends Component {
       }
       return  h(
         'div', {class: 'content-internal wrapper-datasets'},
-        h('a', {class:'button button-filter', href:'', onclick:filterDatasets}, labels['filter-title']),
+        h('a', {class:'button button-filter', onclick:component.mobileFilterOpen, href: ''}, labels['filter-title']),
         h('div', {class: 'sidebar'},
-        	h('a', {class: 'icon-close', href:''}, labels['Close']),
+        	h('div', {class: 'icon-close', onclick:component.mobileFilterCancel}, labels['Close']),
           h('h5', {}, labels['filter-title']),
           h('form', {},
             h(CategoryFilter, {
@@ -202,8 +225,8 @@ class DatasetList extends Component {
             })
           ),
           h('div', {class:'filter-buttons-mobile'},
-          	h('a', {class: 'button button-filter-apply', href:''}, labels['button-apply']),
-          	h('a', {class: 'button button-grey button-filter-cancel', href:''}, labels['button-cancel']),
+          	h('a', {class: 'button button-filter-apply', href:'', onclick:closeDataFilter}, labels['button-apply']),
+          	h('a', {class: 'button button-grey button-filter-cancel', href:'', onclick:component.mobileFilterCancel}, labels['button-cancel']),
           ),
          ),
         h('div', {class: 'content-sidebar'},

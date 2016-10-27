@@ -90,24 +90,6 @@ nav {
   float: left;
 }
 
-.nav-mobile {
-  @media screen and (max-width: 920px) {
-    right: initial;
-    left: 0;
-  }
-}
-
-.nav-list_item {
-  margin-top: 1.5em;
-  &:first-of-type {
-    margin-right: 3em;
-    margin-left: 0;
-    @media screen and (max-width: 960px) {
-      margin-right: 0em;
-    }
-  }
-}
-
 .nav-languages {
   li {
     &:first-of-type {
@@ -126,9 +108,42 @@ nav {
   }
 }
 
+.nav-mobile {
+  @media screen and (max-width: 920px) {
+    right: initial;
+    left: 0;
+    .nav-list_item {
+      padding: 0em 2em .6em;
+      margin-top: .8em;
+      &:hover {
+        padding: 0em 2em .6em;
+        margin-right: 0;
+      }
+    }
+    .nav-languages {
+      .nav-list_item {
+        &:first-of-type {
+          padding: 0em 2em .6em;
+        }
+      }
+    }
+  }
+}
+
+.nav-list_item {
+  margin-top: 1.5em;
+  &:first-of-type {
+    margin-right: 3em;
+    margin-left: 0;
+    @media screen and (max-width: 960px) {
+      margin-right: 0em;
+    }
+  }
+}
+
 .section-feature_main {
   float: right;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 766px) {
     float: initial;
   }
 }
@@ -141,13 +156,13 @@ nav {
   padding-left: 0;
   margin-left: 0;
   li {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 766px) {
       float: right;
       margin-right: 0;
       margin-left: 4%;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 766px) {
     border-right: 0;
     padding-right: 0;
     margin-right: 0;
@@ -173,7 +188,7 @@ nav {
   border-right: 3px solid #fff;
   padding-right: 4%;
   margin-right: 6%;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 766px) {
     border-right: 0;
   }
 }
@@ -203,11 +218,21 @@ nav {
 }
 
 .dropdown-resources {
+  .dropdown-sm {
+    &:after {
+      left: 1rem;
+      right: initial;
+      float: left;
+    }
+  }
+}
+
+.dropdown-resources {
   float: right;
 }
 
 .header-filter-resources {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 766px) {
     float: right;
     margin-right: 0;
     margin-left: 1em;
@@ -254,6 +279,12 @@ nav {
   }
   &:nth-child(3) {
     margin-left: 0em;
+  }
+}
+
+.mc_embed_signup_scroll {
+  &:nth-child(3) {
+    display: none;
   }
 }
 

@@ -35,7 +35,7 @@ section {
 		margin-left: 0;
 		width: 100%;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		border-left: 3px solid #fff;
 		padding-left: 4%;
 		margin-left: 6%;
@@ -49,8 +49,8 @@ section {
 		float: initial;
 		width: 100%;
 	}
-	@media screen and (min-width: 768px) {
-		width: 28%;
+	@media screen and (min-width: 766px) {
+		width: 29%;
 		float: left;
 	}
 }
@@ -122,7 +122,7 @@ nav {
 		display: block;
 		float: right;
 	}
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 766px) {
 		display: initial;
 	}
 }
@@ -252,7 +252,7 @@ nav {
 			margin-right: 0;
 		}
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		width: 29%;
 		&:nth-child(3) {
 			margin-right: 0;
@@ -318,7 +318,7 @@ img {
 }
 
 .header-filter-resources {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 766px) {
 		float: left;
 		margin-right: 1em;
 		margin-top: .2em;
@@ -326,14 +326,14 @@ img {
 }
 
 .sidebar-resources {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 766px) {
 		width: 100%;
 		margin-bottom: 1.5em;
 	}
 }
 
 .dropdown-resources-options {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 766px) {
 		display: none;
 		position: absolute;
 		border: 1px solid $light-grey;
@@ -355,7 +355,7 @@ img {
 	@media screen and (min-width: 320px) {
 		width: 100%;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		width: 65%;
 	}
 }
@@ -412,7 +412,7 @@ img {
 	margin-bottom: 3em;
 	margin-top: 2.5em;
 	@media screen and (max-width: 600px) {
-		height: 400px;
+	height: 330px;
     width: 100%;
     position: relative;
 	}
@@ -455,7 +455,7 @@ img {
 	@media screen and (min-width: 320px) {
 		width: 100%;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 766px) {
 		width: 60%;
 	}
 }
