@@ -4,4 +4,8 @@ title: Developers
 lang: fa
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pharetra leo sed libero bibendum pharetra vitae at nibh. Praesent quis sem mattis, ullamcorper ligula sed, venenatis metus. Maecenas ornare tempor eleifend. Vivamus eleifend congue erat, quis rhoncus leo semper ac. In efficitur justo eu mattis vestibulum. Nullam auctor dui eros, eu pharetra erat molestie eu. Sed in nisl risus. Aenean posuere quam ac sapien semper molestie. Nunc congue nulla mi, et consequat tellus dapibus ac. Fusce eget magna ante. Vestibulum quis varius libero. Proin ac tellus eu massa consequat fringilla quis id eros. Etiam laoreet fermentum nibh vel auctor. Cras sed ipsum ac nunc consequat interdum eu quis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+پایگاه داده باز ایران علاقه‌مند است گروهی از توسعه‌دهندگان را گرد هم آورد تا بتوانند به توسعه بلندمدت این پایگاه کمک کنند. اگر کدنویس هستید، بنا به سابقه یا علاقه‌تان، راه‌های زیادی برای کمک به ما وجود دارد:
+
+- **استفاده از API**: استفاده از APIهای مختلف  پایگاه داده باز ایران در اپلیکیشن‌ها و سرویس‌هایی که طراحی می‌کنید. 
+- **مصورسازی**: یکی از چالش‌های کار، معنا دادن به  داده‌ها است. برای نمایش داده‌های ما، راه خوبی پیدا کرده‌اید؟ آیا ترکیب آن با داده‌های دیگر دید جدیدی ارائه می‌کند؟ لطفا آن‌ها را به ما به اشتراک بگذارید.
+- **نظرات**: به نظرات شما در مورد متدولوژی، طراحی و کد‌های نوشته شده‌مان نیاز داریم. لطفا پیشنهادها و نظرات‌تان را با ما به اشتراک بگذارید.
