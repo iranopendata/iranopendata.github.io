@@ -83,7 +83,7 @@ class Dataset extends Component {
           h('li', {},
             h('span', {class: 'metadata-item metadata-item-header'}, lang['dataset-source']),
             h('span', {class: 'metadata-item metadata-descript'},
-              h('a', {href: source_url}, lang['dataset-source'])
+              h('a', {href: source_url}, source)
             ),
           ),
 
