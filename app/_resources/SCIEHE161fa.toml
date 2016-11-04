@@ -1,0 +1,73 @@
+name = "SCIEHE161fa"
+license = "CC-BY-NC"
+ 
+indexed_at = "2016-09-19" 
+period = [1393, 1393] 
+frequency = "yearly"
+category= ["employment"]
+
+[[maintainer]]
+lang = "en" 
+text = "Small Media Foundation" 
+
+[[maintainer]]
+lang = "fa" 
+text = "بنیاد رسانه خرد"
+
+[[keywords]]
+lang = "en" 
+wordlist = ["employment", "unemployment", "Iran"]
+
+[[keywords]]
+lang = "fa" 
+wordlist = ["اشتغال", "بیکاری"]
+
+[author]
+web = "http://rc.majlis.ir/fa/report/show/985478"
+
+  [[author.name]] 
+  lang = "fa"
+  text = "مرکز پژوهش‌های مجلس"
+
+  [[author.name]]
+  lang = "en"
+  text = "Islamic Parliament Research Center"
+
+[[title]]
+lang = "en" 
+text = "Number of workers in Iran" 
+
+[[title]]
+lang = "fa"
+text = "تعداد شاغلان کشور"
+
+[[description]]
+lang = "fa"
+text = "این مجموعه داده از گزارش مرکز پژوهش‌های مجلس و به نقل از مرکز آمار تهیه شده است "
+
+[[description]]
+lang = "en"
+text = ""
+
+[[resources]]
+
+  url = "http://iod.dataset.s3.amazonaws.com/ehe/SCIEHE161fa.csv"
+
+  [[resources.title]]
+  lang = "en" 
+  text = "Database"
+
+  [[resources.title]]
+  lang = "fa"
+  text = "Database"
+
+  [[resources.sources]]
+  name = "Islamic Parliament Research Center" 
+  web = "http://rc.majlis.ir/fa/report/show/985478" 
+
+  [resources.schema]
+  format = "csv"
+
+      [[resources.schema.fields]]
+      name = "Year"
+      type = "string"
