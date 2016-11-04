@@ -105,7 +105,10 @@
 
   # Get Involved - About page - black content block
   involved-title: Get Involved
-  involved-descript: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum massa eget odio elementum, ac ultricies dolor tincidunt. Nulla eu leo a tortor aliquet eleifend. Aliquam eu magna vitae nisl porttitor consectetur vel ut quam.
+  involved-descript: Publish your datasets: If you have clean datasets that you would like to publish, you can send them to us! Please also send along a written methodology explaining how you cleaned the data. 
+  Suggest datasets: Looking for a dataset that isn’t here? If you know of a dataset that you think should be made available on Iran Open Data, please suggest it to us. If we think the dataset is interesting, we’ll add it to our to-do list. 
+  Write ingest codes: If you’re a developer and would like to help us write ingest codes, please do get in touch!
+  Sponsor us: Iran Open Data is currently sponsored by Small Media Foundation. We would like to expand our financial sponsors. Please get in touch with us if you can help!
   involved-button: Contact Us
 
   # Methodology - Home page - black content block
