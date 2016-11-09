@@ -30,7 +30,7 @@
   button-submit: Submit
 
   # Home Page
-  homepage-title: Making Iranian Data Available to the Public
+  homepage-title: Making Iranian Data Publicly Available
   homepage-descript: Discover clean and reliable public data on topics ranging from housing to heath, and from trade to transportation. Check back with our growing database frequently for our latest datasets, or sign up to our newsletter for alerts as new data becomes available.
   homepage-button: View All Datasets
   homepage-usecases-descript: Here we feature projects that are based upon Iran Open Data's datasets.
