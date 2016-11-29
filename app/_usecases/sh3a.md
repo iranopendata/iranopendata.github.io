@@ -3,7 +3,7 @@ collection: usecases
 title: علل نامعلوم مرگ در استان تهران
 source: رادیو فردا 
 description: پراکندگی دلایل مرگ و میر در استان‌ها چه می‌تواند به ما بگوید؟ نگاهی به گزارش سازمان ثبت احوال درباره چهار دلیل اصلی مرگ و میر در ۳۱ استان کشور در سال ۱۳۹۳ نشان می‌دهد که بیماری‌های قلبی وعروقی شایع‌ترین دلیل مرگ است، ولی در مورد سه دلیل بعدی اختلاف زیادی در میان استان‌ها وجود دارد.
-link: http:http://www.radiofarda.com/a/f3-death-reasons-tehran/28126144.html
+link: http://www.radiofarda.com/a/f3-death-reasons-tehran/28126144.html
 img: SH 3 a.png
 featured: yes
 lang: fa
