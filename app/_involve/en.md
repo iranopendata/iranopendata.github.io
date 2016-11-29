@@ -1,3 +1,9 @@
+---
+collection: involved
+title: Get involved
+lang: en
+---
+
 There are a number of different ways you can get involved in the project: 
 
 - Publish your datasets: If you have clean datasets that you would like to publish, you can send them to us! Please also send along a written methodology explaining how you cleaned the data.
