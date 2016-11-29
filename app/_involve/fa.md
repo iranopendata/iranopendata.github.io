@@ -1,5 +1,5 @@
 ---
-collection: involved
+collection: involve
 title: Get involved
 lang: fa
 ---
