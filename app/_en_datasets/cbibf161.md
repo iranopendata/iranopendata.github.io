@@ -5,6 +5,6 @@ id: cbibf161
 layout: dataset
 notes: 
 - date: Dec. 16, 2016
-  text: سال پایه برای بررسی شاخص بهای کالاها و خدمات در این مجموعه داده سال ۱۳۹۰ است.    
+  text: The base year for the index of prices of goods and services in the dataset is 1390.    
 related:
 ---
