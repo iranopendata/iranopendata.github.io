@@ -1,4 +1,5 @@
 ---
+id: na3b
 collection: usecases
 title: کارهای بهتر و مشاغل کلیدی؛ «همه برای مردان»
 source: رادیو فردا 
