@@ -248,17 +248,11 @@ nav {
 	}
 	@media screen and (min-width: 440px) {
 		width: 40%;
-		&:nth-child(2) {
-			margin-right: 0;
-		}
 	}
 	@media screen and (min-width: 766px) {
 		width: 29%;
 		&:nth-child(3) {
 			margin-right: 0;
-		}
-		&:nth-child(2) {
-			margin-right: 4.5em;
 		}
 	}
 }
