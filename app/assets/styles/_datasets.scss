@@ -15,6 +15,10 @@
 	}
 }
 
+.metadata-item a{
+	color: #42b70b;
+}
+
 /*Pagination*/
 .list-item-pagination {
 	display: inline-block;
@@ -58,7 +62,12 @@
 .transport { border-top: 2px solid $transport; }
 .women { border-top: 2px solid $women; }
 
-.content-dataset { padding-top: 3.5em; border-top-width: 3px;}
+.content-dataset { 
+	h1 {
+		font-size: 2.8em;
+	}
+	padding-top: 3.5em; border-top-width: 3px;
+}
 
 .filter-categories li label {
 	&:before {

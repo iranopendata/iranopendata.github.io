@@ -5,7 +5,13 @@
 		<div class="centered-content">
 			<h2 class="section-black-header">{{lang.involved-title}}</h2>
 			<div class="section-black-description">
-				<p class="description-md">{{lang.involved-descript}}</p>
+				<p class="description-md">
+				{% for post in site.involve %}
+				      {% if post.lang == page.lang %}
+					{{post.content}}
+				      {% endif %}
+				{% endfor %}
+				</p>
 				<a class="button button-white" href="/{{page.lang}}/contact/">{{lang.involved-button}}</a>
 				<a class="button button-white button-secondary" href="https://github.com/orgs/iranopendata/">{{lang.button-github}}</a>
 			</div>
