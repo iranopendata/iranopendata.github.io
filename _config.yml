@@ -29,3 +29,5 @@ collections:
   fa_datasets:
     output: true
     permalink: /fa/datasets/:path/
+  involve:
+    output: true

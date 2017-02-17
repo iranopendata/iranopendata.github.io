@@ -40,6 +40,7 @@ const categoryMap = {
   }
 };
 
+
 const frequencyMap = {
   'fa': {
     'daily': 'روزانه',
@@ -76,6 +77,25 @@ function invertLangArray(langArray) {
   })
 
   return retObject;
+}
+
+  /*
+   * Takes an array of objects, each object 
+   * having a lang and link fields and returns
+   * a download link according to the page lang.
+   * If there is only one item in the array return
+   * the item.
+   */
+function createDownloadURL(langArray) {
+  if (langArray.length == 1) {
+    return langArray[0].link;
+  } else {
+    let retObject = {};
+    langArray.forEach( (item) => {
+      retObject[item["lang"]] = item["link"];
+    })
+    return retObject[PAGE_LANG];
+  }
 }
 
   /* Takes dataset from the API
@@ -117,7 +137,7 @@ function transformDatasetFromAPI (dataset, lang) {
   return {
     'category': dataset.category,
     'title': title[lang],
-    'url': dataset.resources[0].url,
+    'url': createDownloadURL(dataset.resources[0].url),
     'description': description[lang],
     'period': dataset.period || [],
     'source': source[lang],
