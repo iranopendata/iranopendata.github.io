@@ -6,7 +6,7 @@ layout: default
 	<div class="wrapper wrapper-content">
 		<h1>{{lang.use_cases}}</h1>
     {% assign counter = 0 %}
-    {% for usecase in site.usecases reversed %}
+    {% for usecase in site.usecases reversed | sort: 'date' %}
       {% if usecase.lang == page.lang %}
         {% assign counter = counter | plus: 1 %}
       {% endif %}
