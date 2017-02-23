@@ -27,8 +27,8 @@ layout: default
         {% endif %}
       {% endfor %}
     </div>
-    <ul class="list-type-none">
-      {% for usecase in site.usecases %}
+    <ul class="list-type-none list-flex-wrapper">
+      {% for usecase in site.usecases reversed | sort: 'date' %}
         {% if usecase.lang == page.lang and usecase.featured == false %}
           <li class="list-item-block list-item-block-sm">
             <a target="_blank" href="{{usecase.link}}"><img class="img-feature image-usecase" src="/assets/graphics/{{usecase.img}}"></a>
