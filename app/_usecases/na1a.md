@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-men-control-job-market/28330697.html
 img: na1a.png
 featured: yes
 lang: fa
+date: 1395-11-06
 ---
