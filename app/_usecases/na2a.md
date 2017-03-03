@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-gender-gap-university-workplace/28180805.ht
 img: na2a.png
 featured: no
 lang: fa
+date: 1395-09-26
 ---
