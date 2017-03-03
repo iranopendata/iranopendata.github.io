@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-farmers-iliterate-iran/28255130.html
 img: sh5a.png
 featured: no
 lang: fa
+date: 1395-11-05
 ---
