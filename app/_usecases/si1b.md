@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-housing-cost-iran-families-budget/28273233.
 img: si1b.png
 featured: no
 lang: fa
+date: 1395-11-13
 ---
