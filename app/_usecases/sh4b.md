@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-healthcare-cost-iranian-basket/28302849.htm
 img: sh4b.png
 featured: no
 lang: fa
+date: 1395-11-26
 ---
