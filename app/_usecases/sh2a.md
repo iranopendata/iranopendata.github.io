@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-death-cause-provinces/28114816.html
 img: sh2.png
 featured: no
 lang: fa
+date: 1395-08-24
 ---

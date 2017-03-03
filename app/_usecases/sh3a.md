@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-death-reasons-tehran/28126144.html
 img: SH 3 a.png
 featured: no
 lang: fa
+date: 1395-08-28
 ---

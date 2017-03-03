@@ -7,4 +7,5 @@ link: http://www.radiofarda.com/a/f3-housing-rent-ownership/28294759.html
 img: si2a.png
 featured: no
 lang: fa
+date: 1395-11-19
 ---
