@@ -9,7 +9,7 @@ const categoryMap = {
     'banking': 'مالی و بانکی',
     'budget': 'بودجه و هزینه های دولت',
     'housing': 'مسکن',
-    'transport': 'حمل و نقل (',
+    'transport': 'حمل و نقل',
     'trade': 'تجارت',
     'health': 'بهداشت',
     'education': 'آموزش',
