@@ -275,13 +275,14 @@ gulp.task('html', function () {
 
 // Compress images.
 gulp.task('images', function () {
-  return gulp.src('_site/assets/graphics/**/*')
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true,
-      // don't remove IDs from SVGs, they are often used
-      // as hooks for embedding and styling
-      svgoPlugins: [{cleanupIDs: false}]
+	return gulp.src('_site/assets/graphics/**/*')
+		.pipe($.cache($.imagemin([
+			$.imagemin.gifsicle({interlaced: true}),
+			$.imagemin.jpegtran({progressive: true}),
+			$.imagemin.optipng({optimizationLevel: 5}),
+			$.imagemin.svgo({plugins: [{cleanupIDs: false}]})
+    ], {
+      verbose: true
     })))
-    .pipe(gulp.dest('_site/assets/graphics'));
+		.pipe(gulp.dest('_site/assets/graphics'));
 });
