@@ -45,3 +45,13 @@
 		border-top: 0;
 	}
 }
+
+.top-banner {
+	background-color: $light-light-grey;
+	border-bottom: 1px solid $light-grey;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	p {
+		margin-bottom: 0;
+	}
+}

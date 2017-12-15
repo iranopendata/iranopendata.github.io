@@ -6,6 +6,9 @@
   developers: "توسعه‌ دهندگان"
   about: "درباره ما"
   english: "فارسی"
+  banner_before_link: "وب سایت جدید پایگاه داده باز ایران به زودی راه اندازی میشود. برای دیدن این سایت روی"
+  banner_link: "این لینک"
+  banner_after_link: "کلیک کنید."
 
   # terms
   featured: "برگزیده"
