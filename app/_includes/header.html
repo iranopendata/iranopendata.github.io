@@ -1,4 +1,10 @@
 	{% assign lang = site.data[page.lang][0] %}
+	<div class="top-banner">
+		<div class="wrapper">
+			<p class="description-lg">{{lang.banner_before_link}} <a href="http://new.iranopendata.org">{{lang.banner_link}}</a> {{lang.banner_after_link}}</p>
+		</div>
+	</div>
+
 	<header id="site-header" class="wrapper">
 		<h1 class="logo">
 			<a href="/{{page.lang}}/"><img src="/assets/graphics/IOD-logo.png" alt="Iran Open Data" /></a>
